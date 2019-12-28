@@ -1,0 +1,8 @@
+abbr,name,xmin,xmax
+prcp,Precipitation,0,10
+rmin,Minimum Humidity,0,70
+tmax,Maximum Temperature,0,40
+wind,Wind,2,20
+erc,Energy Release Component,20,100
+bi,Burning Index,20,110
+sfwp,Severe Fire Wx Potential,0.8,5.2
