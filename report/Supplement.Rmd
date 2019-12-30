@@ -1,0 +1,158 @@
+---
+title: "Supplementary Material"
+author: "Jude Bayham,..."
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+
+#Packages
+library(tidyverse)
+library(lmtest)
+library(sandwich)
+library(stargazer)
+
+#Data for growth model
+load("analysis/inputs/01_growth.Rdata")
+load("analysis/cache/results_growth.Rdata")
+
+load("analysis/inputs/03_orders.Rdata")
+load("analysis/cache/results_resource_orders.Rdata")
+
+#Name replacements
+var.names <- read_csv("report/var_names.csv")
+
+source("functions/analysis_functions.R")
+```
+
+## Introduction
+
+This document is the supplementary material for the manuscript "The effect of weather on resource ordering patterns during large wildland fires".  
+
+- get reg 2 results in
+- summary table comparison with some info about factor variables
+
+
+
+## Results
+
+This section contains the full result tables referenced in the manuscript
+
+<center>
+
+```{r, results='asis'}
+map(output.growth,
+    function(x){
+      temp.names <- suppressMessages(names(x$coefficients) %>%
+        enframe(., name = NULL) %>%
+        inner_join(.,
+                   var.names))
+      names(x$coefficients) <- temp.names$new_name
+      coeftest(x,vcov=vcovCL(x,cluster = growth.ds$ross_inc_id[-x$na.action]))
+    }) %>%
+  stargazer(.,
+            type = "html",
+            title = "Table S1 Complete Results of Quasipoisson Regression of Fire Growth",
+            dep.var.caption = "Fire Growth",
+            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are CFBX=1, Inaccessibility (Medium), GACC (EB),</br> and year (2007)    L.Area are the three coefficients on the cubic natural spline.  </br>PC denotes the principal components. L denotes a 1 period lag.",
+            notes.align = "l",
+            single.row = T)
+
+
+```
+</center>
+
+
+
+<center>
+```{r, results='asis'}
+map(all.resources,
+    function(x){
+      temp.names <- suppressMessages(
+        rownames(x$coeftable) %>%
+        enframe(., name = NULL) %>%
+        inner_join(.,
+                   var.names))
+      rownames(x$coeftable) <- temp.names$new_name
+      fixest_to_coeftest(x)
+    }) %>%
+  stargazer(.,
+            type = "html",
+            title = "Table S3 Complete Results of Fixed Effects Regression of Total Resource Orders",
+            dep.var.caption = "Total Resource Orders",
+            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes.align = "l",
+            single.row = T)
+
+
+```
+</center>
+
+
+<center>
+```{r, results='asis'}
+map(results.lm[c(1,2,4,5)],
+    function(x){
+      temp.names <- suppressMessages(
+        rownames(x$coeftable) %>%
+        enframe(., name = NULL) %>%
+        inner_join(.,
+                   var.names))
+      rownames(x$coeftable) <- temp.names$new_name
+      fixest_to_coeftest(x)
+    }) %>%
+  stargazer(.,
+            type = "html",
+            title = "Table S4a Complete Results of Fixed Effects Regression of Select Resource Orders",
+            column.labels = c("Wildland Engines","Structure Engines","Type 1 Crews","Type 2 Crews"),
+            dep.var.caption = " ",
+            model.numbers = F,
+            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes.align = "l",
+            single.row = F)
+
+
+
+map(results.lm[c(6,7,8,3)],
+    function(x){
+      temp.names <- suppressMessages(
+        rownames(x$coeftable) %>%
+        enframe(., name = NULL) %>%
+        inner_join(.,
+                   var.names))
+      rownames(x$coeftable) <- temp.names$new_name
+      fixest_to_coeftest(x)
+    }) %>%
+  stargazer(.,
+            type = "html",
+            title = "Table S4b Complete Results of Fixed Effects Regression of Select Resource Orders",
+            column.labels = c("LAT","Aircraft","Helicopters","Dozers"),
+            dep.var.caption = " ",
+            model.numbers = F,
+            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes.align = "l",
+            single.row = F)
+
+
+```
+</center>
+
+
+## Data
+
+
+### Weather
+
+gridMET
+
+### Vegetation and Topography
+
+Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
+
+We also calculate several metrics from a digital elevation model.  Specifically, we calculate the mean, standard deviation, median, minimum, maximum, mode, range (max-min), and sum of elevation and slope.  We also calculate ruggedness defined as the ratio of actual surface area to slope-corrected surface area.
+
+These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.
+
+

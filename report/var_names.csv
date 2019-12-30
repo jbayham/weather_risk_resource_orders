@@ -1,0 +1,70 @@
+value,new_name
+(Intercept),(Intercept)
+L1.prcp,L.Precipitation
+L1.rmin,L.Humidity
+L1.tmax,L.Temperature
+L1.wind,L.Wind
+L1.bi,L.BI
+L1.erc,L.ERC
+L1.sfwp2,L.CFBX (2)
+L1.sfwp3,L.CFBX (3)
+L1.sfwp4,L.CFBX (4)
+L1.sfwp5,L.CFBX (5)
+terrainHigh,Inaccessibility (High)
+terrainLow,Inaccessibility (Low)
+doy_cos,Day of year
+gaccNO,GACC NO
+gaccNR,GACC NR
+gaccNW,GACC NW
+gaccRM,GACC RM
+gaccSO,GACC SO
+gaccSW,GACC SW
+gaccWB,GACC WB
+"splines::ns(L1.area, df = 3)1",L.Area S1
+"splines::ns(L1.area, df = 3)2",L.Area S2
+"splines::ns(L1.area, df = 3)3",L.Area S3
+cause_descrLightning,Cause (Lightning)
+cause_descrN/A,Cause (NA)
+cause_descrUnder Investigation,Cause (Under Investigation)
+year2008,2008
+year2009,2009
+year2010,2010
+year2011,2011
+year2012,2012
+year2013,2013
+PC1,PC1
+PC2,PC2
+PC3,PC3
+PC4,PC4
+PC5,PC5
+PC6,PC6
+PC7,PC7
+PC8,PC8
+PC9,PC9
+PC10,PC10
+PC11,PC11
+PC12,PC12
+PC13,PC13
+PC14,PC14
+PC15,PC15
+PC16,PC16
+PC17,PC17
+PC18,PC18
+PC19,PC19
+PC20,PC20
+doy_cos:gaccNO,GACC NO x DOY
+doy_cos:gaccNR,GACC NR x DOY
+doy_cos:gaccNW,GACC NW x DOY
+doy_cos:gaccRM,GACC RM x DOY
+doy_cos:gaccSO,GACC SO x DOY
+doy_cos:gaccSW,GACC SW x DOY
+doy_cos:gaccWB,GACC WB x DOY
+doy_cos:gaccEB,GACC EB x DOY
+growth_potentialHigh,Growth Potential (High)
+growth_potentialLow,Growth Potential (Low)
+evac_potential,Potential Evacuation
+L1.growth,L.Growth
+L1.evac,L.Evacuation
+growth_potentialHigh:evac_potential,Growth Potential (High) x Pot. Evac.
+growth_potentialLow:evac_potential,Growth Potential (Low) x Pot. Evac.
+L1.growth:L1.evac,Lagged Growth x L. Evacuation

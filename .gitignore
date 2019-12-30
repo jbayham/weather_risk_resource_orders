@@ -46,3 +46,4 @@ analysis/cache/
 
 report/figures/
 report/tables/*
+report/*.html
