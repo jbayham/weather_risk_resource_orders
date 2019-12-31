@@ -1,5 +1,5 @@
 ---
-title: "Supplementary Material: The effect of weather on resource ordering patterns during large wildland fires"
+title: "Supplementary Material: Weather, Risk, and Resource Orders on Large Wildland Fires in the Western US"
 author: "Jude Bayham, Erin J. Belval, Matthew P. Thompson, David E. Calkin, Crystal S. Stonesifer and Christopher Dunn "
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
@@ -39,14 +39,26 @@ source("functions/analysis_functions.R")
 
 # Introduction
 
-This document is the supplementary material for the manuscript "The effect of weather on resource ordering patterns during large wildland fires".  We provide more detail on the data used in the analysis.  We also provide the complete regression tables and full set of figures based on our analyses.
+This document is the supplementary material for the manuscript "Weather, Risk, and Resource Orders on Large Wildland Fires in the Western US".  We provide more detail on the data used in the analysisas well as the complete regression tables and full set of figures from our analyses.
 
 
 # Data
 
+This section provides additional information on the nature of the data used in the analysis and our processing steps.  
 
 
+## Outliers
+
+We remove outliers of weather and growth variables to reduce their potential influence on the regression results.  The following figure displays histograms of the weather variables (CFBX is not included because it is categorical) with omitted outliers indicated in red.
+
+
+<center>
+```{r}
+include_graphics(path = "figures/outliers.png")
+```
+</center>
 ## Summary Statistics
+
 The datasets used in each regression vary based on the missingness of the variables used in the analysis.  While the datasets vary in number of observations, they are all based on the same criteria: fires between 2007-2013 in the Western US.  Table S1 provides summary statistics of the core weather, fire size and growth, and resource order variables used in each regression model.  There are no significant differences between the means across the three datasets.  Therefore, using the larger datasets in models 1 and 2 simply provide more efficient estimates.   
 
 
@@ -72,10 +84,29 @@ Data on the vegetation and topography are compiled based on Landfire Existing Ve
 
 We also calculate several metrics from a digital elevation model.  Specifically, we calculate the mean, standard deviation, median, minimum, maximum, mode, range (max-min), and sum of elevation and slope.  We also calculate ruggedness defined as the ratio of actual surface area to slope-corrected surface area.
 
-These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.
+These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.  The following figure shows the cumulative proportion of variance explained by each principal component.  The red line indicates our cutoff at 80% of the variation.
+
+<center>
+```{r}
+load("analysis/cache/pca.Rdata")
+summary(pca.output)$importance %>%
+  t() %>%
+  as_tibble() %>%
+  rownames_to_column(var = "Principal Components") %>%
+  filter(`Cumulative Proportion`<0.97) %>%
+  ggplot(aes(x=reorder(`Principal Components`,`Cumulative Proportion`),y=`Cumulative Proportion`)) +
+    geom_col(width = 1) +
+    geom_hline(yintercept = .8, color="red",size=2) +
+    scale_x_discrete(name="Principal Components",breaks=seq.int(1,36,2)) +
+    ylab("Cumulative Proportion of Variation") +
+    theme_bw()
+```
+</center>
 
 
+## ICS-209 Reporting
 
+Changes to the ICS-209 implemented in 2014 have added some ambiguity to the intent of the 209 reporting process, specifically with how it relates to reactive or proactive planning. These updates eliminated the Growth Potential field altogether; further, they modified the “Report Date” field to a new data block called “For Time Period.” In this new data block, users must enter time and date values for fields named “Report From” and “Report To.” While the user guide offers some guidance on how to populate these fields (https://www.predictiveservices.nifc.gov/intelligence/ICS-209_User_Guide_2.0.pdf), it is unclear how widely these instructions are adhered to. Some users may see that this is a forward-looking tool since they are planning for resource needs for upcoming operational periods; they may, in turn, indicate that the “For Time Period” values span the upcoming 24 hours. Others may see it as a reactive tool for reporting on past events and populate the date range for the last 24 hours. The potential inconsistencies from these changes confuse temporal summaries and eliminate the snapshot value of a daily report with a single date and time. Future improvements to clarify and simplify this would improve managers’ abilities to consistently interpret fire report data and increase analytical value of archived data. 
 
 
 
@@ -83,11 +114,11 @@ These variables clearly capture redundant information that would cause multicoll
 
 # Results
 
-This section contains the full result tables referenced in the manuscript
+This section contains the full result tables referenced in the manuscript.
 
 ## Fire Growth
 
-Table S1 contains the full regression results of the quasipoisson models of fire growth as a function of weather and other controls (eq 1 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction.  Column 1 contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression.
+Table S2 contains the full regression results of the quasipoisson models of fire growth as a function of weather and other controls (eq 1 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction.  Column 1 contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression.
 
 <center>
 
@@ -103,7 +134,7 @@ map(output.growth,
     }) %>%
   stargazer(.,
             type = "html",
-            title = "Table S1 Complete Results of Quasipoisson Regression of Fire Growth",
+            title = "Table S2 Complete Results of Quasipoisson Regression of Fire Growth",
             dep.var.caption = "Fire Growth",
             notes = "Notes: *** p<0.01, ** p<0.05, * p<0.1 </br>Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are CFBX=1, Inaccessibility (Medium), GACC (EB),</br> and year (2007)    L.Area are the three coefficients on the cubic natural spline.  </br>PC denotes the principal components. L denotes a 1 period lag.",
             notes.append = F,
@@ -135,7 +166,7 @@ include_graphics(path = "figures/sfwp.png")
 *****************************
 
 ## Growth Potential
-Table S2 contains the full regression results of the ordered logit regressions of fire growth potential on weather and other controls (equation 2 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction. Column 1 labeled *All* contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression. 
+Table S3 contains the full regression results of the ordered logit regressions of fire growth potential on weather and other controls (equation 2 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction. Column 1 labeled *All* contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression. 
 ```{r,message=FALSE,warning=FALSE}
 temp.tab <- read_tsv("report/tables/need_formatting/02_gp_raw.txt",
                      skip = 3,
@@ -146,7 +177,7 @@ temp.tab %>%
             var.names,
             by=c("X1"="value")) %>%
   select(Coefficient=new_name,All=X2,Weather=X3,Indices=X4,CFBX=X5) %>%
-  kable(caption = "Table S2 Complete Results of Ordered Logit Regression of Growth Potential") %>%
+  kable(caption = "Table S3 Complete Results of Ordered Logit Regression of Growth Potential") %>%
   kable_styling(bootstrap_options = c("condensed"),
                 full_width = F,position = "center") %>%
   footnote(general = "Observations: 14,366. *** p<0.01, ** p<0.05, * p<0.1 
@@ -174,7 +205,7 @@ include_graphics(path = "figures/gp_sfwp.png")
 
 ## Resource Orders
 
-Tables S3 contains the complete regression results of the linear fixed effects regression of total resource orders on observed and expected fire growth, evacuation, and interactions between the two.  Columns 1-4 correspond to the models described in the main text in Table 4.  Column 1 includes only the main effects of growth potential and lagged fire growth as well as fire fixed effects.  Column 2 includes growth potential, lagged fire growth, potential evacuation, and lagged evacuation as well as their interactions (fire fixed effects).  Column 3 includes the same regressors as column 2 but adds days since discovery fixed effects.  Column 4 adds incident commander fixed effects.
+Tables S4 contains the complete regression results of the linear fixed effects regression of total resource orders on observed and expected fire growth, evacuation, and interactions between the two.  Columns 1-4 correspond to the models described in the main text in Table 4.  Column 1 includes only the main effects of growth potential and lagged fire growth as well as fire fixed effects.  Column 2 includes growth potential, lagged fire growth, potential evacuation, and lagged evacuation as well as their interactions (fire fixed effects).  Column 3 includes the same regressors as column 2 but adds days since discovery fixed effects.  Column 4 adds incident commander fixed effects.
 
 <center>
 ```{r, results='asis'}
@@ -192,7 +223,7 @@ map(all.resources,
     }) %>%
   stargazer(.,
             type = "html",
-            title = "Table S3 Complete Results of Fixed Effects Regression of Total Resource Orders",
+            title = "Table S4 Complete Results of Fixed Effects Regression of Total Resource Orders",
             dep.var.caption = "Total Resource Orders",
             notes = note.text,
             notes.append = F,
@@ -204,7 +235,7 @@ map(all.resources,
 ```
 </center>
 
-Tables S4a and S4b contain the complete regression results of the linear fixed effects regressions by resource type.
+Tables S5a and S5b contain the complete regression results of the linear fixed effects regressions by resource type.
 
 <center>
 ```{r, results='asis'}
@@ -220,7 +251,7 @@ map(results.lm[c(1,2,4,5)],
     }) %>%
   stargazer(.,
             type = "html",
-            title = "Table S4a Complete Results of Fixed Effects Regression of Select Resource Orders",
+            title = "Table S5a Complete Results of Fixed Effects Regression of Select Resource Orders",
             column.labels = c("Wildland Engines","Structure Engines","Type 1 Crews","Type 2 Crews"),
             dep.var.caption = " ",
             model.numbers = F,
@@ -244,7 +275,7 @@ map(results.lm[c(6,7,8,3)],
     }) %>%
   stargazer(.,
             type = "html",
-            title = "Table S4b Complete Results of Fixed Effects Regression of Select Resource Orders",
+            title = "Table S5b Complete Results of Fixed Effects Regression of Select Resource Orders",
             column.labels = c("LAT","Aircraft","Helicopters","Dozers"),
             dep.var.caption = " ",
             model.numbers = F,
