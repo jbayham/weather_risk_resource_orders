@@ -43,6 +43,7 @@ temp.ds <- temp.ds %>%
          L1.evac = lag(evac),
          L1.evac = ifelse(sitnum==1,evac,L1.evac),
          doy_cos=cos(yday(report_date)),
+         year=as.factor(year(fod_discovery_date)),
          time_since_disco=as.numeric(report_date-date(fod_discovery_date))) %>%
   ungroup() %>%
   filter(growth>=0)
@@ -89,7 +90,7 @@ temp.ds <- temp.ds %>%
 
 #Write out for stata
 gp.ds <- temp.ds %>%
-  select(ross_inc_id,growth_potential,starts_with("L0."),
+  select(ross_inc_id,growth_potential,starts_with("L0."),year,
          area,terrain,doy_cos,cause_descr,gacc,starts_with("PC")) %>%
   rename_all(~str_replace_all(.,"L0.","")) 
 
@@ -106,8 +107,7 @@ temp.ds <- temp.ds %>%
   mutate_at(vars(pl_national,pl_region),
             ~relevel(.,ref = "Medium")) %>%
   mutate_if(is.character,as.factor) %>%  #character to factor
-  mutate(year=as.factor(year(fod_discovery_date)),
-         growth_potential = factor(growth_potential,levels=c("Low","Medium","High","Extreme")),
+  mutate(growth_potential = factor(growth_potential,levels=c("Low","Medium","High","Extreme")),
          growth_potential = recode_factor(growth_potential,Extreme="High"),
          growth_potential = relevel(growth_potential,ref = "Medium"),
          terrain = recode_factor(terrain,Extreme="High"),

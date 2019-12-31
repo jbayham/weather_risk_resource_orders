@@ -1,5 +1,15 @@
 value,new_name
 (Intercept),(Intercept)
+prcp,Precipitation
+rmin,Humidity
+tmax,Temperature
+wind,Wind
+bi,BI
+erc,ERC
+2.sfwp,CFBX (2)
+3.sfwp,CFBX (3)
+4.sfwp,CFBX (4)
+5.sfwp,CFBX (5)
 L1.prcp,L.Precipitation
 L1.rmin,L.Humidity
 L1.tmax,L.Temperature
@@ -12,7 +22,17 @@ L1.sfwp4,L.CFBX (4)
 L1.sfwp5,L.CFBX (5)
 terrainHigh,Inaccessibility (High)
 terrainLow,Inaccessibility (Low)
+2.terrain1,Inaccessibility (Medium)
+3.terrain1,Inaccessibility (High)
+4.terrain1,Inaccessibility (Extreme)
 doy_cos,Day of year
+2.gacc1,GACC NO
+3.gacc1,GACC NR
+4.gacc1,GACC NW
+5.gacc1,GACC RM
+6.gacc1,GACC SO
+7.gacc1,GACC SW
+8.gacc1,GACC WB
 gaccNO,GACC NO
 gaccNR,GACC NR
 gaccNW,GACC NW
@@ -20,12 +40,24 @@ gaccRM,GACC RM
 gaccSO,GACC SO
 gaccSW,GACC SW
 gaccWB,GACC WB
+sp_area1,L.Area S1
+sp_area2,L.Area S2
+sp_area3,L.Area S3
 "splines::ns(L1.area, df = 3)1",L.Area S1
 "splines::ns(L1.area, df = 3)2",L.Area S2
 "splines::ns(L1.area, df = 3)3",L.Area S3
+2.cause_desc1,Cause (Lightning)
+3.cause_desc1,Cause (NA)
+4.cause_desc1,Cause (Under Investigation)
 cause_descrLightning,Cause (Lightning)
 cause_descrN/A,Cause (NA)
 cause_descrUnder Investigation,Cause (Under Investigation)
+2.year1,2008
+3.year1,2009
+4.year1,2010
+5.year1,2011
+6.year1,2012
+7.year1,2013
 year2008,2008
 year2009,2009
 year2010,2010
@@ -52,6 +84,14 @@ PC17,PC17
 PC18,PC18
 PC19,PC19
 PC20,PC20
+1b.gacc1#co.doy_cos,GACC EB x DOY
+2.gacc1#c.doy_cos,GACC NO x DOY
+3.gacc1#c.doy_cos,GACC NR x DOY
+4.gacc1#c.doy_cos,GACC NW x DOY
+5.gacc1#c.doy_cos,GACC RM x DOY
+6.gacc1#c.doy_cos,GACC SO x DOY
+7.gacc1#c.doy_cos,GACC SW x DOY
+8.gacc1#c.doy_cos,GACC WB x DOY
 doy_cos:gaccNO,GACC NO x DOY
 doy_cos:gaccNR,GACC NR x DOY
 doy_cos:gaccNW,GACC NW x DOY
@@ -68,3 +108,6 @@ L1.evac,L.Evacuation
 growth_potentialHigh:evac_potential,Growth Potential (High) x Pot. Evac.
 growth_potentialLow:evac_potential,Growth Potential (Low) x Pot. Evac.
 L1.growth:L1.evac,Lagged Growth x L. Evacuation
+Constant cut1,Cut 1 (kappa)
+Constant cut2,Cut 2 (kappa)
+Constant cut3,Cut 3 (kappa)

@@ -1,6 +1,6 @@
 ---
-title: "Supplementary Material"
-author: "Jude Bayham,..."
+title: "Supplementary Material: The effect of weather on resource ordering patterns during large wildland fires"
+author: "Jude Bayham, Erin J. Belval, Matthew P. Thompson, David E. Calkin, Crystal S. Stonesifer and Christopher Dunn "
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: html_document
 ---
@@ -13,6 +13,12 @@ library(tidyverse)
 library(lmtest)
 library(sandwich)
 library(stargazer)
+library(margins)
+library(knitr)
+library(readxl)
+library(kableExtra)
+
+options(knitr.kable.NA = '')
 
 #Data for growth model
 load("analysis/inputs/01_growth.Rdata")
@@ -31,14 +37,34 @@ source("functions/analysis_functions.R")
 
 This document is the supplementary material for the manuscript "The effect of weather on resource ordering patterns during large wildland fires".  
 
-- get reg 2 results in
-- summary table comparison with some info about factor variables
+
+## Data
+
+We use 
+
+
+### Principal Components Analysis
+
+Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
+
+We also calculate several metrics from a digital elevation model.  Specifically, we calculate the mean, standard deviation, median, minimum, maximum, mode, range (max-min), and sum of elevation and slope.  We also calculate ruggedness defined as the ratio of actual surface area to slope-corrected surface area.
+
+These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.
+
+
+
+
+
 
 
 
 ## Results
 
 This section contains the full result tables referenced in the manuscript
+
+### Fire Growth
+
+Table S1 contains the full regression results of the quasipoisson models of fire growth as a function of weather and other controls (eq 1 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction.  Column 1 contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression.
 
 <center>
 
@@ -56,18 +82,81 @@ map(output.growth,
             type = "html",
             title = "Table S1 Complete Results of Quasipoisson Regression of Fire Growth",
             dep.var.caption = "Fire Growth",
-            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are CFBX=1, Inaccessibility (Medium), GACC (EB),</br> and year (2007)    L.Area are the three coefficients on the cubic natural spline.  </br>PC denotes the principal components. L denotes a 1 period lag.",
+            notes = "Notes: *** p<0.01, ** p<0.05, * p<0.1 </br>Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are CFBX=1, Inaccessibility (Medium), GACC (EB),</br> and year (2007)    L.Area are the three coefficients on the cubic natural spline.  </br>PC denotes the principal components. L denotes a 1 period lag.",
+            notes.append = F,
             notes.align = "l",
+            notes.label = " ",
             single.row = T)
 
 
 ```
 </center>
 
+</br>
 
+The direct and composite weather measures are all statistically significant at $\alpha=0.01$, and the signs confirm intuition.  Fire growth decreases when precipitation and humidity are higher, whereas growth increases with higher temperature, wind speed, BI, ERC, and CFBX.  The magnitude of the coefficients on the discrete levels of CFBX is rising, which confirms that higher fire behavior ratings correspond to higher fire growth rates.  
+
+The following figures illustrate the predicted fire growth over the observed domain of the weather variables.  The figures are generated using the estimates from the separately estimated regressions.  Note that the small ticks on the horizontal axis denote observations in the dataset.
+
+
+```{r,out.width="50%"}
+include_graphics(path = "figures/prcp.png")
+include_graphics(path = "figures/rmin.png")
+include_graphics(path = "figures/tmax.png")
+include_graphics(path = "figures/wind.png")
+include_graphics(path = "figures/bi.png")
+include_graphics(path = "figures/erc.png")
+include_graphics(path = "figures/sfwp.png")
+```
+
+*****************************
+
+### Growth Potential
+Table S2 contains the full regression results of the ordered logit regressions of fire growth potential on weather and other controls (equation 2 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction. Column 1 labeled *All* contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression. 
+```{r,results='asis',message=FALSE,warning=FALSE}
+temp.tab <- read_tsv("report/tables/need_formatting/02_gp_raw.txt",
+                     skip = 3,
+                     n_max = 128)
+
+temp.tab %>%
+  left_join(.,
+            var.names,
+            by=c("X1"="value")) %>%
+  select(Coefficient=new_name,All=X2,Weather=X3,Indices=X4,CFBX=X5) %>%
+  kable(caption = "Table S2 Complete Results of Ordered Logit Regression of Growth Potential") %>%
+  kable_styling(bootstrap_options = c("condensed"),
+                full_width = F,position = "center") %>%
+  footnote(general = "Observations: 14,366. *** p<0.01, ** p<0.05, * p<0.1 
+           Standard errors are clustered at the fire level and are in parentheses.  ",
+           general_title = "Notes: ")
+
+```
+
+
+The direct and composite weather measures are all statistically significant at $\alpha=0.01$ when estimates separately, and the signs confirm intuition.  Fire growth potential decreases when precipitation and humidity are higher, whereas growth increases with higher temperature, wind speed, BI, ERC, and CFBX.  The magnitude of the coefficients on the discrete levels of CFBX is rising, which confirms that higher fire behavior ratings correspond to higher fire growth rates.  
+
+The following figures illustrate the predicted probabilities of each category of growth potential over the observed domain of the weather variables.  The figures are generated using the estimates from the separately estimated regressions.  Note that the small ticks on the horizontal axis denote observations in the dataset.
+
+```{r,out.width="50%"}
+include_graphics(path = "figures/gp_prcp.png")
+include_graphics(path = "figures/gp_rmin_leg.png")
+include_graphics(path = "figures/gp_tmax.png")
+include_graphics(path = "figures/gp_wind.png")
+include_graphics(path = "figures/gp_bi.png")
+include_graphics(path = "figures/gp_erc.png")
+include_graphics(path = "figures/gp_sfwp.png")
+```
+
+*****************************
+
+### Resource Orders
+
+Tables S3 contains the complete regression results of the linear fixed effects regression of total resource orders on observed and expected fire growth, evacuation, and interactions between the two.  Columns 1-4 correspond to the models described in the main text in Table 4.  Column 1 includes only the main effects of growth potential and lagged fire growth as well as fire fixed effects.  Column 2 includes growth potential, lagged fire growth, potential evacuation, and lagged evacuation as well as their interactions (fire fixed effects).  Column 3 includes the same regressors as column 2 but adds days since discovery fixed effects.  Column 4 adds incident commander fixed effects.
 
 <center>
 ```{r, results='asis'}
+note.text <- "Notes: *** p<0.01, ** p<0.05, * p<0.1 </br>Observations: 3,735; Fires: 1,125; Number of days since discovery FE: 84; Number of ICs: 1,234 </br> Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag."
+
 map(all.resources,
     function(x){
       temp.names <- suppressMessages(
@@ -82,14 +171,17 @@ map(all.resources,
             type = "html",
             title = "Table S3 Complete Results of Fixed Effects Regression of Total Resource Orders",
             dep.var.caption = "Total Resource Orders",
-            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes = note.text,
+            notes.append = F,
             notes.align = "l",
+            notes.label = " ",
             single.row = T)
 
 
 ```
 </center>
 
+Tables S4a and S4b contain the complete regression results of the linear fixed effects regressions by resource type.
 
 <center>
 ```{r, results='asis'}
@@ -109,8 +201,10 @@ map(results.lm[c(1,2,4,5)],
             column.labels = c("Wildland Engines","Structure Engines","Type 1 Crews","Type 2 Crews"),
             dep.var.caption = " ",
             model.numbers = F,
-            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes = note.text,
+            notes.append = F,
             notes.align = "l",
+            notes.label = " ",
             single.row = F)
 
 
@@ -131,28 +225,14 @@ map(results.lm[c(6,7,8,3)],
             column.labels = c("LAT","Aircraft","Helicopters","Dozers"),
             dep.var.caption = " ",
             model.numbers = F,
-            notes = "Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag.",
+            notes = note.text,
+            notes.append = F,
             notes.align = "l",
+            notes.label = " ",
             single.row = F)
 
 
 ```
 </center>
-
-
-## Data
-
-
-### Weather
-
-gridMET
-
-### Vegetation and Topography
-
-Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
-
-We also calculate several metrics from a digital elevation model.  Specifically, we calculate the mean, standard deviation, median, minimum, maximum, mode, range (max-min), and sum of elevation and slope.  We also calculate ruggedness defined as the ratio of actual surface area to slope-corrected surface area.
-
-These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.
 
 

@@ -4,7 +4,8 @@
 load("analysis/inputs/01_growth.Rdata")
 
 
-lag.var.list <- list(c("prcp","rmin","tmax","wind"),
+lag.var.list <- list(c("prcp","rmin","tmax","wind","bi","erc","sfwp"),
+                     c("prcp","rmin","tmax","wind"),
                      c("bi","erc"),
                      c("sfwp"))
 lag.length=c(str_c("L",c(1)))
@@ -44,7 +45,7 @@ output.growth <- map(lag.var.list,
       
       coeftest(lm.model,vcov=vcovCL(lm.model,cluster = growth.ds$ross_inc_id[-lm.model$na.action])) %>%
         tidy() %>%
-        add_row(term="Effron R2", estimate=PseudoR2(lm.model, which = "Efron")) %>%
+        add_row(term="Effron R2", estimate=PseudoR2(lm.model, which = "Effron")) %>%
         write_csv(.,path = str_c("report/tables/need_formatting/01_growth_wx_",str_c(vars.cat$Var2,collapse = "_"),".csv"))
       
       to.map <- read_csv("report/wx_names.csv",col_names = T) %>%
