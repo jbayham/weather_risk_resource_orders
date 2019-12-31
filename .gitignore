@@ -44,7 +44,8 @@ analysis/cache/
 # file created by google drive and sync
 .DS_Store
 
-report/figures/
-report/tables/*
+#Syncing the figures and tables because some of them are produced with Stata which not everyone may have
+#report/figures/
+#report/tables/*
 report/*.html
 .Rproj.user
