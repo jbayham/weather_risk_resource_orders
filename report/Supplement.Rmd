@@ -2,7 +2,11 @@
 title: "Supplementary Material: The effect of weather on resource ordering patterns during large wildland fires"
 author: "Jude Bayham, Erin J. Belval, Matthew P. Thompson, David E. Calkin, Crystal S. Stonesifer and Christopher Dunn "
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
@@ -33,17 +37,36 @@ var.names <- read_csv("report/var_names.csv")
 source("functions/analysis_functions.R")
 ```
 
-## Introduction
+# Introduction
 
-This document is the supplementary material for the manuscript "The effect of weather on resource ordering patterns during large wildland fires".  
-
-
-## Data
-
-We use 
+This document is the supplementary material for the manuscript "The effect of weather on resource ordering patterns during large wildland fires".  We provide more detail on the data used in the analysis.  We also provide the complete regression tables and full set of figures based on our analyses.
 
 
-### Principal Components Analysis
+# Data
+
+
+
+## Summary Statistics
+The datasets used in each regression vary based on the missingness of the variables used in the analysis.  While the datasets vary in number of observations, they are all based on the same criteria: fires between 2007-2013 in the Western US.  Table S1 provides summary statistics of the core weather, fire size and growth, and resource order variables used in each regression model.  There are no significant differences between the means across the three datasets.  Therefore, using the larger datasets in models 1 and 2 simply provide more efficient estimates.   
+
+
+```{r,message=FALSE,warning=FALSE}
+sum.tab <- read_csv("report/tables/summ_stats.csv") %>%
+  rename_all(~str_replace_all(.,"_[:digit:]",""))
+
+sum.tab %>%
+  kable(caption = "Table S1 Summary Statistics used in each Model") %>%
+  kable_styling(bootstrap_options = c("condensed"),
+                full_width = F,position = "center") %>%
+  add_header_above(c(" " = 1, "Model 3: Resource Orders" = 5, "Model 1: Fire Growth" = 5, "Model 2: Growth Potential" = 5))
+  # footnote(general = "Observations: 14,366. *** p<0.01, ** p<0.05, * p<0.1 
+  #          Standard errors are clustered at the fire level and are in parentheses.  ",
+  #          general_title = "Notes: ")
+
+```
+
+
+## Principal Components Analysis
 
 Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
 
@@ -58,11 +81,11 @@ These variables clearly capture redundant information that would cause multicoll
 
 
 
-## Results
+# Results
 
 This section contains the full result tables referenced in the manuscript
 
-### Fire Growth
+## Fire Growth
 
 Table S1 contains the full regression results of the quasipoisson models of fire growth as a function of weather and other controls (eq 1 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction.  Column 1 contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression.
 
@@ -111,9 +134,9 @@ include_graphics(path = "figures/sfwp.png")
 
 *****************************
 
-### Growth Potential
+## Growth Potential
 Table S2 contains the full regression results of the ordered logit regressions of fire growth potential on weather and other controls (equation 2 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction. Column 1 labeled *All* contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression. 
-```{r,results='asis',message=FALSE,warning=FALSE}
+```{r,message=FALSE,warning=FALSE}
 temp.tab <- read_tsv("report/tables/need_formatting/02_gp_raw.txt",
                      skip = 3,
                      n_max = 128)
@@ -149,7 +172,7 @@ include_graphics(path = "figures/gp_sfwp.png")
 
 *****************************
 
-### Resource Orders
+## Resource Orders
 
 Tables S3 contains the complete regression results of the linear fixed effects regression of total resource orders on observed and expected fire growth, evacuation, and interactions between the two.  Columns 1-4 correspond to the models described in the main text in Table 4.  Column 1 includes only the main effects of growth potential and lagged fire growth as well as fire fixed effects.  Column 2 includes growth potential, lagged fire growth, potential evacuation, and lagged evacuation as well as their interactions (fire fixed effects).  Column 3 includes the same regressors as column 2 but adds days since discovery fixed effects.  Column 4 adds incident commander fixed effects.
 
