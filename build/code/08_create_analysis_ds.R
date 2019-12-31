@@ -52,13 +52,27 @@ temp.ds <- temp.ds %>%
 ##############
 #Figure showing outliers
 temp.ds %>%
-  select(L1.bi,L1.erc,L1.prcp,L1.rmin,L1.tmax,L1.wind,growth,lag_growth=L1.growth) %>%
-  rename_all(~str_replace_all(.,"L1.","")) %>%
+  select(BI=L1.bi,
+         ERC=L1.erc,
+         Precipitation=L1.prcp,
+         Humidity=L1.rmin,
+         Temperature=L1.tmax,
+         Wind=L1.wind,
+         `Fire Growth`=growth,
+         lag_growth=L1.growth) %>%
+  #rename_all(~str_replace_all(.,"L1.","")) %>%
   gather(key="variable",value = "value") %>%
   bind_cols(.,
             temp.ds %>%
-              select(L1.bi,L1.erc,L1.prcp,L1.rmin,L1.tmax,L1.wind,growth,lag_growth=L1.growth) %>%
-              rename_all(~str_replace_all(.,"L1.","")) %>%
+              select(BI=L1.bi,
+                     ERC=L1.erc,
+                     Precipitation=L1.prcp,
+                     Humidity=L1.rmin,
+                     Temperature=L1.tmax,
+                     Wind=L1.wind,
+                     `Fire Growth`=growth,
+                     lag_growth=L1.growth) %>%
+              #rename_all(~str_replace_all(.,"L1.","")) %>%
               transmute_all(isnt_out_z) %>%
               gather(key="Var2",value = "out") %>%
               select(-Var2)

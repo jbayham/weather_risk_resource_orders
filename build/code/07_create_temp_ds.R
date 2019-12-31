@@ -118,6 +118,9 @@ pca.topo <- prcomp(ti.ds %>%
                    center = TRUE,
                    scale. = TRUE)
 
+pca.output <- pca.topo
+save(pca.output,file = "analysis/cache/pca.Rdata")
+
 topo.controls <- as_tibble(pca.topo$x[,summary(pca.topo)$importance[3,]<.8]) #setting threshold at 80% of variation from first PC
 
 ti.controls <- topo.controls %>%
