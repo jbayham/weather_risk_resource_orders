@@ -78,6 +78,14 @@ sum.tab %>%
 ```
 
 
+### Interactive Map of Fires in Dataset
+The following map depicts the location of fires in the dataset.  The point color and size indicate the incident complexity, a composite metric influenced by both fire size and values at risk.  Zoom in to see the individual fire locations in dense regions.  Click on a dot to see additional information about the fire including its name, final size, and growth potential over the course of the fire.
+```{r,out.width = "100%"}
+#leaflet map
+load("analysis/cache/map_for_image.Rdata")
+m
+```
+
 ## Principal Components Analysis
 
 Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
