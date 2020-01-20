@@ -11,6 +11,11 @@ init.pacs(c("tidyverse",      #shortcut to many useful packages (eg, dplyr, ggpl
             "lubridate",      #working with dates
             "sf",             #for GIS
             "USAboundaries",  #easily access US maps in sf
+            "leaflet",        #Interactive mapping
+            "htmltools",      #additional html utilities
+            "htmlwidgets",    #additional html utilities   
+            "leafpop",        #easy tables in leaflet popup
+            "fastDummies",    #tidy compatible dummy variables
             "googledrive",    #for accessing googledrive
             "RODBC",          #accessing MSAccess DB 
             "readxl",         #reading excel files
