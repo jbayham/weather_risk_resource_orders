@@ -50,3 +50,5 @@ analysis/cache/
 report/*.html
 report/figures/*map*
 .Rproj.user
+packrat/lib*/
+packrat/src/
