@@ -1,30 +1,23 @@
 
-# The effect of weather on resource ordering patterns during large wildland fires
+# Weather, Risk, and Resource Orders on Large Wildland Fires in the Western US
 
-Jude Bayham, Erin J. Belval, Matthew P. Thompson, David E. Calkin, Crystal S. Stonesifer, and Christopher Dunn 
+Jude Bayham, Erin J. Belval, Matthew P. Thompson, Christopher Dunn, Crystal S. Stonesifer, and David E. Calkin  
 
-Weather conditions are a well-known determinant of fire behavior. Yet, there is little empirical evidence on how incident commanders respond to observed or expected weather conditions. We compile a novel dataset on wildfire resource requests, weather conditions, and fire growth to investigate the extent to which incident commanders respond to realized or expected fire behavior and risks.  Our results suggest that incident commanders are forward-looking and respond to expected rather than recently observed fire behavior.  Moreover, the results vary by resource type, which has important implications for forecasting resource needs and costs.  
 
-This repository contains the data and scripts to construct the dataset and run the analyses to generate figures and tables reported in the manuscript.
 
-# To Do
-- Host raw data
-- Finish supplement
-- Snapshot packages with packrat (https://www.joelnitta.com/post/packrat/packrat/)
+This repository contains the scripts to construct the dataset and run the analyses to generate figures and tables reported in the manuscript.  Most of the analysis is conducted in R.  However, the ordered logit analysis of growth potential is conducted in [Stata](https://www.stata.com/).  The raw data is not contained in the repository, but can be requested from the corresponding author at jbayham@colostate.edu.
 
 ********************************************
 
-# Project and directory structure
+# Project Structure
 
-This section describes the directory structure of the project.  The project is divided into two primary parts.  Part 1 builds the datasets to be used in the analysis phase.  Part 2 contains scripts to run the analysis and generate output (tables and figures).  Note that the dataset produced in Part 1 is written to the inputs directory in Part 2.
+This section describes the directory structure of the project.  The project is divided into two parts.  Part 1 builds the datasets used in the analysis phase.  Part 2 contains scripts to run the analysis and generate output (tables and figures).  Note that the datasets produced in Part 1 is written to the inputs directory in Part 2.
 
 ## Part 1: Build
 
-- `inputs` directory contains the raw data that should not be modified or overwritten
+- `inputs` directory contains the raw data that should not be modified or overwritten.  *Unzip the data into this folder* 
 - `cache` directory stores copies of data during intermediate steps in the preprocessing   
 - `code` directory contains all scripts to read in and preprocess the data  
-
-The code directory includes a make file (`00-build.R`) for the dataset build phase of the project.
 
 ## Part 2: Analysis
 
@@ -38,18 +31,12 @@ The `references` directory contains bib files for the project.
 
 ## Building the Project
 
-The project root directory contains a file called `project_init.R` that initializes the project (installs/loads packages etc.).  You should run this file each time you open R to begin working on the project.  
+The project root directory contains a file called `project_init.R` that initializes the project (installs/loads packages etc.) and should be run each time you open R to begin working on the project.  The makefile, `build/code/00-build.R`, calls the scripts that import the raw data, process, and construct datasets for analysis.   
 
 *Note that all file references within project are relative to the root directory of the project.*
 
 **********************
-# Data
-
-The data directory contains two MS Access DBs compiled by Chris Dunn.  The two datasets contain much of the same information but one contains Matt Jolly's weather data and the other contains gridMET weather data.  The excel file titled MetaData provides descriptions of the tables in the Access DBs.
-
-Data sources:  
-
-- U of I weather data is from the gridMet product (ABATZOGLOU Lab).  This is the source for the BI, ERC, precipitation, minimum humidity, maximum temperature, and wind.  Note that the BI and ERC are calculated (or calibrated) for fuel model G (http://www.climatologylab.org/gridmet.html).
+# Scripts
 
 ## Build 
 
@@ -74,8 +61,7 @@ The build/code directory contains a series of numbered scripts.  These scripts s
 - The script 08_create_analysis_ds.R creates datasets for each analysis: model of growth, model of growth potential, and model of resource orders.  This script also generates an outliers plot of weather and growth observations that are removed.  The script also contains code that outputs the list of IC names to Google Open Refine for text cleanup.  The names are remerged back with the dataset for use as fixed effect controls when modeling resource orders. 
 
 
-******************************************
-# Analysis
+## Analysis
 
 The analysis/code directory contains script to conduct analyses and produce figures and tables.  Intermediate outputs are cached to the analysis/cache directory.  
 
@@ -88,22 +74,20 @@ The analysis/code directory contains script to conduct analyses and produce figu
 - The script 04_simulation.R illustrates how to use the model results together to understand the link between weather and resource orders.
 
 
-******************************************
-# Report
+## Report
 
 The report directory contains the manuscript and supporting documents such as tables and figure images.
 
 
-
-
-*********************************
-# Functions
+## Functions
 
 This directory contains scripts with functions used to process and analyze the data.   
 
 - The script init_function.R contains a set of functions used to streamline initializing the project.
 
 - The script munge_functions.R contains functions to process the data
+
+- The script analysis_functions.R contains functions to convert regression output to a table.
 
 
 
