@@ -5,26 +5,6 @@
 ###############################################################
 load("build/cache/temp_ds.Rdata")
 
-#Dividing data into mob and demob phase for regression
-#Cut data to only mobilization phase
-# mob.ds <- inner_join(temp.ds %>%
-#                        arrange(incident_number,report_date),
-#                      temp.ds %>%
-#                        group_by(incident_number) %>%
-#                        summarize(max_personnel=max(total_personnel)),
-#                      by=c("incident_number")) %>%
-#   group_by(incident_number) %>%
-#   mutate(sitnum=row_number(),
-#          max_match=total_personnel==max_personnel,
-#          max_match=ifelse(max_match,TRUE,NA),
-#          max_match=ifelse(lag(max_match),FALSE,max_match),
-#          max_match=ifelse(sitnum==1,TRUE,max_match)) %>%
-#   fill(max_match) %>%
-#   filter(max_match) %>%
-#   ungroup() %>%
-#   select(-total_personnel,-max_personnel,-merge.date)
-
-#Alternative to calculating only mob phase
 temp.ds <- temp.ds %>%
   group_by(incident_number) %>%
   mutate(sitnum = row_number()) %>%
@@ -60,7 +40,6 @@ temp.ds %>%
          Wind=L1.wind,
          `Fire Growth`=growth,
          lag_growth=L1.growth) %>%
-  #rename_all(~str_replace_all(.,"L1.","")) %>%
   gather(key="variable",value = "value") %>%
   bind_cols(.,
             temp.ds %>%
@@ -137,7 +116,28 @@ save(growth.ds,file = "analysis/inputs/01_growth.Rdata")
 
 
 
-##############################################################
+#######################################################################
+#Export ic_names for text cleanup in openrefine
+
+# temp.ds %>%
+#   mutate(ic_name=str_to_lower(ic_name)) %>%
+#   select(ross_inc_id,sitnum,time_since_disco,ic_name) %>%
+#   arrange(ic_name) %>%
+#   write_csv(path = "build/cache/ic_names_to_refine.csv")
+
+
+#Remerge cleaned ic_names
+temp.ds <- temp.ds %>%
+  select(-ic_name) %>%
+  left_join(.,
+            read_csv("build/cache/ic_names-csv.csv") %>% select(-time_since_disco)) %>%
+  arrange(incident_number,sitnum) %>%
+  group_by(incident_number,sitnum) %>%
+  fill(ic_name) %>%
+  ungroup() %>%
+  mutate(ic_name=ifelse(is.na(ic_name),"other",ic_name))
+
+#########################################################################
 #Constructing dataset for orders regression
 orders.ds <- temp.ds %>%
   filter(growth>0 & L1.growth>0 & p_contain<100) #Removing observations without growth 
@@ -155,26 +155,4 @@ sum.stat %>% add_row(skim_type=data_rows(sum.stat)) %>% write_csv("report/tables
 
 
 
-#######################################################################
-#Export ic_names for text cleanup in openrefine
-
-# temp.ds %>%
-#   mutate(ic_name=str_to_lower(ic_name)) %>%
-#   select(ross_inc_id,sitnum,time_since_disco,ic_name) %>%
-#   arrange(ic_name) %>%
-#   write_csv(path = "data/ic_names_to_refine.csv")
-
-
-#Remerge cleaned ic_names
-# temp.ds <- temp.ds %>%
-#   select(-ic_name) %>%
-#   left_join(.,
-#             read_csv("data/ic_names-csv.csv") %>% select(-time_since_disco)) %>%
-#   arrange(incident_number,sitnum) %>%
-#   group_by(incident_number,sitnum) %>%
-#   fill(ic_name) %>%
-#   ungroup() %>%
-#   mutate(ic_name=ifelse(is.na(ic_name),"other",ic_name))
-
-#########################################################################
 

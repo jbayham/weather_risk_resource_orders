@@ -27,9 +27,6 @@ pl <- pl %>%
                             OSCC="SO"))
 
 #################################
-# ggplot(data = pl) +
-#   geom_col(aes(x=date,y=pl,color=gacc)) +
-#   facet_wrap(~gacc)
 print("Caching preparedness_level.Rdata")
 save(pl,file = "build/cache/preparedness_level.Rdata")
 

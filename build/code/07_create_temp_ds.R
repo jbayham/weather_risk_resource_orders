@@ -14,23 +14,14 @@ base.data <- incident %>%
          im_report_date=report_date,
          im_hour=hour,
          ross_inc_id,
-         # status,
          gacc,
          fod_latitude,
          fod_longitude,
-         # imt_type_description,agency,
          strategy=`209_initial_strategy`,
          cause_descr,
          area,
-         # fod_fire_size,
          fod_discovery_date,
          p_contain,
-         # ross_max_team_type,
-         # disco_to_cont,
-         # disco_to_first_order,
-         # disco_to_ia,
-         # disco_to_last_ff_off,
-         # `disco_to_last_ic/imt_off`,
          ic_name,
          growth_potential,
          terrain,
@@ -47,11 +38,6 @@ base.data <- incident %>%
 
 ################################
 #Constructing time-varying variables
-#########
-#structures threatened, damaged, and destroyed
-# tv.ds <- left_join(base.data,
-#                    structures,
-#                    by=c("incident_number","report_date")) 
 
 #ross resources
 tv.ds <- left_join(base.data,
@@ -78,39 +64,8 @@ ti.ds <- left_join(vegetation,
                    by="incident_number") %>% 
   distinct(incident_number,.keep_all = T)
 
-###
-#Old but may keep
-
-#wui data
-# ti.ds <- left_join(ti.ds,
-#                    wui %>% select(-one_of("id")),
-#                    by="incident_number") %>% distinct(incident_number,.keep_all = T)
-
-
-#Reducing the dimensionality of static controls using PCA
-# pca.wui <- prcomp(ti.ds %>% 
-#                     select(wuidist:facehdendist) %>% 
-#                     mutate_all(~ifelse(is.na(.),0,.)),
-#                   center = TRUE,
-#                   scale. = TRUE)
-#summary(pca.wui) #79% of variation from first PC
-
-#wui.controls <- as_tibble(pca.wui$x[summary(pca.wui)$importance[3,]<.8])
-
-# pca.topo <- prcomp(ti.ds %>% 
-#                      select(ha_nlcd_sub0:ruggedness) %>% 
-#                      mutate_all(~ifelse(is.na(.),0,.)) %>% 
-#                      select(which(apply(.,2,sum)!=0)),
-#                    center = TRUE,
-#                    scale. = TRUE)
-# 
-# topo.controls <- as_tibble(pca.topo$x[,summary(pca.topo)$importance[3,]<.8]) #setting threshold at 80% of variation from first PC
-# 
-# ti.controls <- bind_cols(wui.controls,topo.controls) %>%
-#   rename_all(~str_c("PC",seq.int(1,dim(wui.controls)[2]+dim(topo.controls)[2]))) %>%
-#   bind_cols(ti.ds %>% select(incident_number),.)
-
-
+###################################
+#PCA on vegetation and topo variables
 pca.topo <- prcomp(ti.ds %>% 
                      select(ha_nlcd_sub0:ruggedness) %>% 
                      mutate_all(~ifelse(is.na(.),0,.)) %>% 
@@ -127,8 +82,7 @@ ti.controls <- topo.controls %>%
   rename_all(~str_c("PC",seq.int(1,dim(topo.controls)[2]))) %>%
   bind_cols(ti.ds %>% select(incident_number),.)
 
-
-#########
+#####################################
 #Combining time-invariant and time-varying variables
 temp.ds <- left_join(tv.ds,
                      ti.controls,
@@ -164,17 +118,6 @@ for(i in 0:1){
     ) %>%
     distinct(incident_number,report_date,.keep_all = T)
 }
-
-#Leads
-# for(i in 1:7){
-#   weather.lag <- inner_join(weather.lag %>%
-#                               mutate(merge.date= report_date + i),
-#                             weather %>%
-#                               select(-one_of("julian_date","fire_year")) %>%
-#                               rename_at(.vars = vars(bi:wind),.funs = funs(str_c("F",i,".",.))),
-#                             by=c("incident_number" = "incident_number","merge.date" = "report_date")) %>%
-#     distinct(incident_number,report_date,.keep_all = T)
-# }
 
 
 ####################################

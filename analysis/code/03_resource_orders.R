@@ -31,12 +31,6 @@ formula.input <- list(
         str_c(c("growth_potential*evac_potential","L1.growth*L1.evac","terrain","doy_cos:gacc","splines::ns(L1.area,df=3)"),collapse = " + "),
         "|incident_number+time_since_disco+ic_name")
 )
-#FE panel model
-# mob.pdata <- orders.ds %>%
-#   select(ross_inc_id,time_since_disco,Dozers:Wildland_Engines,one_of(rhs.vars[[1]]),L1.evac,evac_potential,pl_national) %>%
-#   drop_na() %>%
-#   distinct(ross_inc_id,time_since_disco,.keep_all = T) %>%
-#   pdata.frame(.,index = c("ross_inc_id","time_since_disco"))
 
 all.resources <- map(formula.input,
                  function(x){
@@ -109,10 +103,6 @@ esttable(results.lm,
 
 save(results.lm,all.resources,file = "analysis/cache/results_resource_orders.Rdata")
 
-#Render the Rmarkdown file
-# rmarkdown::render(input = "report/Results.Rmd",
-#                   output_file = "results_inter.html",
-#                   output_format = "html_document")
 
 for.summary <- orders.ds[-results.lm[[1]]$obsRemoved,] %>% 
   select(Wildland_Engines,Structure_Engines,Dozers,Type_1_Crews,Type_2_Crews,
@@ -124,95 +114,3 @@ for.summary <- orders.ds[-results.lm[[1]]$obsRemoved,] %>%
 
 sum.stat <- my_skim(for.summary) 
 sum.stat %>% add_row(skim_type=data_rows(sum.stat)) %>% write_csv("report/tables/need_formatting/03_summary.csv")
-###############################################
-# #Summary Stats
-# #stargazer::stargazer(on.inc.fe$model)
-# orders.ds %>% 
-#   select(lhs.var.list,contains("threatened"),L1.evac_yes,
-#          L0.bi,L0.erc,L0.sfwp,L0.prcp,L0.rmin,L0.tmax,L0.wind,growth) %>%
-#   as.data.frame() %>%
-#   stargazer::stargazer(.,
-#                        type = "text")
-# 
-# #results quickout
-# lhs=4
-# stargazer::stargazer(results.lm[[2]],type = "text")
-# stargazer::stargazer(results.lm[[lhs]],results.glm[[lhs]],
-#                      type = "text")
-# 
-# 
-# 
-# for.spline <- orders.ds %>% 
-#   select(y=T2_4Airtanker_requested,x=growth) %>%
-#   drop_na() %>%
-#   as.data.frame()
-# 
-# sp.out <- smooth.spline(y=for.spline$FixedWingAircraft_requested,
-#               x=for.spline$L0.wind,
-#               df=3)
-# 
-# plot(sp.out)
-# 
-# drsmooth::spline.plot(dosecolumn = "x",
-#                       targetcolumn = "y",
-#                       k=4,
-#                       data_type = "continuous",
-#                       data = for.spline)
-# 
-# summary()
-# 
-# results.df <- bind_rows(results) %>% 
-#   left_join(.,
-#             on.inc.fe$model %>%                #Means for effect comparison
-#               select(matches("L0|threatened")) %>% 
-#               summarize_all(~mean(.,na.rm=T)) %>%
-#               gather(key="term",value="mean"),
-#             by="term") %>%
-#   mutate(estimate=ifelse(is.na(mean),estimate,estimate*mean),
-#          std.error=ifelse(is.na(mean),std.error,std.error*mean),
-#          statistic=estimate/std.error)
-# 
-# 
-# #Generating the dotwhisker plot
-# dwplot(results.df %>% filter(str_detect(model,"Structure")), 
-#        style="dotwhisker",
-#        by_2sd = F,
-#        vline = geom_vline(xintercept = 0, colour = "grey60", linetype = 2)) + 
-#   theme_bw() +
-#   scale_x_continuous(limits = c(-1.5,1.5)) +
-#   #ggtitle(g.title) +
-#   xlab("Coef. Est.") +
-#   ylab("")
-# 
-# 
-# 
-# 
-
-##########################################
-#Experimenting with visualizing splines.  Most of the code below is unecessary.
-#It seems like with fixest, I need to generate a new dataframe with mean values
-#for things I want to hold constant and let the variable of interest change.
-# spo=splines::ns(mob.ds$L1.area[-fe.model.seq[[2]]$obsRemoved],df=3)
-# head(predict(spo,mob.ds$L1.area[-fe.model.seq[[2]]$obsRemoved]))
-# 
-# coef(fe.model.seq[[2]])[str_which(names(coef(fe.model.seq[[2]])),"spline")]
-# 
-# spline.predict <- splines::ns(mob.ds$L1.area[-fe.model.seq[[2]]$obsRemoved],df=3)%*%coef(fe.model.seq[[2]])[str_which(names(coef(fe.model.seq[[2]])),"spline")] %>%
-#   as.numeric()
-# 
-# 
-# 
-# 
-# mob.ds[-fe.model.seq[[2]]$obsRemoved,] %>%
-#   mutate(pred=predict(fe.model.seq[[2]])) %>%
-#   ggplot(aes(y=pred,x=L1.growth,color=as.factor(L1.evac))) +
-#   geom_smooth()
-# 
-# mob.ds[-fe.model.seq[[2]]$obsRemoved,] %>%
-#   mutate(pred=predict(fe.model.seq[[2]])) %>%
-#   ggplot(aes(y=pred,x=L1.area,color=as.factor(L1.evac))) +
-#   # geom_point() +
-#   geom_smooth() +
-#   geom_rug() +
-#   xlim(c(0,25)) +
-#   ylim(c(1,2.5))

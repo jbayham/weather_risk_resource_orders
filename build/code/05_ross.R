@@ -2,14 +2,6 @@
 #contains resource orders and assignments by day.
 
 #Reading in data, creating requested as sum of filled and utf, then converting from long to wide format
-# ross <- read_csv(file="data/ROSSCountsForICS209Fires.csv") %>%
-#   mutate(requested=filled+utf) %>%
-#   gather(filled,utf,requested,on_incident,key="order",value="count") %>%
-#   mutate(resource=str_c(str_replace_all(resource," ",""),"_",order),
-#          date=mdy(date)) %>%
-#   select(-order) %>%
-#   spread(key = resource,value = count)
-
 ross <- read_csv(file="build/inputs/ROSSCountsForICS209Fires.csv") %>%
   mutate(requested=filled+utf) %>%
   select(-filled,-utf,-on_incident) %>%

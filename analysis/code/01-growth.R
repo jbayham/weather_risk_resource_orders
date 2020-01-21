@@ -36,11 +36,7 @@ output.growth <- map(lag.var.list,
                       data = growth.ds,
                       family = "quasipoisson")
       
-      # lm.model <- lm(model.formula,
-      #                 data = growth.ds)
-      
-      
-      
+
       coeftest(lm.model,vcov=vcovCL(lm.model,cluster = growth.ds$ross_inc_id[-lm.model$na.action]))
       
       coeftest(lm.model,vcov=vcovCL(lm.model,cluster = growth.ds$ross_inc_id[-lm.model$na.action])) %>%

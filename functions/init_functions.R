@@ -46,44 +46,7 @@ load.or.build <- function(dataset,munge.script){
   }
 }
 
-####################################################
-#Function to read project data from google drive
-get_data <- function(folder_url){
-  require(googledrive)
-  if(dir.exists("build/inputs")){
-    message("Data already exists in build/inputs folder.  Delete build/inputs folder and rerun build.R to download and rebuild the data.")
-  } else {
-    dir.create("build/inputs",recursive = T)
-    message("The build/inputs folder has been created.")
-    
-    #Locate zip files on google drive
-    files <- drive_get(as_id(folder_url)) %>% 
-      drive_ls() %>%
-      filter(str_detect(name,pattern = "zip"))
-    
-    #Loop over list of zip files; write to data folder; unzip; and delete zipped folder
-    message("The zipped file with raw data is large.  It may take a little while - but it only happens once.")
-    map2(.x = files$id,
-         .y = files$name, 
-         function(x,y){
-           #Download files from googledrive folder
-           drive_download(as_id(x),path = str_c("build/inputs/",y),overwrite = T)
-           
-           #Unzip files
-           unzip(zipfile = str_c("build/inputs/",y),
-                 exdir = "build/inputs",
-                 overwrite = T)
-           
-           #Remove the zipped file
-           file.remove(str_c("build/inputs/",y))
-           
-         })
-    
-  }
-  
-  
-  
-}
+
 
 #This function builds out the folder structure
 folder.setup <- function(){

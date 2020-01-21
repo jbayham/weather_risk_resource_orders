@@ -44,18 +44,19 @@ my_skim <- skim_with(numeric = sfl(mean=~mean(.,na.rm = T),
                                    sd=~sd(.,na.rm = T),
                                    min=~min(.,na.rm = T),
                                    max=~max(.,na.rm = T)), append = FALSE)
+
 #########################
 #Loading project helper functions (all scripts within folder)
 run.script("functions")
 
 
 ##########################################
-##########################################
-#Function to download the project data (on first run, google should prompt you to login with credentials)
-#if data folder doesn't exist, build data
-#get_data("url")
 
 
 folder.setup()
 
+
+if(length(dir("build/inputs"))==0){
+  message("Request data from jbayham@colostate.edu")
+}
 

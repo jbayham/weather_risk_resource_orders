@@ -20,15 +20,6 @@ incident <- sqlQuery(dun.jolly,
 
 
 
-#Cleaning variables that will be used in later analyses
-# incident <- incident %>%
-#   mutate(gacc=dplyr::recode(gacc,
-#                             SO="OSCC",
-#                             NO="ONCC",
-#                             WB="GB",
-#                             EB="GB"))
-# 
-
 
 
 ##########################################
