@@ -76,7 +76,7 @@ m <- leaflet(to.map) %>%
     options = layersControlOptions(collapsed = FALSE)
   ) 
   
-saveWidget(m,str_c(getwd(),"/report/figures/map_for_image.html"))
+saveWidget(m,str_c(getwd(),"/report/figures/fire_weather_map.html"))
 save(m,file = "analysis/cache/map_for_image.Rdata")
 
 #preview and screen shot
