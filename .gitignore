@@ -48,4 +48,5 @@ analysis/cache/
 #report/figures/
 #report/tables/*
 report/*.html
+report/figures/*map*
 .Rproj.user
