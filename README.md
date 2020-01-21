@@ -31,7 +31,7 @@ The `references` directory contains bib files for the project.
 
 ## Building the Project
 
-The project root directory contains a file called `project_init.R` that initializes the project (installs/loads packages etc.) and should be run each time you open R to begin working on the project.  The makefile, `build/code/00-build.R`, calls the scripts that import the raw data, process, and construct datasets for analysis.   
+The project root directory contains a file called `project_init.R` that initializes the project (installs/loads packages etc.) and should be run each time you open R to begin working on the project.  The makefile, `build/code/00_build.R`, calls the scripts that import the raw data, process, and construct datasets for analysis.   
 
 *Note that all file references within project are relative to the root directory of the project.*
 
@@ -42,19 +42,19 @@ The project root directory contains a file called `project_init.R` that initiali
 
 The build/code directory contains a series of numbered scripts.  These scripts should be run in order to reproduce the dataset.
 
-- The script 00-build.R builds the dataset by either loading a cached copy or running the script to build each component.  
+- The script 00_build.R builds the dataset by either loading a cached copy or running the script to build each component.  
 
-- The script 01-incident.R imports the 209 incident table from Dunn's DB.  This appears to be a subset of fires not in complexes and with more than three reports.
+- The script 01_incident.R imports the 209 incident table from Dunn's DB.  This appears to be a subset of fires not in complexes and with more than three reports.
 
-- The script 02-resources.R imports the resource tables from Dunn's DB.  The resource reporting appears to have changed in 2001 or 2002 so I append the tables together.  Pre-2002, strike teams and single resources are aggregated.  
+- The script 02_resources.R imports the resource tables from Dunn's DB.  The resource reporting appears to have changed in 2001 or 2002 so I append the tables together.  Pre-2002, strike teams and single resources are aggregated.  
 
-- The script 03-read_in_environment.R imports the data from the topography tables and vegetation tables in Dunn's DB.  These are all of the time-invariant environmental controls used in subsequent models.
+- The script 03_environment.R imports the data from the topography tables and vegetation tables in Dunn's DB.  These are all of the time-invariant environmental controls used in subsequent models.
 
-- The script 04-read_in_weather.R imports weather data from tables both Access DBs.  One of the DBs contains tables with BI (burning index), ERC (energy release component), and SFWP (severe fire weather potential).  The DB call UofI contains data on max temperature, minimum humidity, precipitation, and windspeed.
+- The script 04_weather.R imports weather data from tables both Access DBs.  One of the DBs contains tables with BI (burning index), ERC (energy release component), and SFWP (severe fire weather potential).  The DB call UofI contains data on max temperature, minimum humidity, precipitation, and windspeed.
 
-- The script 05-ross.R imports the ROSS data that Erin extracted.  The data contain daily requests, utfs, and assignments for the following resource types: VLAT, Type 1 Airtankers, Type 2-4 Airtankers, Fixed Wing Aircraft, Type 1 Helicopters, Type 2 Helicopters, Type 3 Helicopters, Dozers, Structure Engines, Wildland Engines, Type 1 Crews, Type 2 Crews, and Type 2IA Crews.  Several of these categories are collapsed for the analysis.
+- The script 05_ross.R imports the ROSS data that Erin extracted.  The data contain daily requests, utfs, and assignments for the following resource types: VLAT, Type 1 Airtankers, Type 2-4 Airtankers, Fixed Wing Aircraft, Type 1 Helicopters, Type 2 Helicopters, Type 3 Helicopters, Dozers, Structure Engines, Wildland Engines, Type 1 Crews, Type 2 Crews, and Type 2IA Crews.  Several of these categories are collapsed for the analysis.
 
-- The script 06-preparedness.R imports the daily national and GACC preparedness level data compiled by Erin.
+- The script 06_preparedness.R imports the daily national and GACC preparedness level data compiled by Erin.
 
 - The script 07_create_temp_ds.R merges the individual components together and cahces an intermediate dataset called temp_ds.Rdata.  
 
@@ -69,14 +69,20 @@ The analysis/code directory contains script to conduct analyses and produce figu
 
 - The script 02_growth_potential.do reads in a cached dataset 02_gp_ds_stata.dta and runs the ordered logit models and generates figures.  *Note that this analysis is conducted in Stata.*
 
-- The script 03_orders_FE.R reads the 03_orders.Rdata dataset and runs the FE models of resource orders.
+- The script 03_resource_orders.R reads the 03_orders.Rdata dataset and runs the FE models of resource orders.
 
 - The script 04_simulation.R illustrates how to use the model results together to understand the link between weather and resource orders.
+
+- The script 05_map.R generates the leaflet map of fire ignition points
+
+- The script 06_tab_gp_evac_forRR.R tabulates growth potential and evacuation status
 
 
 ## Report
 
 The report directory contains the manuscript and supporting documents such as tables and figure images.
+
+- The script Supplement.Rmd generates the online supplement for the manuscript.
 
 
 ## Functions
