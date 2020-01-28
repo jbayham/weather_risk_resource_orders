@@ -70,6 +70,7 @@ m <- leaflet(to.map) %>%
             #labels = c("Most Complex","","","","Least Complex"),
             title = "Complexity",
             position = "bottomright") %>%
+  addScaleBar(position = c("bottomleft")) %>%
   addLayersControl(
     baseGroups = c("Terrain","Night Lights"),
     overlayGroups = c("Fires"),
@@ -80,28 +81,22 @@ saveWidget(m,str_c(getwd(),"/report/figures/fire_weather_map.html"))
 save(m,file = "analysis/cache/map_for_image.Rdata")
 
 #preview and screen shot
-# leaflet(to.map,options = leafletOptions(zoomControl = FALSE)) %>% 
+# leaflet(to.map,options = leafletOptions(zoomControl = FALSE)) %>%
 #   addProviderTiles(providers$Stamen.Terrain,group = "Terrain") %>%
-#   #addProviderTiles(providers$NASAGIBS.ViirsEarthAtNight2012, group = "Night Lights") %>%
 #   addCircleMarkers(color = ~marker.pal(finalmaxcomplexity),
 #                    fillOpacity = 0.7,
 #                    stroke = FALSE,
 #                    radius = ~(6 - finalmaxcomplexity +2),
 #                    clusterOptions = markerClusterOptions(disableClusteringAtZoom=5),
-#                    #label = ~fod_fire_name,
 #                    popup = popupTable(to.map.table,row.numbers = F, feature.id = F),
 #                    group = "Fires") %>%
-#   addLegend(pal = marker.pal, 
-#             values = ~finalmaxcomplexity, 
-#             opacity = 0.7, 
-#             #labels = c("Most Complex","","","","Least Complex"),
+#   addLegend(pal = marker.pal,
+#             values = ~finalmaxcomplexity,
+#             opacity = 0.7,
 #             title = "Complexity",
 #             position = "bottomleft") %>%
-#   addLayersControl(
-#     baseGroups = c("Terrain","Night Lights"),
-#     overlayGroups = c("Fires"),
-#     options = layersControlOptions(collapsed = FALSE)
-#   ) 
+#   addScaleBar(position = c("bottomleft")) 
+  
   
 
 
