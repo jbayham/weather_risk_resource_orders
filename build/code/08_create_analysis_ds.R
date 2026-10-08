@@ -74,6 +74,7 @@ temp.ds <- temp.ds %>%
   select(L0.bi,L0.erc,L0.prcp,L0.rmin,L0.tmax,L0.wind,growth) %>%
   rename_all(~str_replace_all(.,"L0.","")) %>%
   transmute_all(isnt_out_z) %>%
+  rename(growth1 = growth) %>%
   bind_cols(temp.ds,.) %>%
   filter_if(~all(is.logical(.)),all_vars(.)) %>%
   select(-bi:-wind,-growth1) %>%
@@ -126,16 +127,24 @@ save(growth.ds,file = "analysis/inputs/01_growth.Rdata")
 #   write_csv(path = "build/cache/ic_names_to_refine.csv")
 
 
-#Remerge cleaned ic_names
-temp.ds <- temp.ds %>%
-  select(-ic_name) %>%
-  left_join(.,
-            read_csv("build/cache/ic_names-csv.csv") %>% select(-time_since_disco)) %>%
-  arrange(incident_number,sitnum) %>%
-  group_by(incident_number,sitnum) %>%
-  fill(ic_name) %>%
-  ungroup() %>%
-  mutate(ic_name=ifelse(is.na(ic_name),"other",ic_name))
+# Resolve only unambiguous commander corrections, preserving row identity.
+# Historical and legacy modes are diagnostics, never the default.
+source("functions/commander_names.R")
+commander_mode <- getOption("weather.audit.commander", "corrected")
+if (commander_mode == "corrected") {
+  temp.ds <- reconcile_commanders(temp.ds, read_csv("build/cache/ic_names-csv.csv", show_col_types = FALSE))
+  write_csv(attr(temp.ds, "commander_audit"), "report/tables/commander_audit.csv")
+} else if (commander_mode == "legacy") {
+  # Deliberately reproduce the old many-to-many merge for before/after checks.
+  temp.ds <- temp.ds %>% select(-ic_name) %>%
+    left_join(read_csv("build/cache/ic_names-csv.csv", show_col_types = FALSE) %>% select(-time_since_disco),
+              by = c("ross_inc_id", "sitnum"), relationship = "many-to-many") %>%
+    arrange(incident_number, sitnum) %>% group_by(incident_number, sitnum) %>%
+    fill(ic_name) %>% ungroup() %>%
+    mutate(ic_name = ifelse(is.na(ic_name), "other", ic_name))
+} else if (commander_mode != "historical") {
+  stop("Unknown commander mode")
+}
 
 #########################################################################
 #Constructing dataset for orders regression
@@ -151,7 +160,7 @@ for.summary <- gp.ds %>%
          gacc,sfwp,bi,erc,prcp,rmin,tmax,wind) 
 
 sum.stat <- my_skim(for.summary) 
-sum.stat %>% add_row(skim_type=data_rows(sum.stat)) %>% write_csv("report/tables/need_formatting/02_summary.csv")
+sum.stat %>% as_tibble() %>% add_row(skim_type=as.character(data_rows(sum.stat))) %>% write_csv("report/tables/need_formatting/02_summary.csv")
 
 
 

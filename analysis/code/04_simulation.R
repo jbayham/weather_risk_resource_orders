@@ -6,6 +6,7 @@
 load("analysis/cache/results_growth.Rdata")
 load("analysis/cache/results_resource_orders.Rdata")
 load("analysis/inputs/03_orders.Rdata")
+orders.ds$all_resources <- rowSums(orders.ds[c("Wildland_Engines", "Structure_Engines", "Dozers", "Type_1_Crews", "Type_2_Crews", "VLAT", "T2_4_Airtanker", "Helicopters")])
 
 
 ###############################################

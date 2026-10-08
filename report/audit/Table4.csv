@@ -1,0 +1,28 @@
+"variant","model","term","label","estimate","se","p","n"
+"corrected","Table4_1","growth_potentialHigh","Growth Potential (High)",10.5795202713754,2.22320114693154,1.94855505327207e-06,3735
+"corrected","Table4_1","growth_potentialLow","Growth Potential (Low)",-6.60103462446185,2.98242423965491,0.0268761598329576,3735
+"corrected","Table4_1","L1.growth","Lagged Growth",0.59296148801441,0.403813175729852,0.14199410863611,3735
+"corrected","Table4_2","growth_potentialHigh","Growth Potential (High)",10.2399228091087,2.52569799128313,5.02858902646928e-05,3735
+"corrected","Table4_2","growth_potentialLow","Growth Potential (Low)",-5.55035394581696,2.36941340307652,0.0191549679225534,3735
+"corrected","Table4_2","L1.growth","Lagged Growth",0.337589453406609,0.190338948618458,0.0761256034054959,3735
+"corrected","Table4_2","evac_potential","Potential Evacuation",-0.133428868309576,3.3062284036897,0.967808653928801,3735
+"corrected","Table4_2","L1.evac","L.Evacuation",-1.11285035472962,3.59402568570431,0.756835529963783,3735
+"corrected","Table4_2","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.488029993816236,3.85848320265069,0.899350125464733,3735
+"corrected","Table4_2","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-8.68274843244504,12.6131350530203,0.491207599105943,3735
+"corrected","Table4_2","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.410686667066948,0.60008544491262,0.49373504169038,3735
+"corrected","Table4_3","growth_potentialHigh","Growth Potential (High)",7.26622393192055,2.37886181632366,0.00225439011492751,3735
+"corrected","Table4_3","growth_potentialLow","Growth Potential (Low)",-1.97342308100916,2.13062067858814,0.354331759344582,3735
+"corrected","Table4_3","L1.growth","Lagged Growth",0.458934464989606,0.210159214375181,0.0289808751681842,3735
+"corrected","Table4_3","evac_potential","Potential Evacuation",-1.35735424842374,3.20125259910728,0.671560540200334,3735
+"corrected","Table4_3","L1.evac","L.Evacuation",-1.5337401105596,3.8048244106855,0.686871684993065,3735
+"corrected","Table4_3","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",2.13148474883617,3.70425713127971,0.565010729109638,3735
+"corrected","Table4_3","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-12.100788964575,12.3487137527367,0.327124115244912,3735
+"corrected","Table4_3","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.339190954742158,0.605608031065512,0.575422609311258,3735
+"corrected","Table4_4","growth_potentialHigh","Growth Potential (High)",8.91642996561098,4.16703811872953,0.0323747789531229,3735
+"corrected","Table4_4","growth_potentialLow","Growth Potential (Low)",-0.926706653656198,3.93346559287654,0.813746593170625,3735
+"corrected","Table4_4","L1.growth","Lagged Growth",0.45160722784855,0.328846237053051,0.169656560182022,3735
+"corrected","Table4_4","evac_potential","Potential Evacuation",-1.22284493639347,4.84096795018242,0.800574706722444,3735
+"corrected","Table4_4","L1.evac","L.Evacuation",-5.35368595382516,5.88383876613212,0.362876947518495,3735
+"corrected","Table4_4","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-2.16502969682049,5.28943005384531,0.682310363087546,3735
+"corrected","Table4_4","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-11.0447178053475,17.9900150274845,0.539257622082715,3735
+"corrected","Table4_4","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.385882517415695,0.960485434381297,0.687862280181675,3735

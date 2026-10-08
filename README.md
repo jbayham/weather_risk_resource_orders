@@ -5,9 +5,22 @@ Jude Bayham, Erin J. Belval, Matthew P. Thompson, Christopher Dunn, Crystal S. S
 
 
 
-This repository contains the scripts to construct the dataset and run the analyses to generate figures and tables reported in the manuscript.  Most of the analysis is conducted in R.  However, the ordered logit analysis of growth potential is conducted in [Stata](https://www.stata.com/).  The raw data is not contained in the repository, but can be requested from the corresponding author at jbayham@colostate.edu.
+This repository contains the scripts to construct the dataset and run the analyses to generate figures and tables reported in the manuscript.  The audited cached-data workflow is now conducted in R, including an explicit translation of the ordered logits. The original Stata source is retained for reference; the translation does not reproduce every saved Stata coefficient at printed precision.  The raw data is not contained in the repository, but can be requested from the corresponding author at jbayham@colostate.edu.
 
 ********************************************
+
+# AI-assisted reproducibility audit
+
+Read [the paper](https://doi.org/10.3390/f11020169), [audit instructions](audit/README.md), and [findings and substantive changes](audit/RESULTS.md). No published-paper copy is distributed with these changes.
+
+```sh
+Rscript --vanilla audit/install.R
+Rscript --vanilla audit/reproduce.R
+```
+
+The audit uses committed component caches and writes working data only under ignored `audit-output/`. Aggregate results and newly generated figures appear in `report/audit/`; `report/Supplement-audit.html` is generated locally. It tests the corrected commander join, retains historical and flawed-merge diagnostics separately, requests fire-clustered inference explicitly, and checks original benchmarks. The raw-data rebuild and map remain unavailable without their original inputs. See the audit instructions for dependencies, coverage and known discrepancies.
+
+The older initialization/build instructions below describe the original workflow and can attempt raw-data access or automatic package installation. Use the audit entry point above for the tested cached-data reproduction.
 
 # Project Structure
 
@@ -67,7 +80,7 @@ The analysis/code directory contains script to conduct analyses and produce figu
 
 - The script 01_growth.R reads the cached dataset growth.Rdata runs the ananlysis of observed fire growth as a function of weather and other controls.  
 
-- The script 02_growth_potential.do reads in a cached dataset 02_gp_ds_stata.dta and runs the ordered logit models and generates figures.  *Note that this analysis is conducted in Stata.*
+- The primary script `02_growth_potential.R` reads `02_gp_ds_stata.dta`, estimates ordered logits and calls the R inference/margins routines. `02_growth_potential.do` remains unchanged as the original Stata reference.
 
 - The script 03_resource_orders.R reads the 03_orders.Rdata dataset and runs the FE models of resource orders.
 

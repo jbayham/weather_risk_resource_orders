@@ -2,7 +2,7 @@
 
 
 #load base data 
-load("analysis/inputs/01_growth.Rdata")
+load("analysis/inputs/03_orders.Rdata")
 
 #Tabulate growth potential and evac potential
 tab_dist <- table(orders.ds$growth_potential,orders.ds$evac_potential)
@@ -11,7 +11,11 @@ dimnames(tab_dist) <- list(c("Low","Medium","High"),
                            c("No","Yes"))
 
 #plot data
+write.csv(as.data.frame(tab_dist), "report/tables/gp_evac_contingency.csv", row.names = FALSE)
+png("report/figures/gp_evac_contingency.png", width = 900, height = 600)
 plot(tab_dist,
      main = "",
      xlab = "Growth Potential",
      ylab = "Evacuation Potential")
+
+dev.off()
