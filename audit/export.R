@@ -58,7 +58,7 @@ load("audit-output/corrected/analysis/cache/pca.Rdata",e)
 png(file.path(output,"figures/PCA.png"),width=1000,height=650)
 v<-summary(e$pca.output)$importance[3,];plot(seq_along(v),v,type="b",xlab="Principal component",ylab="Cumulative variance explained");abline(h=.8,col="red");dev.off()
 write.csv(data.frame(package=required,version=vapply(required,function(p)as.character(packageVersion(p)),character(1))),file.path(output,"packages.csv"),row.names=FALSE)
-writeLines(c(paste("R",getRversion()),paste("Platform:",R.version$platform),"No seed: deterministic estimation; no resampling.","Base revision: 5fe40759ee4194f3a5a86926e1105fdc3b66ca0e"),file.path(output,"environment.txt"))
+writeLines(c(paste("R",getRversion()),paste("Platform:",R.version$platform),"Deterministic estimation with fixest threads=1; no resampling. Plot rug jitter seed: 20261008.","Base revision: 5fe40759ee4194f3a5a86926e1105fdc3b66ca0e"),file.path(output,"environment.txt"))
 # Relative paths and content checksums, no personal system/library paths.
 code<-c("report/Supplement.Rmd",list.files("audit",recursive=TRUE,full.names=TRUE),list.files("analysis/code",full.names=TRUE),list.files("functions",full.names=TRUE),list.files("build/code",full.names=TRUE))
 code<-code[file.info(code)$isdir==FALSE];write.csv(data.frame(path=code,md5=unname(tools::md5sum(code))),file.path(output,"source-checksums.csv"),row.names=FALSE)

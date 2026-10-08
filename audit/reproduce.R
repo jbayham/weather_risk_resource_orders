@@ -9,6 +9,8 @@ missing <- required[!vapply(required,requireNamespace,logical(1),quietly=TRUE)]
 if(length(missing)) stop("Install required packages first; see audit/README.md: ",paste(missing,collapse=", "))
 if(packageVersion("fixest") != "0.2.1") stop("This audit pins fixest 0.2.1; see audit/install.R")
 for(p in setdiff(required,c("MASS","numDeriv","rmarkdown","knitr"))) suppressPackageStartupMessages(library(p,character.only=TRUE))
+fixest::setFixest_nthreads(1)
+set.seed(20261008) # margins::cplot jitters rug marks; estimation itself is deterministic.
 root <- normalizePath(".")
 if(!file.exists("build/code/08_create_analysis_ds.R")) stop("Run from repository root")
 source("audit/tests/test_commander.R")
@@ -50,6 +52,6 @@ if(status != 0L) stop("Saved Stata comparison failed")
 rmarkdown::render("report/Supplement.Rmd",output_file="Supplement-audit.html",quiet=TRUE,
                   envir=new.env(parent=globalenv()),knit_root_dir=root)
 html <- readLines("report/Supplement-audit.html", warn=FALSE)
-stopifnot(sum(grepl("data:image/png;base64,",html,fixed=TRUE)) >= 15L,
+stopifnot(sum(lengths(regmatches(html,gregexpr("data:image/png;base64,",html,fixed=TRUE)))) >= 15L,
           !any(grepl('src="report/audit/figures/',html,fixed=TRUE)))
 cat("Audit completed. See report/audit, report/Supplement-audit.html and audit-output.\n")

@@ -15,7 +15,7 @@ Installation is an explicit network-enabled step. It installs missing packages i
 
 Other R requirements: dplyr >=1.1, tidyr, purrr, stringr, readr, tibble, lubridate, haven, ggplot2, skimr, lmtest, sandwich, broom, DescTools, margins, MASS, numDeriv, rmarkdown and knitr. Exact tested versions appear in `report/audit/packages.csv`. The original project pinned R 3.6.1; this is a compatibility reconstruction, not that complete historical environment. An existing dependency library can be supplied via `WEATHER_R_LIBS` (platform-separated library directories); `audit-library/`, if present, takes precedence. The runner refuses a different fixest version.
 
-`audit/install.R` requires network access only during setup. The reproduction itself uses local committed caches. No automatic installation or private-data download occurs during reproduction. Runs are deterministic; there is no simulation draw or bootstrap seed. The tested cached workflow fits comfortably on a Mac; no remote computation is required.
+`audit/install.R` requires network access only during setup. The reproduction itself uses local committed caches. No automatic installation or private-data download occurs during reproduction. Estimation uses one fixest thread to avoid parallel reduction variability; no resampling is used. Seed 20261008 stabilizes the random rug-mark jitter in margins::cplot and does not affect the estimates. The tested cached workflow fits comfortably on a Mac; no remote computation is required.
 
 ## Selected workflow
 
