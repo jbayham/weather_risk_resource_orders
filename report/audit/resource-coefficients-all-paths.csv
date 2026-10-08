@@ -1,0 +1,742 @@
+"variant","model","term","label","estimate","se","p","n"
+"corrected","Table4_1","growth_potentialHigh","Growth Potential (High)",10.5795202713754,2.22320114693154,1.94855505327207e-06,3735
+"corrected","Table4_1","growth_potentialLow","Growth Potential (Low)",-6.60103462446185,2.98242423965491,0.0268761598329576,3735
+"corrected","Table4_1","L1.growth","Lagged Growth",0.59296148801441,0.403813175729852,0.14199410863611,3735
+"corrected","Table4_1","terrainHigh","Inaccessibility (High)",0.925361642595739,5.35250692511948,0.862742779460233,3735
+"corrected","Table4_1","terrainLow","Inaccessibility (Low)",4.38180894130055,8.29492206604001,0.597324461335517,3735
+"corrected","Table4_1","splines::ns(L1.area, df = 3)1","L.Area S1",-90.3783201591067,35.8291536846457,0.0116530608168733,3735
+"corrected","Table4_1","splines::ns(L1.area, df = 3)2","L.Area S2",-33.6017962003487,47.2088602257456,0.476607924357754,3735
+"corrected","Table4_1","splines::ns(L1.area, df = 3)3","L.Area S3",80.2426163456953,102.600165854996,0.434161381774239,3735
+"corrected","Table4_1","doy_cos:gaccEB","GACC EB x DOY",0.849398159161616,0.852790475261688,0.31923940790712,3735
+"corrected","Table4_1","doy_cos:gaccNO","GACC NO x DOY",8.78024888329882,7.18325987696977,0.221586287867371,3735
+"corrected","Table4_1","doy_cos:gaccNR","GACC NR x DOY",0.22924840201309,0.573620076589963,0.689412861979751,3735
+"corrected","Table4_1","doy_cos:gaccNW","GACC NW x DOY",-0.599320111136915,1.02192987893935,0.557567016411225,3735
+"corrected","Table4_1","doy_cos:gaccRM","GACC RM x DOY",-0.619637967685139,1.17437909902779,0.597755975369742,3735
+"corrected","Table4_1","doy_cos:gaccSO","GACC SO x DOY",-0.0354245886717595,5.24158149251866,0.99460763564444,3735
+"corrected","Table4_1","doy_cos:gaccSW","GACC SW x DOY",0.0220832510832515,0.796456251800015,0.977879980631951,3735
+"corrected","Table4_1","doy_cos:gaccWB","GACC WB x DOY",1.09403488942865,2.87972380313134,0.70401247677557,3735
+"corrected","Table4_2","growth_potentialHigh","Growth Potential (High)",10.2399228091087,2.52569799128313,5.0285890264693e-05,3735
+"corrected","Table4_2","growth_potentialLow","Growth Potential (Low)",-5.55035394581696,2.36941340307652,0.0191549679225534,3735
+"corrected","Table4_2","evac_potential","Potential Evacuation",-0.133428868309576,3.3062284036897,0.967808653928801,3735
+"corrected","Table4_2","L1.growth","Lagged Growth",0.337589453406609,0.190338948618458,0.0761256034054959,3735
+"corrected","Table4_2","L1.evac","L.Evacuation",-1.11285035472962,3.59402568570431,0.756835529963783,3735
+"corrected","Table4_2","terrainHigh","Inaccessibility (High)",0.689716045359669,5.47871403199933,0.89981889221976,3735
+"corrected","Table4_2","terrainLow","Inaccessibility (Low)",3.75914372909616,8.33631455861589,0.652035729290127,3735
+"corrected","Table4_2","splines::ns(L1.area, df = 3)1","L.Area S1",-89.811880581631,36.1214545321646,0.0129047890661268,3735
+"corrected","Table4_2","splines::ns(L1.area, df = 3)2","L.Area S2",-34.7369385660475,47.0163607933383,0.46001228989499,3735
+"corrected","Table4_2","splines::ns(L1.area, df = 3)3","L.Area S3",76.371064576306,102.33516006986,0.455496039987902,3735
+"corrected","Table4_2","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.488029993816236,3.85848320265069,0.899350125464733,3735
+"corrected","Table4_2","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-8.68274843244504,12.6131350530203,0.491207599105942,3735
+"corrected","Table4_2","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.410686667066948,0.60008544491262,0.49373504169038,3735
+"corrected","Table4_2","doy_cos:gaccEB","GACC EB x DOY",0.892058289618563,0.882338277729043,0.312008677890972,3735
+"corrected","Table4_2","doy_cos:gaccNO","GACC NO x DOY",8.77038287084039,7.16069045833068,0.220652206127725,3735
+"corrected","Table4_2","doy_cos:gaccNR","GACC NR x DOY",0.226620830149862,0.579479000988012,0.695740421801068,3735
+"corrected","Table4_2","doy_cos:gaccNW","GACC NW x DOY",-0.556532399546113,1.04244642275771,0.593430465122772,3735
+"corrected","Table4_2","doy_cos:gaccRM","GACC RM x DOY",-0.670158244737002,1.15740404509325,0.562576754098738,3735
+"corrected","Table4_2","doy_cos:gaccSO","GACC SO x DOY",-0.00502938222866644,5.2760116633096,0.999239413011387,3735
+"corrected","Table4_2","doy_cos:gaccSW","GACC SW x DOY",-0.0416251356198402,0.810574365310636,0.959044520739385,3735
+"corrected","Table4_2","doy_cos:gaccWB","GACC WB x DOY",1.41241364960545,2.93513597039345,0.63036801233527,3735
+"corrected","Table4_3","growth_potentialHigh","Growth Potential (High)",7.26622393192055,2.37886181632365,0.00225439011492742,3735
+"corrected","Table4_3","growth_potentialLow","Growth Potential (Low)",-1.97342308100912,2.13062067858814,0.354331759344592,3735
+"corrected","Table4_3","evac_potential","Potential Evacuation",-1.35735424842377,3.20125259910728,0.671560540200328,3735
+"corrected","Table4_3","L1.growth","Lagged Growth",0.458934464989609,0.210159214375184,0.0289808751681853,3735
+"corrected","Table4_3","L1.evac","L.Evacuation",-1.53374011055959,3.8048244106855,0.686871684993067,3735
+"corrected","Table4_3","terrainHigh","Inaccessibility (High)",-0.632348816078191,4.96896899262942,0.898734965112676,3735
+"corrected","Table4_3","terrainLow","Inaccessibility (Low)",3.68615061659686,6.07036882477726,0.543693852619398,3735
+"corrected","Table4_3","splines::ns(L1.area, df = 3)1","L.Area S1",-110.311377574954,43.7604692564654,0.0117088482725709,3735
+"corrected","Table4_3","splines::ns(L1.area, df = 3)2","L.Area S2",-30.9112227099825,43.0161083680484,0.472389602144633,3735
+"corrected","Table4_3","splines::ns(L1.area, df = 3)3","L.Area S3",71.3219831644336,87.4894318742297,0.414953924094193,3735
+"corrected","Table4_3","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",2.1314847488362,3.70425713127972,0.565010729109632,3735
+"corrected","Table4_3","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-12.100788964575,12.3487137527366,0.327124115244913,3735
+"corrected","Table4_3","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.339190954742154,0.605608031065512,0.575422609311262,3735
+"corrected","Table4_3","doy_cos:gaccEB","GACC EB x DOY",0.416162401142021,1.09284728509351,0.703347479820318,3735
+"corrected","Table4_3","doy_cos:gaccNO","GACC NO x DOY",8.58779550812697,6.32562282733421,0.174584120483672,3735
+"corrected","Table4_3","doy_cos:gaccNR","GACC NR x DOY",0.0809595806483974,0.707152836863512,0.908852004675098,3735
+"corrected","Table4_3","doy_cos:gaccNW","GACC NW x DOY",-0.732769587122598,1.52949998261152,0.631873933526139,3735
+"corrected","Table4_3","doy_cos:gaccRM","GACC RM x DOY",-1.7012820727857,1.20941552800908,0.15951704040464,3735
+"corrected","Table4_3","doy_cos:gaccSO","GACC SO x DOY",-0.861203258806054,5.0976156005263,0.865841972049659,3735
+"corrected","Table4_3","doy_cos:gaccSW","GACC SW x DOY",-1.15581839203958,0.937338274847353,0.217543804289283,3735
+"corrected","Table4_3","doy_cos:gaccWB","GACC WB x DOY",2.67247331800962,3.40740766908246,0.432856613274416,3735
+"corrected","Table4_4","growth_potentialHigh","Growth Potential (High)",8.9164299656106,4.16703811868371,0.0323747789512277,3735
+"corrected","Table4_4","growth_potentialLow","Growth Potential (Low)",-0.926706653656861,3.933465592847,0.813746593169121,3735
+"corrected","Table4_4","evac_potential","Potential Evacuation",-1.22284493639338,4.84096795016238,0.80057470672165,3735
+"corrected","Table4_4","L1.growth","Lagged Growth",0.451607227848383,0.328846237035464,0.169656560159357,3735
+"corrected","Table4_4","L1.evac","L.Evacuation",-5.35368595382559,5.88383876624666,0.362876947527798,3735
+"corrected","Table4_4","terrainHigh","Inaccessibility (High)",0.129386733241567,18.5648573125075,0.994439233259514,3735
+"corrected","Table4_4","terrainLow","Inaccessibility (Low)",5.28598845769974,23.7606339930253,0.823949328038577,3735
+"corrected","Table4_4","splines::ns(L1.area, df = 3)1","L.Area S1",-162.096061362596,77.504067889914,0.0364875377295809,3735
+"corrected","Table4_4","splines::ns(L1.area, df = 3)2","L.Area S2",70.3440532006542,109.691290108458,0.52133354029379,3735
+"corrected","Table4_4","splines::ns(L1.area, df = 3)3","L.Area S3",323.343899026305,251.397183866586,0.198377655219365,3735
+"corrected","Table4_4","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-2.16502969682068,5.28943005383465,0.682310363086914,3735
+"corrected","Table4_4","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-11.0447178053479,17.9900150275135,0.539257622083356,3735
+"corrected","Table4_4","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.385882517415791,0.960485434374968,0.687862280179653,3735
+"corrected","Table4_4","doy_cos:gaccEB","GACC EB x DOY",-1.00948165135153,1.74225197723416,0.562311228867064,3735
+"corrected","Table4_4","doy_cos:gaccNO","GACC NO x DOY",3.17655815046254,8.46731969443794,0.707545121985337,3735
+"corrected","Table4_4","doy_cos:gaccNR","GACC NR x DOY",0.215240557576287,1.01669638967189,0.832336536027034,3735
+"corrected","Table4_4","doy_cos:gaccNW","GACC NW x DOY",-1.53106645119972,2.36433990815903,0.517265607887584,3735
+"corrected","Table4_4","doy_cos:gaccRM","GACC RM x DOY",-3.43992968366238,2.42735680779384,0.156438958229348,3735
+"corrected","Table4_4","doy_cos:gaccSO","GACC SO x DOY",3.35984760729261,7.81961897569326,0.667436460764721,3735
+"corrected","Table4_4","doy_cos:gaccSW","GACC SW x DOY",-1.0015256220067,1.64009727308308,0.541431224153515,3735
+"corrected","Table4_4","doy_cos:gaccWB","GACC WB x DOY",0.695171565207886,5.54691160534116,0.900265566285349,3735
+"corrected","Wildland_Engines","growth_potentialHigh","Growth Potential (High)",4.72910985937505,1.29926005048735,0.000272798405232111,3735
+"corrected","Wildland_Engines","growth_potentialLow","Growth Potential (Low)",-1.62826192862631,1.14963060563319,0.156677479423027,3735
+"corrected","Wildland_Engines","evac_potential","Potential Evacuation",0.34241422590389,1.779469995338,0.847409437880099,3735
+"corrected","Wildland_Engines","L1.growth","Lagged Growth",0.1788512157145,0.101152592805855,0.0770387075505981,3735
+"corrected","Wildland_Engines","L1.evac","L.Evacuation",-0.99567684367348,2.16456107003273,0.645523266652077,3735
+"corrected","Wildland_Engines","terrainHigh","Inaccessibility (High)",-1.10048870193655,4.09649897708256,0.788205747776202,3735
+"corrected","Wildland_Engines","terrainLow","Inaccessibility (Low)",0.00920913370224625,5.25154389585978,0.998600826351415,3735
+"corrected","Wildland_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-42.320436881568,15.4389620126867,0.00612254413027183,3735
+"corrected","Wildland_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-9.78949861647456,21.045718253688,0.641821225704036,3735
+"corrected","Wildland_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",50.8952968533132,47.1226503267133,0.280115395141413,3735
+"corrected","Wildland_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.056611996201767,2.13864598479607,0.978881702052775,3735
+"corrected","Wildland_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-4.26689724346414,6.01114658633158,0.477809040761781,3735
+"corrected","Wildland_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.199438884796564,0.382157360905883,0.601756432800406,3735
+"corrected","Wildland_Engines","doy_cos:gaccEB","GACC EB x DOY",0.0293970287728439,0.485148693040014,0.951682668824169,3735
+"corrected","Wildland_Engines","doy_cos:gaccNO","GACC NO x DOY",4.15409502862492,4.58274656492667,0.36469028273897,3735
+"corrected","Wildland_Engines","doy_cos:gaccNR","GACC NR x DOY",0.252138067424905,0.324724960556901,0.437473568134908,3735
+"corrected","Wildland_Engines","doy_cos:gaccNW","GACC NW x DOY",-0.319243143518307,0.680337809030891,0.638896594749294,3735
+"corrected","Wildland_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.69813225160519,0.69157298675327,0.312742303198699,3735
+"corrected","Wildland_Engines","doy_cos:gaccSO","GACC SO x DOY",0.854956356258445,2.8471132818504,0.763956841975713,3735
+"corrected","Wildland_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.14273059053299,0.408322915557745,0.726674022516345,3735
+"corrected","Wildland_Engines","doy_cos:gaccWB","GACC WB x DOY",1.27763671223869,1.51278637826643,0.398357344533687,3735
+"corrected","Structure_Engines","growth_potentialHigh","Growth Potential (High)",0.638510258616664,0.682947747790326,0.349822925781979,3735
+"corrected","Structure_Engines","growth_potentialLow","Growth Potential (Low)",-1.28242187426045,0.741888304072408,0.0838822180160735,3735
+"corrected","Structure_Engines","evac_potential","Potential Evacuation",0.21499753511755,0.852098960352326,0.800797426160801,3735
+"corrected","Structure_Engines","L1.growth","Lagged Growth",-0.0128437448649256,0.0529062039444382,0.808187885940255,3735
+"corrected","Structure_Engines","L1.evac","L.Evacuation",0.249575435250767,1.15200717968832,0.828485798464746,3735
+"corrected","Structure_Engines","terrainHigh","Inaccessibility (High)",0.223823060659607,0.625111574537784,0.720303667618856,3735
+"corrected","Structure_Engines","terrainLow","Inaccessibility (Low)",1.28142205248919,1.23404759262974,0.299088759797643,3735
+"corrected","Structure_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-17.3781954527065,14.4126189244244,0.227909077823429,3735
+"corrected","Structure_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-6.4840228552701,7.23940961435005,0.370436354767786,3735
+"corrected","Structure_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",7.45668237079732,11.0924303518849,0.501436257140863,3735
+"corrected","Structure_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.323607801518542,1.01915933126013,0.750845842481032,3735
+"corrected","Structure_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-3.76466853693082,4.72971435930831,0.42605465898637,3735
+"corrected","Structure_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0112166553698935,0.093652149256205,0.904665876435842,3735
+"corrected","Structure_Engines","doy_cos:gaccEB","GACC EB x DOY",0.144718838184196,0.160210738137866,0.366365112092408,3735
+"corrected","Structure_Engines","doy_cos:gaccNO","GACC NO x DOY",1.75618906343649,1.1758691626426,0.135300021544893,3735
+"corrected","Structure_Engines","doy_cos:gaccNR","GACC NR x DOY",0.0380062669383375,0.114531733735686,0.740009706460962,3735
+"corrected","Structure_Engines","doy_cos:gaccNW","GACC NW x DOY",0.122777764220201,0.15213605464382,0.419651456178391,3735
+"corrected","Structure_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.0144614626916038,0.138183759036612,0.916650481422929,3735
+"corrected","Structure_Engines","doy_cos:gaccSO","GACC SO x DOY",-1.95510096006651,2.66733592697078,0.463571297238534,3735
+"corrected","Structure_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.0346370484029049,0.122367928527434,0.77713345851397,3735
+"corrected","Structure_Engines","doy_cos:gaccWB","GACC WB x DOY",0.0415246808371234,0.463918340767924,0.92867771982312,3735
+"corrected","Dozers","growth_potentialHigh","Growth Potential (High)",0.573946671002074,0.237895804663097,0.0158393282713361,3735
+"corrected","Dozers","growth_potentialLow","Growth Potential (Low)",-0.259026961947342,0.197739244910311,0.190215423156763,3735
+"corrected","Dozers","evac_potential","Potential Evacuation",-0.140879482716202,0.249358924802573,0.572096431012333,3735
+"corrected","Dozers","L1.growth","Lagged Growth",0.0142136038613917,0.0171372472785142,0.406879059773944,3735
+"corrected","Dozers","L1.evac","L.Evacuation",-0.454426188506913,0.348064086674649,0.191694762345624,3735
+"corrected","Dozers","terrainHigh","Inaccessibility (High)",0.543784533381887,0.624304280074396,0.383740592260612,3735
+"corrected","Dozers","terrainLow","Inaccessibility (Low)",0.795682121630008,0.834479951893392,0.340333465944001,3735
+"corrected","Dozers","splines::ns(L1.area, df = 3)1","L.Area S1",-6.36982963840551,3.12395142627759,0.041447066708318,3735
+"corrected","Dozers","splines::ns(L1.area, df = 3)2","L.Area S2",-6.02670951486789,2.68742939709357,0.0249254940260791,3735
+"corrected","Dozers","splines::ns(L1.area, df = 3)3","L.Area S3",-2.31791825749973,4.52882487439373,0.608780838359326,3735
+"corrected","Dozers","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.0747556493764245,0.291043394868754,0.797291510665831,3735
+"corrected","Dozers","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.985292802691991,0.974316197990581,0.311889154863674,3735
+"corrected","Dozers","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.035981743876273,0.0534982412024412,0.501215756543839,3735
+"corrected","Dozers","doy_cos:gaccEB","GACC EB x DOY",0.132511504012582,0.0979062024078916,0.175910757622296,3735
+"corrected","Dozers","doy_cos:gaccNO","GACC NO x DOY",0.991764148680922,0.854453074918925,0.245763700650428,3735
+"corrected","Dozers","doy_cos:gaccNR","GACC NR x DOY",0.0465107307131149,0.0482623909160312,0.335193604991486,3735
+"corrected","Dozers","doy_cos:gaccNW","GACC NW x DOY",0.0660215805827045,0.145942626885483,0.650994980897186,3735
+"corrected","Dozers","doy_cos:gaccRM","GACC RM x DOY",0.122797537061646,0.187644654580364,0.512844265611326,3735
+"corrected","Dozers","doy_cos:gaccSO","GACC SO x DOY",0.0163076346252498,0.441828619342789,0.970557235026069,3735
+"corrected","Dozers","doy_cos:gaccSW","GACC SW x DOY",-0.0757206503030976,0.0778293447783874,0.330599934592182,3735
+"corrected","Dozers","doy_cos:gaccWB","GACC WB x DOY",0.158616366920782,0.234152206387148,0.498147695244904,3735
+"corrected","Type_1_Crews","growth_potentialHigh","Growth Potential (High)",1.48892734142617,0.426054717698839,0.000474620257459073,3735
+"corrected","Type_1_Crews","growth_potentialLow","Growth Potential (Low)",-0.55778770195672,0.413704578841158,0.177569824794464,3735
+"corrected","Type_1_Crews","evac_potential","Potential Evacuation",-0.207196787544549,0.625693675089514,0.740533205152621,3735
+"corrected","Type_1_Crews","L1.growth","Lagged Growth",0.0389858673458425,0.0304814388172604,0.200895818608943,3735
+"corrected","Type_1_Crews","L1.evac","L.Evacuation",-0.462277879948666,0.605062076473958,0.444856946992138,3735
+"corrected","Type_1_Crews","terrainHigh","Inaccessibility (High)",0.428851162337899,0.801832413439708,0.592761264577336,3735
+"corrected","Type_1_Crews","terrainLow","Inaccessibility (Low)",0.558127038314164,1.4222386011113,0.694741591237279,3735
+"corrected","Type_1_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-7.99499575596565,3.6728271862275,0.0294957869995602,3735
+"corrected","Type_1_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",-5.01906851731539,7.38736613864707,0.496876564397055,3735
+"corrected","Type_1_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",6.70148706555748,16.7692818338499,0.689429980823532,3735
+"corrected","Type_1_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.365775071741985,0.675823422584169,0.58834991785109,3735
+"corrected","Type_1_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.682504317069669,1.49887010442105,0.648860428537116,3735
+"corrected","Type_1_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.135042382511698,0.118172841952499,0.253141112624438,3735
+"corrected","Type_1_Crews","doy_cos:gaccEB","GACC EB x DOY",0.192126191956261,0.129816382815427,0.138877470490976,3735
+"corrected","Type_1_Crews","doy_cos:gaccNO","GACC NO x DOY",1.01952225637906,1.02098782633466,0.318005676868408,3735
+"corrected","Type_1_Crews","doy_cos:gaccNR","GACC NR x DOY",0.00763906191805356,0.110192226784807,0.944731029083667,3735
+"corrected","Type_1_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.0140358547311312,0.154713733604065,0.927713923793506,3735
+"corrected","Type_1_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.0819663217270149,0.184299072072417,0.65650313962374,3735
+"corrected","Type_1_Crews","doy_cos:gaccSO","GACC SO x DOY",0.324039327977155,1.04252110937223,0.755935337403579,3735
+"corrected","Type_1_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.178066638204696,0.14721350597965,0.226439768712714,3735
+"corrected","Type_1_Crews","doy_cos:gaccWB","GACC WB x DOY",0.379442960726862,0.507976572966313,0.455082026378116,3735
+"corrected","Type_2_Crews","growth_potentialHigh","Growth Potential (High)",0.216045432930934,0.137701935856578,0.116663007288586,3735
+"corrected","Type_2_Crews","growth_potentialLow","Growth Potential (Low)",-0.192219939790083,0.0972712492586591,0.0481408633162234,3735
+"corrected","Type_2_Crews","evac_potential","Potential Evacuation",-0.25925413178443,0.171184419136529,0.12990598929346,3735
+"corrected","Type_2_Crews","L1.growth","Lagged Growth",0.0266319297044034,0.0133183108200164,0.0455383184818061,3735
+"corrected","Type_2_Crews","L1.evac","L.Evacuation",0.215630916903144,0.210247851281312,0.305078551207551,3735
+"corrected","Type_2_Crews","terrainHigh","Inaccessibility (High)",0.176581450759178,0.292027960005504,0.545396227610691,3735
+"corrected","Type_2_Crews","terrainLow","Inaccessibility (Low)",0.275255109895531,0.315500048166916,0.382967958573012,3735
+"corrected","Type_2_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-5.1041255751056,1.81462379546748,0.00491162470877041,3735
+"corrected","Type_2_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",0.922774055725803,2.7305643218653,0.735406430366833,3735
+"corrected","Type_2_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",9.121908796902,6.21558784180483,0.142216752570562,3735
+"corrected","Type_2_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.502885505718669,0.237491185022896,0.0342181773170002,3735
+"corrected","Type_2_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.522370384412047,0.398954482149561,0.190416385896488,3735
+"corrected","Type_2_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",-0.0067563210516998,0.0251848949348452,0.788492435249431,3735
+"corrected","Type_2_Crews","doy_cos:gaccEB","GACC EB x DOY",0.142419535314261,0.114633669976348,0.214093314406282,3735
+"corrected","Type_2_Crews","doy_cos:gaccNO","GACC NO x DOY",0.231892710630362,0.202362044459141,0.251824172159366,3735
+"corrected","Type_2_Crews","doy_cos:gaccNR","GACC NR x DOY",-0.157468055222197,0.116690654915746,0.177192880072035,3735
+"corrected","Type_2_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.153800107801519,0.198745424422697,0.439016640406639,3735
+"corrected","Type_2_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.217768207243942,0.153256479455402,0.155334306808577,3735
+"corrected","Type_2_Crews","doy_cos:gaccSO","GACC SO x DOY",0.388273302701883,0.321484396818108,0.227142813902525,3735
+"corrected","Type_2_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.095386426726009,0.0838263981797149,0.255160406772098,3735
+"corrected","Type_2_Crews","doy_cos:gaccWB","GACC WB x DOY",0.0414487263773397,0.286139110888587,0.88482523093325,3735
+"corrected","VLAT","growth_potentialHigh","Growth Potential (High)",0.124837820432784,0.0391874216901312,0.00144423980948245,3735
+"corrected","VLAT","growth_potentialLow","Growth Potential (Low)",-0.128578833809008,0.0595550882555282,0.0308509508089796,3735
+"corrected","VLAT","evac_potential","Potential Evacuation",0.0122863801852452,0.0566164693460234,0.82819999879842,3735
+"corrected","VLAT","L1.growth","Lagged Growth",-0.00111769574130548,0.00300818884343686,0.710227135835477,3735
+"corrected","VLAT","L1.evac","L.Evacuation",-0.0132789043408339,0.0486904533064653,0.785067766146032,3735
+"corrected","VLAT","terrainHigh","Inaccessibility (High)",-0.018437144614775,0.0844030343194193,0.82708495667152,3735
+"corrected","VLAT","terrainLow","Inaccessibility (Low)",0.0964334365174561,0.102576646439349,0.347160612736556,3735
+"corrected","VLAT","splines::ns(L1.area, df = 3)1","L.Area S1",0.0439127630911479,0.436588258166489,0.919882571795894,3735
+"corrected","VLAT","splines::ns(L1.area, df = 3)2","L.Area S2",-0.306397493194046,0.581949070395484,0.59853929121383,3735
+"corrected","VLAT","splines::ns(L1.area, df = 3)3","L.Area S3",-0.706438949679719,1.34101233538504,0.598335770851585,3735
+"corrected","VLAT","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.000364610890828171,0.0686579384555733,0.995762820153937,3735
+"corrected","VLAT","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.0231349222897592,0.114086293219753,0.83930353947583,3735
+"corrected","VLAT","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0100249304047924,0.00692995699027816,0.148006777367593,3735
+"corrected","VLAT","doy_cos:gaccEB","GACC EB x DOY",-0.00138643507894881,0.0165227063738264,0.933127277189394,3735
+"corrected","VLAT","doy_cos:gaccNO","GACC NO x DOY",0.0890974492081188,0.142841581117069,0.532791721142515,3735
+"corrected","VLAT","doy_cos:gaccNR","GACC NR x DOY",-0.000352515775847659,0.00514286659415506,0.945352111324035,3735
+"corrected","VLAT","doy_cos:gaccNW","GACC NW x DOY",-0.00178641211488044,0.0217400839398563,0.934510453265156,3735
+"corrected","VLAT","doy_cos:gaccRM","GACC RM x DOY",-0.00580433214642723,0.0116447620929605,0.618166873436437,3735
+"corrected","VLAT","doy_cos:gaccSO","GACC SO x DOY",-0.00954262581937387,0.0846173974776349,0.910209887008706,3735
+"corrected","VLAT","doy_cos:gaccSW","GACC SW x DOY",0.0358887874914759,0.0264445669064836,0.174739037884275,3735
+"corrected","VLAT","doy_cos:gaccWB","GACC WB x DOY",0.169511467654785,0.141926064442719,0.232335376702317,3735
+"corrected","T2_4_Airtanker","growth_potentialHigh","Growth Potential (High)",1.92362604872862,0.337273764190174,1.17402405522765e-08,3735
+"corrected","T2_4_Airtanker","growth_potentialLow","Growth Potential (Low)",-1.24830738077551,0.346543728776364,0.000315579031705807,3735
+"corrected","T2_4_Airtanker","evac_potential","Potential Evacuation",-0.0138843556377373,0.445371204774581,0.975130141480499,3735
+"corrected","T2_4_Airtanker","L1.growth","Lagged Growth",0.0669305634919088,0.0336466691492622,0.0466771342175281,3735
+"corrected","T2_4_Airtanker","L1.evac","L.Evacuation",0.484411108086057,0.339214740501339,0.153281287382654,3735
+"corrected","T2_4_Airtanker","terrainHigh","Inaccessibility (High)",0.00261099880203048,0.654065677380693,0.99681489157526,3735
+"corrected","T2_4_Airtanker","terrainLow","Inaccessibility (Low)",0.37303049448256,1.44818663174846,0.796727558683825,3735
+"corrected","T2_4_Airtanker","splines::ns(L1.area, df = 3)1","L.Area S1",-7.34065254413927,3.38082119756025,0.0299112847977513,3735
+"corrected","T2_4_Airtanker","splines::ns(L1.area, df = 3)2","L.Area S2",-3.51572395439862,7.29766170993024,0.62997620922733,3735
+"corrected","T2_4_Airtanker","splines::ns(L1.area, df = 3)3","L.Area S3",7.2937541593659,16.2617658855509,0.653776760805547,3735
+"corrected","T2_4_Airtanker","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.160856773850207,0.495328505805241,0.745372059437137,3735
+"corrected","T2_4_Airtanker","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.344882573000007,0.826076533019237,0.676316601327212,3735
+"corrected","T2_4_Airtanker","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0146831069134161,0.0397873939303552,0.71209852724747,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccEB","GACC EB x DOY",0.219610836072491,0.149409230362515,0.141599340007904,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccNO","GACC NO x DOY",0.62141366470788,0.61689408528618,0.313777973181793,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccNR","GACC NR x DOY",0.0394151938974533,0.140837203736515,0.779582225253734,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccNW","GACC NW x DOY",-0.290889511454155,0.264695318777324,0.271785606029063,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccRM","GACC RM x DOY",0.352240969529013,0.310764216323314,0.257018211249875,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccSO","GACC SO x DOY",0.282523092215267,0.366966296908276,0.441366100272744,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccSW","GACC SW x DOY",0.3645986818577,0.252726188024078,0.149115470103723,3735
+"corrected","T2_4_Airtanker","doy_cos:gaccWB","GACC WB x DOY",-0.548503181756805,0.44965458022958,0.222528453373421,3735
+"corrected","Helicopters","growth_potentialHigh","Growth Potential (High)",0.544919376596461,0.132225038374683,3.76983885756038e-05,3735
+"corrected","Helicopters","growth_potentialLow","Growth Potential (Low)",-0.253749324651548,0.125642490549069,0.0434234486504712,3735
+"corrected","Helicopters","evac_potential","Potential Evacuation",-0.0819122518333221,0.173617065086084,0.637070700006848,3735
+"corrected","Helicopters","L1.growth","Lagged Growth",0.0259377138947909,0.0119127529294579,0.0294577096103705,3735
+"corrected","Helicopters","L1.evac","L.Evacuation",-0.136807998499709,0.15816106444985,0.387043377389495,3735
+"corrected","Helicopters","terrainHigh","Inaccessibility (High)",0.432990685970356,0.399166763532935,0.278038456901126,3735
+"corrected","Helicopters","terrainLow","Inaccessibility (Low)",0.369984342065001,0.484833763820278,0.445394293093459,3735
+"corrected","Helicopters","splines::ns(L1.area, df = 3)1","L.Area S1",-3.34755749683199,1.42730067464519,0.0190078732698013,3735
+"corrected","Helicopters","splines::ns(L1.area, df = 3)2","L.Area S2",-4.51829167025052,2.80054386354214,0.106665835651841,3735
+"corrected","Helicopters","splines::ns(L1.area, df = 3)3","L.Area S3",-2.0737074624459,6.35066634212982,0.744020491069042,3735
+"corrected","Helicopters","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.0278982647447042,0.206975680665425,0.892777863827154,3735
+"corrected","Helicopters","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.126226588009717,0.33580971250631,0.707000722621676,3735
+"corrected","Helicopters","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0110552842460108,0.0162256552168976,0.495652623260027,3735
+"corrected","Helicopters","doy_cos:gaccEB","GACC EB x DOY",0.0326607903848753,0.093266984227333,0.72619912689489,3735
+"corrected","Helicopters","doy_cos:gaccNO","GACC NO x DOY",-0.0935914508273614,0.24579697622663,0.703375925971401,3735
+"corrected","Helicopters","doy_cos:gaccNR","GACC NR x DOY",0.000732080256039657,0.0789978094800204,0.992606033294264,3735
+"corrected","Helicopters","doy_cos:gaccNW","GACC NW x DOY",0.0344232852709702,0.13699169213144,0.80159756424588,3735
+"corrected","Helicopters","doy_cos:gaccRM","GACC RM x DOY",-0.127064175913484,0.123360695909999,0.302999886849934,3735
+"corrected","Helicopters","doy_cos:gaccSO","GACC SO x DOY",0.0935144898792119,0.216660311967593,0.666019076019751,3735
+"corrected","Helicopters","doy_cos:gaccSW","GACC SW x DOY",0.084428749200681,0.0666010641971263,0.204912721169834,3735
+"corrected","Helicopters","doy_cos:gaccWB","GACC WB x DOY",-0.107264083393295,0.302816492515608,0.723172963456106,3735
+"historical","Table4_1","growth_potentialHigh","Growth Potential (High)",10.5795202713754,2.22320114693154,1.94855505327207e-06,3735
+"historical","Table4_1","growth_potentialLow","Growth Potential (Low)",-6.60103462446185,2.98242423965491,0.0268761598329576,3735
+"historical","Table4_1","L1.growth","Lagged Growth",0.59296148801441,0.403813175729852,0.14199410863611,3735
+"historical","Table4_1","terrainHigh","Inaccessibility (High)",0.925361642595739,5.35250692511948,0.862742779460233,3735
+"historical","Table4_1","terrainLow","Inaccessibility (Low)",4.38180894130055,8.29492206604001,0.597324461335517,3735
+"historical","Table4_1","splines::ns(L1.area, df = 3)1","L.Area S1",-90.3783201591067,35.8291536846457,0.0116530608168733,3735
+"historical","Table4_1","splines::ns(L1.area, df = 3)2","L.Area S2",-33.6017962003487,47.2088602257456,0.476607924357754,3735
+"historical","Table4_1","splines::ns(L1.area, df = 3)3","L.Area S3",80.2426163456953,102.600165854996,0.434161381774239,3735
+"historical","Table4_1","doy_cos:gaccEB","GACC EB x DOY",0.849398159161616,0.852790475261688,0.31923940790712,3735
+"historical","Table4_1","doy_cos:gaccNO","GACC NO x DOY",8.78024888329882,7.18325987696977,0.221586287867371,3735
+"historical","Table4_1","doy_cos:gaccNR","GACC NR x DOY",0.22924840201309,0.573620076589963,0.689412861979751,3735
+"historical","Table4_1","doy_cos:gaccNW","GACC NW x DOY",-0.599320111136915,1.02192987893935,0.557567016411225,3735
+"historical","Table4_1","doy_cos:gaccRM","GACC RM x DOY",-0.619637967685139,1.17437909902779,0.597755975369742,3735
+"historical","Table4_1","doy_cos:gaccSO","GACC SO x DOY",-0.0354245886717595,5.24158149251866,0.99460763564444,3735
+"historical","Table4_1","doy_cos:gaccSW","GACC SW x DOY",0.0220832510832515,0.796456251800015,0.977879980631951,3735
+"historical","Table4_1","doy_cos:gaccWB","GACC WB x DOY",1.09403488942865,2.87972380313134,0.70401247677557,3735
+"historical","Table4_2","growth_potentialHigh","Growth Potential (High)",10.2399228091087,2.52569799128313,5.0285890264693e-05,3735
+"historical","Table4_2","growth_potentialLow","Growth Potential (Low)",-5.55035394581696,2.36941340307652,0.0191549679225534,3735
+"historical","Table4_2","evac_potential","Potential Evacuation",-0.133428868309576,3.3062284036897,0.967808653928801,3735
+"historical","Table4_2","L1.growth","Lagged Growth",0.337589453406609,0.190338948618458,0.0761256034054959,3735
+"historical","Table4_2","L1.evac","L.Evacuation",-1.11285035472962,3.59402568570431,0.756835529963783,3735
+"historical","Table4_2","terrainHigh","Inaccessibility (High)",0.689716045359669,5.47871403199933,0.89981889221976,3735
+"historical","Table4_2","terrainLow","Inaccessibility (Low)",3.75914372909616,8.33631455861589,0.652035729290127,3735
+"historical","Table4_2","splines::ns(L1.area, df = 3)1","L.Area S1",-89.811880581631,36.1214545321646,0.0129047890661268,3735
+"historical","Table4_2","splines::ns(L1.area, df = 3)2","L.Area S2",-34.7369385660475,47.0163607933383,0.46001228989499,3735
+"historical","Table4_2","splines::ns(L1.area, df = 3)3","L.Area S3",76.371064576306,102.33516006986,0.455496039987902,3735
+"historical","Table4_2","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.488029993816236,3.85848320265069,0.899350125464733,3735
+"historical","Table4_2","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-8.68274843244504,12.6131350530203,0.491207599105942,3735
+"historical","Table4_2","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.410686667066948,0.60008544491262,0.49373504169038,3735
+"historical","Table4_2","doy_cos:gaccEB","GACC EB x DOY",0.892058289618563,0.882338277729043,0.312008677890972,3735
+"historical","Table4_2","doy_cos:gaccNO","GACC NO x DOY",8.77038287084039,7.16069045833068,0.220652206127725,3735
+"historical","Table4_2","doy_cos:gaccNR","GACC NR x DOY",0.226620830149862,0.579479000988012,0.695740421801068,3735
+"historical","Table4_2","doy_cos:gaccNW","GACC NW x DOY",-0.556532399546113,1.04244642275771,0.593430465122772,3735
+"historical","Table4_2","doy_cos:gaccRM","GACC RM x DOY",-0.670158244737002,1.15740404509325,0.562576754098738,3735
+"historical","Table4_2","doy_cos:gaccSO","GACC SO x DOY",-0.00502938222866644,5.2760116633096,0.999239413011387,3735
+"historical","Table4_2","doy_cos:gaccSW","GACC SW x DOY",-0.0416251356198402,0.810574365310636,0.959044520739385,3735
+"historical","Table4_2","doy_cos:gaccWB","GACC WB x DOY",1.41241364960545,2.93513597039345,0.63036801233527,3735
+"historical","Table4_3","growth_potentialHigh","Growth Potential (High)",7.26622393192055,2.37886181632365,0.00225439011492742,3735
+"historical","Table4_3","growth_potentialLow","Growth Potential (Low)",-1.97342308100912,2.13062067858814,0.354331759344592,3735
+"historical","Table4_3","evac_potential","Potential Evacuation",-1.35735424842377,3.20125259910728,0.671560540200328,3735
+"historical","Table4_3","L1.growth","Lagged Growth",0.458934464989609,0.210159214375184,0.0289808751681853,3735
+"historical","Table4_3","L1.evac","L.Evacuation",-1.53374011055959,3.8048244106855,0.686871684993067,3735
+"historical","Table4_3","terrainHigh","Inaccessibility (High)",-0.632348816078191,4.96896899262942,0.898734965112676,3735
+"historical","Table4_3","terrainLow","Inaccessibility (Low)",3.68615061659686,6.07036882477726,0.543693852619398,3735
+"historical","Table4_3","splines::ns(L1.area, df = 3)1","L.Area S1",-110.311377574954,43.7604692564654,0.0117088482725709,3735
+"historical","Table4_3","splines::ns(L1.area, df = 3)2","L.Area S2",-30.9112227099825,43.0161083680484,0.472389602144633,3735
+"historical","Table4_3","splines::ns(L1.area, df = 3)3","L.Area S3",71.3219831644336,87.4894318742297,0.414953924094193,3735
+"historical","Table4_3","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",2.1314847488362,3.70425713127972,0.565010729109632,3735
+"historical","Table4_3","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-12.100788964575,12.3487137527366,0.327124115244913,3735
+"historical","Table4_3","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.339190954742154,0.605608031065512,0.575422609311262,3735
+"historical","Table4_3","doy_cos:gaccEB","GACC EB x DOY",0.416162401142021,1.09284728509351,0.703347479820318,3735
+"historical","Table4_3","doy_cos:gaccNO","GACC NO x DOY",8.58779550812697,6.32562282733421,0.174584120483672,3735
+"historical","Table4_3","doy_cos:gaccNR","GACC NR x DOY",0.0809595806483974,0.707152836863512,0.908852004675098,3735
+"historical","Table4_3","doy_cos:gaccNW","GACC NW x DOY",-0.732769587122598,1.52949998261152,0.631873933526139,3735
+"historical","Table4_3","doy_cos:gaccRM","GACC RM x DOY",-1.7012820727857,1.20941552800908,0.15951704040464,3735
+"historical","Table4_3","doy_cos:gaccSO","GACC SO x DOY",-0.861203258806054,5.0976156005263,0.865841972049659,3735
+"historical","Table4_3","doy_cos:gaccSW","GACC SW x DOY",-1.15581839203958,0.937338274847353,0.217543804289283,3735
+"historical","Table4_3","doy_cos:gaccWB","GACC WB x DOY",2.67247331800962,3.40740766908246,0.432856613274416,3735
+"historical","Table4_4","growth_potentialHigh","Growth Potential (High)",7.62942049189692,3.62031987838123,0.0350839172927604,3735
+"historical","Table4_4","growth_potentialLow","Growth Potential (Low)",1.71240912799687,3.21057585666385,0.593780868170805,3735
+"historical","Table4_4","evac_potential","Potential Evacuation",-1.07746953296104,4.33693827655486,0.803793883142432,3735
+"historical","Table4_4","L1.growth","Lagged Growth",0.444715588963843,0.292085469747106,0.127870592561806,3735
+"historical","Table4_4","L1.evac","L.Evacuation",-3.2708115139594,4.92272572348754,0.506414505349218,3735
+"historical","Table4_4","terrainHigh","Inaccessibility (High)",1.52087360600453,14.2651340040802,0.915094621456679,3735
+"historical","Table4_4","terrainLow","Inaccessibility (Low)",1.54064055565732,19.136187068244,0.935832219444682,3735
+"historical","Table4_4","splines::ns(L1.area, df = 3)1","L.Area S1",-141.532862340527,67.8306474583029,0.0369277307154396,3735
+"historical","Table4_4","splines::ns(L1.area, df = 3)2","L.Area S2",44.6348118905927,92.4391747838855,0.62919797220002,3735
+"historical","Table4_4","splines::ns(L1.area, df = 3)3","L.Area S3",248.274678060928,208.063967939399,0.232767059117368,3735
+"historical","Table4_4","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.730722916025952,4.90294927255942,0.881524104825755,3735
+"historical","Table4_4","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-14.3315473711945,18.1676734791443,0.430200385149492,3735
+"historical","Table4_4","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.381947584354581,0.944188554194036,0.685826923997751,3735
+"historical","Table4_4","doy_cos:gaccEB","GACC EB x DOY",-0.4439261011898,1.31455771199887,0.735589296634089,3735
+"historical","Table4_4","doy_cos:gaccNO","GACC NO x DOY",4.75933068980378,7.68717785114315,0.535833440718778,3735
+"historical","Table4_4","doy_cos:gaccNR","GACC NR x DOY",0.302223477564003,0.898135944573487,0.736493236895024,3735
+"historical","Table4_4","doy_cos:gaccNW","GACC NW x DOY",-1.40924731557479,2.03023644557019,0.487600905141044,3735
+"historical","Table4_4","doy_cos:gaccRM","GACC RM x DOY",-3.28667863441172,2.09414410758344,0.116540434477609,3735
+"historical","Table4_4","doy_cos:gaccSO","GACC SO x DOY",3.19361159815652,6.73550667152109,0.635396004021469,3735
+"historical","Table4_4","doy_cos:gaccSW","GACC SW x DOY",-0.985928918064666,1.41293798520603,0.485310782002677,3735
+"historical","Table4_4","doy_cos:gaccWB","GACC WB x DOY",2.00480455493049,5.00642851748862,0.688828007819274,3735
+"historical","Wildland_Engines","growth_potentialHigh","Growth Potential (High)",4.72910985937505,1.29926005048735,0.000272798405232111,3735
+"historical","Wildland_Engines","growth_potentialLow","Growth Potential (Low)",-1.62826192862631,1.14963060563319,0.156677479423027,3735
+"historical","Wildland_Engines","evac_potential","Potential Evacuation",0.34241422590389,1.779469995338,0.847409437880099,3735
+"historical","Wildland_Engines","L1.growth","Lagged Growth",0.1788512157145,0.101152592805855,0.0770387075505981,3735
+"historical","Wildland_Engines","L1.evac","L.Evacuation",-0.99567684367348,2.16456107003273,0.645523266652077,3735
+"historical","Wildland_Engines","terrainHigh","Inaccessibility (High)",-1.10048870193655,4.09649897708256,0.788205747776202,3735
+"historical","Wildland_Engines","terrainLow","Inaccessibility (Low)",0.00920913370224625,5.25154389585978,0.998600826351415,3735
+"historical","Wildland_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-42.320436881568,15.4389620126867,0.00612254413027183,3735
+"historical","Wildland_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-9.78949861647456,21.045718253688,0.641821225704036,3735
+"historical","Wildland_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",50.8952968533132,47.1226503267133,0.280115395141413,3735
+"historical","Wildland_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.056611996201767,2.13864598479607,0.978881702052775,3735
+"historical","Wildland_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-4.26689724346414,6.01114658633158,0.477809040761781,3735
+"historical","Wildland_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.199438884796564,0.382157360905883,0.601756432800406,3735
+"historical","Wildland_Engines","doy_cos:gaccEB","GACC EB x DOY",0.0293970287728439,0.485148693040014,0.951682668824169,3735
+"historical","Wildland_Engines","doy_cos:gaccNO","GACC NO x DOY",4.15409502862492,4.58274656492667,0.36469028273897,3735
+"historical","Wildland_Engines","doy_cos:gaccNR","GACC NR x DOY",0.252138067424905,0.324724960556901,0.437473568134908,3735
+"historical","Wildland_Engines","doy_cos:gaccNW","GACC NW x DOY",-0.319243143518307,0.680337809030891,0.638896594749294,3735
+"historical","Wildland_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.69813225160519,0.69157298675327,0.312742303198699,3735
+"historical","Wildland_Engines","doy_cos:gaccSO","GACC SO x DOY",0.854956356258445,2.8471132818504,0.763956841975713,3735
+"historical","Wildland_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.14273059053299,0.408322915557745,0.726674022516345,3735
+"historical","Wildland_Engines","doy_cos:gaccWB","GACC WB x DOY",1.27763671223869,1.51278637826643,0.398357344533687,3735
+"historical","Structure_Engines","growth_potentialHigh","Growth Potential (High)",0.638510258616664,0.682947747790326,0.349822925781979,3735
+"historical","Structure_Engines","growth_potentialLow","Growth Potential (Low)",-1.28242187426045,0.741888304072408,0.0838822180160735,3735
+"historical","Structure_Engines","evac_potential","Potential Evacuation",0.21499753511755,0.852098960352326,0.800797426160801,3735
+"historical","Structure_Engines","L1.growth","Lagged Growth",-0.0128437448649256,0.0529062039444382,0.808187885940255,3735
+"historical","Structure_Engines","L1.evac","L.Evacuation",0.249575435250767,1.15200717968832,0.828485798464746,3735
+"historical","Structure_Engines","terrainHigh","Inaccessibility (High)",0.223823060659607,0.625111574537784,0.720303667618856,3735
+"historical","Structure_Engines","terrainLow","Inaccessibility (Low)",1.28142205248919,1.23404759262974,0.299088759797643,3735
+"historical","Structure_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-17.3781954527065,14.4126189244244,0.227909077823429,3735
+"historical","Structure_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-6.4840228552701,7.23940961435005,0.370436354767786,3735
+"historical","Structure_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",7.45668237079732,11.0924303518849,0.501436257140863,3735
+"historical","Structure_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.323607801518542,1.01915933126013,0.750845842481032,3735
+"historical","Structure_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-3.76466853693082,4.72971435930831,0.42605465898637,3735
+"historical","Structure_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0112166553698935,0.093652149256205,0.904665876435842,3735
+"historical","Structure_Engines","doy_cos:gaccEB","GACC EB x DOY",0.144718838184196,0.160210738137866,0.366365112092408,3735
+"historical","Structure_Engines","doy_cos:gaccNO","GACC NO x DOY",1.75618906343649,1.1758691626426,0.135300021544893,3735
+"historical","Structure_Engines","doy_cos:gaccNR","GACC NR x DOY",0.0380062669383375,0.114531733735686,0.740009706460962,3735
+"historical","Structure_Engines","doy_cos:gaccNW","GACC NW x DOY",0.122777764220201,0.15213605464382,0.419651456178391,3735
+"historical","Structure_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.0144614626916038,0.138183759036612,0.916650481422929,3735
+"historical","Structure_Engines","doy_cos:gaccSO","GACC SO x DOY",-1.95510096006651,2.66733592697078,0.463571297238534,3735
+"historical","Structure_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.0346370484029049,0.122367928527434,0.77713345851397,3735
+"historical","Structure_Engines","doy_cos:gaccWB","GACC WB x DOY",0.0415246808371234,0.463918340767924,0.92867771982312,3735
+"historical","Dozers","growth_potentialHigh","Growth Potential (High)",0.573946671002074,0.237895804663097,0.0158393282713361,3735
+"historical","Dozers","growth_potentialLow","Growth Potential (Low)",-0.259026961947342,0.197739244910311,0.190215423156763,3735
+"historical","Dozers","evac_potential","Potential Evacuation",-0.140879482716202,0.249358924802573,0.572096431012333,3735
+"historical","Dozers","L1.growth","Lagged Growth",0.0142136038613917,0.0171372472785142,0.406879059773944,3735
+"historical","Dozers","L1.evac","L.Evacuation",-0.454426188506913,0.348064086674649,0.191694762345624,3735
+"historical","Dozers","terrainHigh","Inaccessibility (High)",0.543784533381887,0.624304280074396,0.383740592260612,3735
+"historical","Dozers","terrainLow","Inaccessibility (Low)",0.795682121630008,0.834479951893392,0.340333465944001,3735
+"historical","Dozers","splines::ns(L1.area, df = 3)1","L.Area S1",-6.36982963840551,3.12395142627759,0.041447066708318,3735
+"historical","Dozers","splines::ns(L1.area, df = 3)2","L.Area S2",-6.02670951486789,2.68742939709357,0.0249254940260791,3735
+"historical","Dozers","splines::ns(L1.area, df = 3)3","L.Area S3",-2.31791825749973,4.52882487439373,0.608780838359326,3735
+"historical","Dozers","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.0747556493764245,0.291043394868754,0.797291510665831,3735
+"historical","Dozers","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.985292802691991,0.974316197990581,0.311889154863674,3735
+"historical","Dozers","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.035981743876273,0.0534982412024412,0.501215756543839,3735
+"historical","Dozers","doy_cos:gaccEB","GACC EB x DOY",0.132511504012582,0.0979062024078916,0.175910757622296,3735
+"historical","Dozers","doy_cos:gaccNO","GACC NO x DOY",0.991764148680922,0.854453074918925,0.245763700650428,3735
+"historical","Dozers","doy_cos:gaccNR","GACC NR x DOY",0.0465107307131149,0.0482623909160312,0.335193604991486,3735
+"historical","Dozers","doy_cos:gaccNW","GACC NW x DOY",0.0660215805827045,0.145942626885483,0.650994980897186,3735
+"historical","Dozers","doy_cos:gaccRM","GACC RM x DOY",0.122797537061646,0.187644654580364,0.512844265611326,3735
+"historical","Dozers","doy_cos:gaccSO","GACC SO x DOY",0.0163076346252498,0.441828619342789,0.970557235026069,3735
+"historical","Dozers","doy_cos:gaccSW","GACC SW x DOY",-0.0757206503030976,0.0778293447783874,0.330599934592182,3735
+"historical","Dozers","doy_cos:gaccWB","GACC WB x DOY",0.158616366920782,0.234152206387148,0.498147695244904,3735
+"historical","Type_1_Crews","growth_potentialHigh","Growth Potential (High)",1.48892734142617,0.426054717698839,0.000474620257459073,3735
+"historical","Type_1_Crews","growth_potentialLow","Growth Potential (Low)",-0.55778770195672,0.413704578841158,0.177569824794464,3735
+"historical","Type_1_Crews","evac_potential","Potential Evacuation",-0.207196787544549,0.625693675089514,0.740533205152621,3735
+"historical","Type_1_Crews","L1.growth","Lagged Growth",0.0389858673458425,0.0304814388172604,0.200895818608943,3735
+"historical","Type_1_Crews","L1.evac","L.Evacuation",-0.462277879948666,0.605062076473958,0.444856946992138,3735
+"historical","Type_1_Crews","terrainHigh","Inaccessibility (High)",0.428851162337899,0.801832413439708,0.592761264577336,3735
+"historical","Type_1_Crews","terrainLow","Inaccessibility (Low)",0.558127038314164,1.4222386011113,0.694741591237279,3735
+"historical","Type_1_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-7.99499575596565,3.6728271862275,0.0294957869995602,3735
+"historical","Type_1_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",-5.01906851731539,7.38736613864707,0.496876564397055,3735
+"historical","Type_1_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",6.70148706555748,16.7692818338499,0.689429980823532,3735
+"historical","Type_1_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.365775071741985,0.675823422584169,0.58834991785109,3735
+"historical","Type_1_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.682504317069669,1.49887010442105,0.648860428537116,3735
+"historical","Type_1_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.135042382511698,0.118172841952499,0.253141112624438,3735
+"historical","Type_1_Crews","doy_cos:gaccEB","GACC EB x DOY",0.192126191956261,0.129816382815427,0.138877470490976,3735
+"historical","Type_1_Crews","doy_cos:gaccNO","GACC NO x DOY",1.01952225637906,1.02098782633466,0.318005676868408,3735
+"historical","Type_1_Crews","doy_cos:gaccNR","GACC NR x DOY",0.00763906191805356,0.110192226784807,0.944731029083667,3735
+"historical","Type_1_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.0140358547311312,0.154713733604065,0.927713923793506,3735
+"historical","Type_1_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.0819663217270149,0.184299072072417,0.65650313962374,3735
+"historical","Type_1_Crews","doy_cos:gaccSO","GACC SO x DOY",0.324039327977155,1.04252110937223,0.755935337403579,3735
+"historical","Type_1_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.178066638204696,0.14721350597965,0.226439768712714,3735
+"historical","Type_1_Crews","doy_cos:gaccWB","GACC WB x DOY",0.379442960726862,0.507976572966313,0.455082026378116,3735
+"historical","Type_2_Crews","growth_potentialHigh","Growth Potential (High)",0.216045432930934,0.137701935856578,0.116663007288586,3735
+"historical","Type_2_Crews","growth_potentialLow","Growth Potential (Low)",-0.192219939790083,0.0972712492586591,0.0481408633162234,3735
+"historical","Type_2_Crews","evac_potential","Potential Evacuation",-0.25925413178443,0.171184419136529,0.12990598929346,3735
+"historical","Type_2_Crews","L1.growth","Lagged Growth",0.0266319297044034,0.0133183108200164,0.0455383184818061,3735
+"historical","Type_2_Crews","L1.evac","L.Evacuation",0.215630916903144,0.210247851281312,0.305078551207551,3735
+"historical","Type_2_Crews","terrainHigh","Inaccessibility (High)",0.176581450759178,0.292027960005504,0.545396227610691,3735
+"historical","Type_2_Crews","terrainLow","Inaccessibility (Low)",0.275255109895531,0.315500048166916,0.382967958573012,3735
+"historical","Type_2_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-5.1041255751056,1.81462379546748,0.00491162470877041,3735
+"historical","Type_2_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",0.922774055725803,2.7305643218653,0.735406430366833,3735
+"historical","Type_2_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",9.121908796902,6.21558784180483,0.142216752570562,3735
+"historical","Type_2_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.502885505718669,0.237491185022896,0.0342181773170002,3735
+"historical","Type_2_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.522370384412047,0.398954482149561,0.190416385896488,3735
+"historical","Type_2_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",-0.0067563210516998,0.0251848949348452,0.788492435249431,3735
+"historical","Type_2_Crews","doy_cos:gaccEB","GACC EB x DOY",0.142419535314261,0.114633669976348,0.214093314406282,3735
+"historical","Type_2_Crews","doy_cos:gaccNO","GACC NO x DOY",0.231892710630362,0.202362044459141,0.251824172159366,3735
+"historical","Type_2_Crews","doy_cos:gaccNR","GACC NR x DOY",-0.157468055222197,0.116690654915746,0.177192880072035,3735
+"historical","Type_2_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.153800107801519,0.198745424422697,0.439016640406639,3735
+"historical","Type_2_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.217768207243942,0.153256479455402,0.155334306808577,3735
+"historical","Type_2_Crews","doy_cos:gaccSO","GACC SO x DOY",0.388273302701883,0.321484396818108,0.227142813902525,3735
+"historical","Type_2_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.095386426726009,0.0838263981797149,0.255160406772098,3735
+"historical","Type_2_Crews","doy_cos:gaccWB","GACC WB x DOY",0.0414487263773397,0.286139110888587,0.88482523093325,3735
+"historical","VLAT","growth_potentialHigh","Growth Potential (High)",0.124837820432784,0.0391874216901312,0.00144423980948245,3735
+"historical","VLAT","growth_potentialLow","Growth Potential (Low)",-0.128578833809008,0.0595550882555282,0.0308509508089796,3735
+"historical","VLAT","evac_potential","Potential Evacuation",0.0122863801852452,0.0566164693460234,0.82819999879842,3735
+"historical","VLAT","L1.growth","Lagged Growth",-0.00111769574130548,0.00300818884343686,0.710227135835477,3735
+"historical","VLAT","L1.evac","L.Evacuation",-0.0132789043408339,0.0486904533064653,0.785067766146032,3735
+"historical","VLAT","terrainHigh","Inaccessibility (High)",-0.018437144614775,0.0844030343194193,0.82708495667152,3735
+"historical","VLAT","terrainLow","Inaccessibility (Low)",0.0964334365174561,0.102576646439349,0.347160612736556,3735
+"historical","VLAT","splines::ns(L1.area, df = 3)1","L.Area S1",0.0439127630911479,0.436588258166489,0.919882571795894,3735
+"historical","VLAT","splines::ns(L1.area, df = 3)2","L.Area S2",-0.306397493194046,0.581949070395484,0.59853929121383,3735
+"historical","VLAT","splines::ns(L1.area, df = 3)3","L.Area S3",-0.706438949679719,1.34101233538504,0.598335770851585,3735
+"historical","VLAT","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.000364610890828171,0.0686579384555733,0.995762820153937,3735
+"historical","VLAT","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.0231349222897592,0.114086293219753,0.83930353947583,3735
+"historical","VLAT","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0100249304047924,0.00692995699027816,0.148006777367593,3735
+"historical","VLAT","doy_cos:gaccEB","GACC EB x DOY",-0.00138643507894881,0.0165227063738264,0.933127277189394,3735
+"historical","VLAT","doy_cos:gaccNO","GACC NO x DOY",0.0890974492081188,0.142841581117069,0.532791721142515,3735
+"historical","VLAT","doy_cos:gaccNR","GACC NR x DOY",-0.000352515775847659,0.00514286659415506,0.945352111324035,3735
+"historical","VLAT","doy_cos:gaccNW","GACC NW x DOY",-0.00178641211488044,0.0217400839398563,0.934510453265156,3735
+"historical","VLAT","doy_cos:gaccRM","GACC RM x DOY",-0.00580433214642723,0.0116447620929605,0.618166873436437,3735
+"historical","VLAT","doy_cos:gaccSO","GACC SO x DOY",-0.00954262581937387,0.0846173974776349,0.910209887008706,3735
+"historical","VLAT","doy_cos:gaccSW","GACC SW x DOY",0.0358887874914759,0.0264445669064836,0.174739037884275,3735
+"historical","VLAT","doy_cos:gaccWB","GACC WB x DOY",0.169511467654785,0.141926064442719,0.232335376702317,3735
+"historical","T2_4_Airtanker","growth_potentialHigh","Growth Potential (High)",1.92362604872862,0.337273764190174,1.17402405522765e-08,3735
+"historical","T2_4_Airtanker","growth_potentialLow","Growth Potential (Low)",-1.24830738077551,0.346543728776364,0.000315579031705807,3735
+"historical","T2_4_Airtanker","evac_potential","Potential Evacuation",-0.0138843556377373,0.445371204774581,0.975130141480499,3735
+"historical","T2_4_Airtanker","L1.growth","Lagged Growth",0.0669305634919088,0.0336466691492622,0.0466771342175281,3735
+"historical","T2_4_Airtanker","L1.evac","L.Evacuation",0.484411108086057,0.339214740501339,0.153281287382654,3735
+"historical","T2_4_Airtanker","terrainHigh","Inaccessibility (High)",0.00261099880203048,0.654065677380693,0.99681489157526,3735
+"historical","T2_4_Airtanker","terrainLow","Inaccessibility (Low)",0.37303049448256,1.44818663174846,0.796727558683825,3735
+"historical","T2_4_Airtanker","splines::ns(L1.area, df = 3)1","L.Area S1",-7.34065254413927,3.38082119756025,0.0299112847977513,3735
+"historical","T2_4_Airtanker","splines::ns(L1.area, df = 3)2","L.Area S2",-3.51572395439862,7.29766170993024,0.62997620922733,3735
+"historical","T2_4_Airtanker","splines::ns(L1.area, df = 3)3","L.Area S3",7.2937541593659,16.2617658855509,0.653776760805547,3735
+"historical","T2_4_Airtanker","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.160856773850207,0.495328505805241,0.745372059437137,3735
+"historical","T2_4_Airtanker","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.344882573000007,0.826076533019237,0.676316601327212,3735
+"historical","T2_4_Airtanker","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0146831069134161,0.0397873939303552,0.71209852724747,3735
+"historical","T2_4_Airtanker","doy_cos:gaccEB","GACC EB x DOY",0.219610836072491,0.149409230362515,0.141599340007904,3735
+"historical","T2_4_Airtanker","doy_cos:gaccNO","GACC NO x DOY",0.62141366470788,0.61689408528618,0.313777973181793,3735
+"historical","T2_4_Airtanker","doy_cos:gaccNR","GACC NR x DOY",0.0394151938974533,0.140837203736515,0.779582225253734,3735
+"historical","T2_4_Airtanker","doy_cos:gaccNW","GACC NW x DOY",-0.290889511454155,0.264695318777324,0.271785606029063,3735
+"historical","T2_4_Airtanker","doy_cos:gaccRM","GACC RM x DOY",0.352240969529013,0.310764216323314,0.257018211249875,3735
+"historical","T2_4_Airtanker","doy_cos:gaccSO","GACC SO x DOY",0.282523092215267,0.366966296908276,0.441366100272744,3735
+"historical","T2_4_Airtanker","doy_cos:gaccSW","GACC SW x DOY",0.3645986818577,0.252726188024078,0.149115470103723,3735
+"historical","T2_4_Airtanker","doy_cos:gaccWB","GACC WB x DOY",-0.548503181756805,0.44965458022958,0.222528453373421,3735
+"historical","Helicopters","growth_potentialHigh","Growth Potential (High)",0.544919376596461,0.132225038374683,3.76983885756038e-05,3735
+"historical","Helicopters","growth_potentialLow","Growth Potential (Low)",-0.253749324651548,0.125642490549069,0.0434234486504712,3735
+"historical","Helicopters","evac_potential","Potential Evacuation",-0.0819122518333221,0.173617065086084,0.637070700006848,3735
+"historical","Helicopters","L1.growth","Lagged Growth",0.0259377138947909,0.0119127529294579,0.0294577096103705,3735
+"historical","Helicopters","L1.evac","L.Evacuation",-0.136807998499709,0.15816106444985,0.387043377389495,3735
+"historical","Helicopters","terrainHigh","Inaccessibility (High)",0.432990685970356,0.399166763532935,0.278038456901126,3735
+"historical","Helicopters","terrainLow","Inaccessibility (Low)",0.369984342065001,0.484833763820278,0.445394293093459,3735
+"historical","Helicopters","splines::ns(L1.area, df = 3)1","L.Area S1",-3.34755749683199,1.42730067464519,0.0190078732698013,3735
+"historical","Helicopters","splines::ns(L1.area, df = 3)2","L.Area S2",-4.51829167025052,2.80054386354214,0.106665835651841,3735
+"historical","Helicopters","splines::ns(L1.area, df = 3)3","L.Area S3",-2.0737074624459,6.35066634212982,0.744020491069042,3735
+"historical","Helicopters","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.0278982647447042,0.206975680665425,0.892777863827154,3735
+"historical","Helicopters","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.126226588009717,0.33580971250631,0.707000722621676,3735
+"historical","Helicopters","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0110552842460108,0.0162256552168976,0.495652623260027,3735
+"historical","Helicopters","doy_cos:gaccEB","GACC EB x DOY",0.0326607903848753,0.093266984227333,0.72619912689489,3735
+"historical","Helicopters","doy_cos:gaccNO","GACC NO x DOY",-0.0935914508273614,0.24579697622663,0.703375925971401,3735
+"historical","Helicopters","doy_cos:gaccNR","GACC NR x DOY",0.000732080256039657,0.0789978094800204,0.992606033294264,3735
+"historical","Helicopters","doy_cos:gaccNW","GACC NW x DOY",0.0344232852709702,0.13699169213144,0.80159756424588,3735
+"historical","Helicopters","doy_cos:gaccRM","GACC RM x DOY",-0.127064175913484,0.123360695909999,0.302999886849934,3735
+"historical","Helicopters","doy_cos:gaccSO","GACC SO x DOY",0.0935144898792119,0.216660311967593,0.666019076019751,3735
+"historical","Helicopters","doy_cos:gaccSW","GACC SW x DOY",0.084428749200681,0.0666010641971263,0.204912721169834,3735
+"historical","Helicopters","doy_cos:gaccWB","GACC WB x DOY",-0.107264083393295,0.302816492515608,0.723172963456106,3735
+"legacy","Table4_1","growth_potentialHigh","Growth Potential (High)",10.4664239092478,2.22362960712896,2.51500165912548e-06,3763
+"legacy","Table4_1","growth_potentialLow","Growth Potential (Low)",-6.46501269168572,2.99303718884739,0.0307713152252909,3763
+"legacy","Table4_1","L1.growth","Lagged Growth",0.577156489903634,0.40397343464914,0.15309073134614,3763
+"legacy","Table4_1","terrainHigh","Inaccessibility (High)",1.22060259755834,5.39969832411251,0.821162418249217,3763
+"legacy","Table4_1","terrainLow","Inaccessibility (Low)",4.43533347114728,8.44719535596156,0.599537442872712,3763
+"legacy","Table4_1","splines::ns(L1.area, df = 3)1","L.Area S1",-91.0759022106985,35.7483278780459,0.0108436656592516,3763
+"legacy","Table4_1","splines::ns(L1.area, df = 3)2","L.Area S2",-36.0628427539867,47.2498659636923,0.445322106699285,3763
+"legacy","Table4_1","splines::ns(L1.area, df = 3)3","L.Area S3",79.3204525787828,102.386900456598,0.438509326611197,3763
+"legacy","Table4_1","doy_cos:gaccEB","GACC EB x DOY",0.89332188381009,0.865607371546735,0.30206395834987,3763
+"legacy","Table4_1","doy_cos:gaccNO","GACC NO x DOY",8.75166054253496,7.16232232734517,0.221744447940367,3763
+"legacy","Table4_1","doy_cos:gaccNR","GACC NR x DOY",0.263158767348077,0.585246300434674,0.652959418025316,3763
+"legacy","Table4_1","doy_cos:gaccNW","GACC NW x DOY",-0.556299769567944,1.01615834713715,0.58406698817713,3763
+"legacy","Table4_1","doy_cos:gaccRM","GACC RM x DOY",-0.610011957861668,1.17558967240745,0.603831381344416,3763
+"legacy","Table4_1","doy_cos:gaccSO","GACC SO x DOY",0.0634835639329897,6.12607758239403,0.99173179766712,3763
+"legacy","Table4_1","doy_cos:gaccSW","GACC SW x DOY",0.00440681402645534,0.802934435342639,0.995620923618432,3763
+"legacy","Table4_1","doy_cos:gaccWB","GACC WB x DOY",1.17263477713695,2.89798506850983,0.685743648619847,3763
+"legacy","Table4_2","growth_potentialHigh","Growth Potential (High)",10.2183871915811,2.52506666085045,5.19271841530612e-05,3763
+"legacy","Table4_2","growth_potentialLow","Growth Potential (Low)",-5.52585497742355,2.38583400813788,0.0205522411861601,3763
+"legacy","Table4_2","evac_potential","Potential Evacuation",-0.101693674099622,3.30557460649226,0.975457514970785,3763
+"legacy","Table4_2","L1.growth","Lagged Growth",0.344991163936917,0.192599595782767,0.0732555693925998,3763
+"legacy","Table4_2","L1.evac","L.Evacuation",-1.99513406597839,3.98950597125936,0.61700782001488,3763
+"legacy","Table4_2","terrainHigh","Inaccessibility (High)",0.838565489664513,5.52586613997046,0.879381935197643,3763
+"legacy","Table4_2","terrainLow","Inaccessibility (Low)",3.72971659740414,8.49575774882112,0.660654803205016,3763
+"legacy","Table4_2","splines::ns(L1.area, df = 3)1","L.Area S1",-90.2913926602501,36.0504499027923,0.0122595368988495,3763
+"legacy","Table4_2","splines::ns(L1.area, df = 3)2","L.Area S2",-36.9851397047961,47.0196432884393,0.431522432007752,3763
+"legacy","Table4_2","splines::ns(L1.area, df = 3)3","L.Area S3",75.5175384462853,102.0551647269,0.459319516631984,3763
+"legacy","Table4_2","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.437660122292128,3.85530371625814,0.90961706495923,3763
+"legacy","Table4_2","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-8.62238766499505,12.6251012721671,0.494634696253218,3763
+"legacy","Table4_2","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.38683368655466,0.598767278281094,0.518246881405718,3763
+"legacy","Table4_2","doy_cos:gaccEB","GACC EB x DOY",0.965374503591287,0.902747828427592,0.284901453882541,3763
+"legacy","Table4_2","doy_cos:gaccNO","GACC NO x DOY",8.76518299547247,7.13194026040127,0.219070312201643,3763
+"legacy","Table4_2","doy_cos:gaccNR","GACC NR x DOY",0.245431778102535,0.593321463962437,0.679125074082582,3763
+"legacy","Table4_2","doy_cos:gaccNW","GACC NW x DOY",-0.540397794369762,1.04415572442015,0.604775617247459,3763
+"legacy","Table4_2","doy_cos:gaccRM","GACC RM x DOY",-0.65822572550709,1.15966874840411,0.570307928460174,3763
+"legacy","Table4_2","doy_cos:gaccSO","GACC SO x DOY",0.0885167294951964,6.15904998702407,0.988533345115341,3763
+"legacy","Table4_2","doy_cos:gaccSW","GACC SW x DOY",-0.058539851990782,0.820541780297038,0.943124831773644,3763
+"legacy","Table4_2","doy_cos:gaccWB","GACC WB x DOY",1.42655126527279,2.94235477525751,0.627794674005299,3763
+"legacy","Table4_3","growth_potentialHigh","Growth Potential (High)",7.2178461910247,2.37765493785286,0.00239978309884025,3763
+"legacy","Table4_3","growth_potentialLow","Growth Potential (Low)",-1.97658891752108,2.13957041580092,0.355577369027737,3763
+"legacy","Table4_3","evac_potential","Potential Evacuation",-1.37525639666138,3.18830650761444,0.666218372496651,3763
+"legacy","Table4_3","L1.growth","Lagged Growth",0.481352706741829,0.219700093080517,0.0284551513856325,3763
+"legacy","Table4_3","L1.evac","L.Evacuation",-2.40298193592694,4.21326576596243,0.568449057110131,3763
+"legacy","Table4_3","terrainHigh","Inaccessibility (High)",-0.545485911391156,5.03265328556313,0.913686865698717,3763
+"legacy","Table4_3","terrainLow","Inaccessibility (Low)",3.70461964215556,6.12709205276409,0.545425305354702,3763
+"legacy","Table4_3","splines::ns(L1.area, df = 3)1","L.Area S1",-112.604439104821,43.7236742000882,0.010013422937395,3763
+"legacy","Table4_3","splines::ns(L1.area, df = 3)2","L.Area S2",-33.9030001122236,43.4570015010669,0.435302312668782,3763
+"legacy","Table4_3","splines::ns(L1.area, df = 3)3","L.Area S3",70.8560882119706,88.3796680129833,0.422712713125071,3763
+"legacy","Table4_3","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",2.21530492413002,3.69073322583969,0.548350052321238,3763
+"legacy","Table4_3","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-11.9252339729489,12.3658835346459,0.334862610693167,3763
+"legacy","Table4_3","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.310047472110831,0.606293278362711,0.609083593202485,3763
+"legacy","Table4_3","doy_cos:gaccEB","GACC EB x DOY",0.506273509202153,1.12417714805686,0.652457879581081,3763
+"legacy","Table4_3","doy_cos:gaccNO","GACC NO x DOY",8.591543803797,6.28516330427528,0.171638992008865,3763
+"legacy","Table4_3","doy_cos:gaccNR","GACC NR x DOY",0.0775174719299023,0.725923788859464,0.914959875407052,3763
+"legacy","Table4_3","doy_cos:gaccNW","GACC NW x DOY",-0.747250506079108,1.56126953150562,0.632210955046887,3763
+"legacy","Table4_3","doy_cos:gaccRM","GACC RM x DOY",-1.65989781130714,1.22368479467932,0.174948089783989,3763
+"legacy","Table4_3","doy_cos:gaccSO","GACC SO x DOY",-0.804582756216724,5.91446206277482,0.89179242128154,3763
+"legacy","Table4_3","doy_cos:gaccSW","GACC SW x DOY",-1.19881641341701,0.955986750795095,0.209838572970992,3763
+"legacy","Table4_3","doy_cos:gaccWB","GACC WB x DOY",2.80334995555433,3.46333811749908,0.418264500999784,3763
+"legacy","Table4_4","growth_potentialHigh","Growth Potential (High)",7.81158902804064,2.72430198781808,0.00413895333601904,3763
+"legacy","Table4_4","growth_potentialLow","Growth Potential (Low)",-2.4223630696796,2.66452164857274,0.36328814371586,3763
+"legacy","Table4_4","evac_potential","Potential Evacuation",-1.12559298443648,3.89659938070959,0.77268433404408,3763
+"legacy","Table4_4","L1.growth","Lagged Growth",0.430206200572628,0.227682033524142,0.0588242758560728,3763
+"legacy","Table4_4","L1.evac","L.Evacuation",-3.92284416762893,4.76870078941399,0.410722269777234,3763
+"legacy","Table4_4","terrainHigh","Inaccessibility (High)",-0.96448238835596,8.20260070749966,0.906398462963089,3763
+"legacy","Table4_4","terrainLow","Inaccessibility (Low)",4.11242668420781,9.67268849597154,0.670721062944811,3763
+"legacy","Table4_4","splines::ns(L1.area, df = 3)1","L.Area S1",-140.962122753482,61.6723694262345,0.0222741049982276,3763
+"legacy","Table4_4","splines::ns(L1.area, df = 3)2","L.Area S2",-42.5582676076656,59.0636106170653,0.471186603608832,3763
+"legacy","Table4_4","splines::ns(L1.area, df = 3)3","L.Area S3",91.1749913359823,103.028757420706,0.376185209125226,3763
+"legacy","Table4_4","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.764406248027811,4.49918641445974,0.865089746671749,3763
+"legacy","Table4_4","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-5.92749403173926,12.7624519307538,0.642326876746262,3763
+"legacy","Table4_4","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.326613244775243,0.67257566488414,0.627239723573102,3763
+"legacy","Table4_4","doy_cos:gaccEB","GACC EB x DOY",0.290350235706583,1.37246080417998,0.832454622890913,3763
+"legacy","Table4_4","doy_cos:gaccNO","GACC NO x DOY",2.70974116149602,6.39324771844952,0.671679418472724,3763
+"legacy","Table4_4","doy_cos:gaccNR","GACC NR x DOY",0.357285113919943,0.766999551454233,0.641343057401169,3763
+"legacy","Table4_4","doy_cos:gaccNW","GACC NW x DOY",-0.993201687048306,1.85513184654573,0.592386670232922,3763
+"legacy","Table4_4","doy_cos:gaccRM","GACC RM x DOY",-2.26990035984917,1.4497790457258,0.117421886111973,3763
+"legacy","Table4_4","doy_cos:gaccSO","GACC SO x DOY",-2.29685564144653,6.74893899689664,0.733609228679305,3763
+"legacy","Table4_4","doy_cos:gaccSW","GACC SW x DOY",-0.818432316790038,1.09388458472484,0.454346218359399,3763
+"legacy","Table4_4","doy_cos:gaccWB","GACC WB x DOY",1.052420053542,4.37212943226455,0.809779040912876,3763
+"legacy","Wildland_Engines","growth_potentialHigh","Growth Potential (High)",4.69497302423322,1.30140417430291,0.000309017442127625,3763
+"legacy","Wildland_Engines","growth_potentialLow","Growth Potential (Low)",-1.61667588586534,1.16311994940475,0.164544762732979,3763
+"legacy","Wildland_Engines","evac_potential","Potential Evacuation",0.388949935839158,1.77953242670439,0.826986104144958,3763
+"legacy","Wildland_Engines","L1.growth","Lagged Growth",0.184144471406745,0.10249500747399,0.0723961359208323,3763
+"legacy","Wildland_Engines","L1.evac","L.Evacuation",-1.55151911041272,2.45013342028049,0.526577828094336,3763
+"legacy","Wildland_Engines","terrainHigh","Inaccessibility (High)",-1.00500209700425,4.10486240080406,0.806586435098161,3763
+"legacy","Wildland_Engines","terrainLow","Inaccessibility (Low)",-0.0166174291856023,5.33936338714524,0.997516788459264,3763
+"legacy","Wildland_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-42.5308367962647,15.4124071033422,0.00578864455337808,3763
+"legacy","Wildland_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-11.300697663579,21.0665690357585,0.591662778759324,3763
+"legacy","Wildland_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",50.1534414212179,46.9031652264671,0.284935597367856,3763
+"legacy","Wildland_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.00183684814800766,2.13943104592267,0.999314961517189,3763
+"legacy","Wildland_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-4.27714574098603,6.02043605357165,0.477432648812314,3763
+"legacy","Wildland_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.181435238604838,0.381281180282321,0.634176407767805,3763
+"legacy","Wildland_Engines","doy_cos:gaccEB","GACC EB x DOY",0.07733671415612,0.499156357493508,0.876872680968339,3763
+"legacy","Wildland_Engines","doy_cos:gaccNO","GACC NO x DOY",4.15026990795782,4.56526132469992,0.363298401906728,3763
+"legacy","Wildland_Engines","doy_cos:gaccNR","GACC NR x DOY",0.264397519586275,0.33428391920837,0.428980756890483,3763
+"legacy","Wildland_Engines","doy_cos:gaccNW","GACC NW x DOY",-0.309236297659445,0.685372960114523,0.651849596640678,3763
+"legacy","Wildland_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.689719846414681,0.693275814082987,0.319799118431012,3763
+"legacy","Wildland_Engines","doy_cos:gaccSO","GACC SO x DOY",0.865920431576072,3.47883097508438,0.803429373957972,3763
+"legacy","Wildland_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.150679212191519,0.415638464093052,0.716959964271414,3763
+"legacy","Wildland_Engines","doy_cos:gaccWB","GACC WB x DOY",1.28101448283286,1.51434133870691,0.397596321726132,3763
+"legacy","Structure_Engines","growth_potentialHigh","Growth Potential (High)",0.627165427392526,0.68137226344551,0.357340465666515,3763
+"legacy","Structure_Engines","growth_potentialLow","Growth Potential (Low)",-1.26190210470308,0.74278539969302,0.0893420891660817,3763
+"legacy","Structure_Engines","evac_potential","Potential Evacuation",0.202004091012211,0.849206843894053,0.811978947591308,3763
+"legacy","Structure_Engines","L1.growth","Lagged Growth",-0.00965202117533907,0.0535617914319032,0.856992827035923,3763
+"legacy","Structure_Engines","L1.evac","L.Evacuation",0.194230226903029,1.15726729676876,0.866712903367812,3763
+"legacy","Structure_Engines","terrainHigh","Inaccessibility (High)",0.281655701140292,0.648308092010579,0.663963655052737,3763
+"legacy","Structure_Engines","terrainLow","Inaccessibility (Low)",1.28656795610315,1.27459166010734,0.312784668491087,3763
+"legacy","Structure_Engines","splines::ns(L1.area, df = 3)1","L.Area S1",-17.4317377139423,14.3575310172009,0.224702644221364,3763
+"legacy","Structure_Engines","splines::ns(L1.area, df = 3)2","L.Area S2",-7.09922437627082,7.31005638939475,0.331469289494714,3763
+"legacy","Structure_Engines","splines::ns(L1.area, df = 3)3","L.Area S3",7.12597195576927,11.0264761798582,0.518110902323165,3763
+"legacy","Structure_Engines","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.319229024195669,1.01641652757875,0.753465568593462,3763
+"legacy","Structure_Engines","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-3.71210815956903,4.71398582173584,0.431008553051833,3763
+"legacy","Structure_Engines","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.00505903543901586,0.0947137126939713,0.95740207439497,3763
+"legacy","Structure_Engines","doy_cos:gaccEB","GACC EB x DOY",0.15751715322665,0.162173158013795,0.331403928289457,3763
+"legacy","Structure_Engines","doy_cos:gaccNO","GACC NO x DOY",1.74928089636716,1.17307414183678,0.135910618950155,3763
+"legacy","Structure_Engines","doy_cos:gaccNR","GACC NR x DOY",0.0431020881105695,0.116041822048726,0.710312958040473,3763
+"legacy","Structure_Engines","doy_cos:gaccNW","GACC NW x DOY",0.128842134572061,0.154371172821214,0.403928536977149,3763
+"legacy","Structure_Engines","doy_cos:gaccRM","GACC RM x DOY",-0.0102594125687528,0.137347749897175,0.940456097666829,3763
+"legacy","Structure_Engines","doy_cos:gaccSO","GACC SO x DOY",-2.24407285519466,2.75127559778973,0.414701401285502,3763
+"legacy","Structure_Engines","doy_cos:gaccSW","GACC SW x DOY",-0.0385811602001751,0.125088344313501,0.75775417088102,3763
+"legacy","Structure_Engines","doy_cos:gaccWB","GACC WB x DOY",0.049432151738832,0.46668118576458,0.915643648529372,3763
+"legacy","Dozers","growth_potentialHigh","Growth Potential (High)",0.5790324089109,0.237573252183159,0.0147982377193778,3763
+"legacy","Dozers","growth_potentialLow","Growth Potential (Low)",-0.266025676826701,0.197457288612549,0.177897536877968,3763
+"legacy","Dozers","evac_potential","Potential Evacuation",-0.142860843911691,0.248240915444724,0.564958101164186,3763
+"legacy","Dozers","L1.growth","Lagged Growth",0.0138373047542078,0.0173000147759382,0.423801463377664,3763
+"legacy","Dozers","L1.evac","L.Evacuation",-0.577381821234261,0.41372646682061,0.162845787155738,3763
+"legacy","Dozers","terrainHigh","Inaccessibility (High)",0.529470535316485,0.628501435467093,0.399545462730576,3763
+"legacy","Dozers","terrainLow","Inaccessibility (Low)",0.784020265648939,0.841153291131431,0.351296346681195,3763
+"legacy","Dozers","splines::ns(L1.area, df = 3)1","L.Area S1",-6.4116502591973,3.13330313601894,0.0407277407595487,3763
+"legacy","Dozers","splines::ns(L1.area, df = 3)2","L.Area S2",-6.07217751816047,2.71884585848782,0.0255248276434869,3763
+"legacy","Dozers","splines::ns(L1.area, df = 3)3","L.Area S3",-2.29007477690614,4.51918158802323,0.612333425160464,3763
+"legacy","Dozers","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.0767134522557485,0.290475986244584,0.791706194887902,3763
+"legacy","Dozers","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.993643652486471,0.981735212243923,0.311475903875676,3763
+"legacy","Dozers","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0358457552489959,0.0538523136337325,0.505647154478346,3763
+"legacy","Dozers","doy_cos:gaccEB","GACC EB x DOY",0.138097681221362,0.0996045941471376,0.165606806029123,3763
+"legacy","Dozers","doy_cos:gaccNO","GACC NO x DOY",0.994612245209804,0.85138757210629,0.242716019351494,3763
+"legacy","Dozers","doy_cos:gaccNR","GACC NR x DOY",0.0451242644196338,0.0486632427383892,0.353783173585956,3763
+"legacy","Dozers","doy_cos:gaccNW","GACC NW x DOY",0.0645110048367913,0.146610562388954,0.659925461658801,3763
+"legacy","Dozers","doy_cos:gaccRM","GACC RM x DOY",0.12309227059695,0.185799847104859,0.507651276572407,3763
+"legacy","Dozers","doy_cos:gaccSO","GACC SO x DOY",0.253919248755514,0.567842916446475,0.654756221331319,3763
+"legacy","Dozers","doy_cos:gaccSW","GACC SW x DOY",-0.0771546391788191,0.0799023520287423,0.334238561136222,3763
+"legacy","Dozers","doy_cos:gaccWB","GACC WB x DOY",0.157519180898252,0.234449142860091,0.50166690775564,3763
+"legacy","Type_1_Crews","growth_potentialHigh","Growth Potential (High)",1.48874401129381,0.425689454494347,0.000470074594801325,3763
+"legacy","Type_1_Crews","growth_potentialLow","Growth Potential (Low)",-0.558371198162081,0.414653755502854,0.178110297946573,3763
+"legacy","Type_1_Crews","evac_potential","Potential Evacuation",-0.194790768221915,0.624045976872319,0.754932841290553,3763
+"legacy","Type_1_Crews","L1.growth","Lagged Growth",0.0393498029464912,0.0305990039324526,0.198448948259211,3763
+"legacy","Type_1_Crews","L1.evac","L.Evacuation",-0.604473824213111,0.660388841077659,0.360018329911752,3763
+"legacy","Type_1_Crews","terrainHigh","Inaccessibility (High)",0.437344335984628,0.810947000721987,0.589679342672238,3763
+"legacy","Type_1_Crews","terrainLow","Inaccessibility (Low)",0.549674355881323,1.44276491915117,0.703213060689815,3763
+"legacy","Type_1_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-8.07496252973809,3.67771012005474,0.0281170375367663,3763
+"legacy","Type_1_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",-5.24129795426772,7.39815590129494,0.478659608144944,3763
+"legacy","Type_1_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",6.65709935288172,16.760834880943,0.691233367694516,3763
+"legacy","Type_1_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.345723748145242,0.673534407306574,0.60774300330048,3763
+"legacy","Type_1_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.694484584339314,1.5027309682971,0.643974964840577,3763
+"legacy","Type_1_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.133070184210111,0.117889414153261,0.258994333565255,3763
+"legacy","Type_1_Crews","doy_cos:gaccEB","GACC EB x DOY",0.20108840325912,0.1323448915421,0.128655046732777,3763
+"legacy","Type_1_Crews","doy_cos:gaccNO","GACC NO x DOY",1.02047825977069,1.01728452311013,0.315793571980183,3763
+"legacy","Type_1_Crews","doy_cos:gaccNR","GACC NR x DOY",0.00893356921901477,0.112470325321357,0.936690244833333,3763
+"legacy","Type_1_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.0159407338101386,0.152511676983099,0.916755587505697,3763
+"legacy","Type_1_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.0834500929529744,0.184166228445724,0.65045963087109,3763
+"legacy","Type_1_Crews","doy_cos:gaccSO","GACC SO x DOY",0.408059400438246,1.11107751982123,0.713421684098197,3763
+"legacy","Type_1_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.180221921086085,0.148983580492753,0.226403089667082,3763
+"legacy","Type_1_Crews","doy_cos:gaccWB","GACC WB x DOY",0.379316407463989,0.508601441561001,0.455786514716216,3763
+"legacy","Type_2_Crews","growth_potentialHigh","Growth Potential (High)",0.216545839391342,0.137390764087586,0.114995621143,3763
+"legacy","Type_2_Crews","growth_potentialLow","Growth Potential (Low)",-0.192335261822005,0.0970060711226459,0.0473994234572175,3763
+"legacy","Type_2_Crews","evac_potential","Potential Evacuation",-0.258641013294888,0.17060295346347,0.12950907272818,3763
+"legacy","Type_2_Crews","L1.growth","Lagged Growth",0.0265001929601831,0.0132799805359809,0.0459884414253719,3763
+"legacy","Type_2_Crews","L1.evac","L.Evacuation",0.211686184656585,0.209652643409707,0.312639246823638,3763
+"legacy","Type_2_Crews","terrainHigh","Inaccessibility (High)",0.178980560881619,0.290001620868544,0.537122008693584,3763
+"legacy","Type_2_Crews","terrainLow","Inaccessibility (Low)",0.277602390614112,0.313306460462501,0.375595397868513,3763
+"legacy","Type_2_Crews","splines::ns(L1.area, df = 3)1","L.Area S1",-5.11553633873455,1.81291416706856,0.00477668476642944,3763
+"legacy","Type_2_Crews","splines::ns(L1.area, df = 3)2","L.Area S2",0.931767590832136,2.72750199840982,0.732637337053216,3763
+"legacy","Type_2_Crews","splines::ns(L1.area, df = 3)3","L.Area S3",9.13922043063501,6.21133318145854,0.141188857147714,3763
+"legacy","Type_2_Crews","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.501673093522959,0.236563606362507,0.0339496716721509,3763
+"legacy","Type_2_Crews","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.521861665301166,0.397974368816616,0.189758231259854,3763
+"legacy","Type_2_Crews","L1.growth:L1.evac","Lagged Growth x L. Evacuation",-0.00648468114675831,0.0251363443387188,0.796422126617294,3763
+"legacy","Type_2_Crews","doy_cos:gaccEB","GACC EB x DOY",0.142296616278832,0.114439396097431,0.213711873417658,3763
+"legacy","Type_2_Crews","doy_cos:gaccNO","GACC NO x DOY",0.232101142166163,0.202001189564367,0.250552356632411,3763
+"legacy","Type_2_Crews","doy_cos:gaccNR","GACC NR x DOY",-0.156793258359286,0.116248984773139,0.177410535202866,3763
+"legacy","Type_2_Crews","doy_cos:gaccNW","GACC NW x DOY",-0.152370401660278,0.197827813377979,0.441171011257659,3763
+"legacy","Type_2_Crews","doy_cos:gaccRM","GACC RM x DOY",-0.221818945724636,0.153193307291748,0.147626111708302,3763
+"legacy","Type_2_Crews","doy_cos:gaccSO","GACC SO x DOY",0.386318052836351,0.31046826913893,0.213386344202091,3763
+"legacy","Type_2_Crews","doy_cos:gaccSW","GACC SW x DOY",-0.0954753770461817,0.0836609341453265,0.253779150446657,3763
+"legacy","Type_2_Crews","doy_cos:gaccWB","GACC WB x DOY",0.041411889375726,0.285615232340613,0.884717283190811,3763
+"legacy","VLAT","growth_potentialHigh","Growth Potential (High)",0.123065243982449,0.0390514626310265,0.00162511669651109,3763
+"legacy","VLAT","growth_potentialLow","Growth Potential (Low)",-0.127492314753533,0.0600837553023171,0.0338453055665471,3763
+"legacy","VLAT","evac_potential","Potential Evacuation",0.0133077856197251,0.0570219807555788,0.815466399972494,3763
+"legacy","VLAT","L1.growth","Lagged Growth",-0.000923224610141971,0.00301029832189149,0.759080298487608,3763
+"legacy","VLAT","L1.evac","L.Evacuation",-0.0130012672161756,0.0486094994441392,0.789112307827767,3763
+"legacy","VLAT","terrainHigh","Inaccessibility (High)",-0.0150635938797965,0.0831230920240136,0.856194640473365,3763
+"legacy","VLAT","terrainLow","Inaccessibility (Low)",0.0970608024984298,0.102433304240073,0.343357968781477,3763
+"legacy","VLAT","splines::ns(L1.area, df = 3)1","L.Area S1",0.0332908097170822,0.436710667450803,0.939235467880101,3763
+"legacy","VLAT","splines::ns(L1.area, df = 3)2","L.Area S2",-0.328624020351813,0.582419620594626,0.572591306958893,3763
+"legacy","VLAT","splines::ns(L1.area, df = 3)3","L.Area S3",-0.706010732567295,1.34041961414207,0.598395861924788,3763
+"legacy","VLAT","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.000130052916046291,0.0689462466164481,0.99849495574658,3763
+"legacy","VLAT","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.025515689475618,0.112976986288759,0.821319208565776,3763
+"legacy","VLAT","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.00999061298652333,0.00698010587208071,0.152344768939909,3763
+"legacy","VLAT","doy_cos:gaccEB","GACC EB x DOY",-0.00102761992000609,0.0164918684715602,0.950315405194522,3763
+"legacy","VLAT","doy_cos:gaccNO","GACC NO x DOY",0.0887651535881325,0.142645665156911,0.533759571568508,3763
+"legacy","VLAT","doy_cos:gaccNR","GACC NR x DOY",-8.25070979648127e-05,0.00507727810105186,0.987034737692488,3763
+"legacy","VLAT","doy_cos:gaccNW","GACC NW x DOY",-0.00153877109210038,0.0216325741170389,0.943292596232769,3763
+"legacy","VLAT","doy_cos:gaccRM","GACC RM x DOY",-0.005922591903361,0.0116012706590254,0.609692567256601,3763
+"legacy","VLAT","doy_cos:gaccSO","GACC SO x DOY",-0.0586155305608349,0.127035357341742,0.64450365209709,3763
+"legacy","VLAT","doy_cos:gaccSW","GACC SW x DOY",0.0356428446599862,0.0263724806192266,0.176530014274202,3763
+"legacy","VLAT","doy_cos:gaccWB","GACC WB x DOY",0.169771969442098,0.141939562475754,0.231662874125718,3763
+"legacy","T2_4_Airtanker","growth_potentialHigh","Growth Potential (High)",1.93810122821975,0.337222961897979,9.07120381114893e-09,3763
+"legacy","T2_4_Airtanker","growth_potentialLow","Growth Potential (Low)",-1.25019212102917,0.344978426411608,0.00029011314640212,3763
+"legacy","T2_4_Airtanker","evac_potential","Potential Evacuation",-0.030667334713633,0.445280096328046,0.945091499338563,3763
+"legacy","T2_4_Airtanker","L1.growth","Lagged Growth",0.0662444428530533,0.0334680624409104,0.0477785183732155,3763
+"legacy","T2_4_Airtanker","L1.evac","L.Evacuation",0.489390517143691,0.34152566841237,0.151871030051365,3763
+"legacy","T2_4_Airtanker","terrainHigh","Inaccessibility (High)",0.000641683957264895,0.65029690948242,0.999212683265344,3763
+"legacy","T2_4_Airtanker","terrainLow","Inaccessibility (Low)",0.381661181191138,1.44919899865004,0.792273047314079,3763
+"legacy","T2_4_Airtanker","splines::ns(L1.area, df = 3)1","L.Area S1",-7.39877026747843,3.38816041420718,0.0289833368584103,3763
+"legacy","T2_4_Airtanker","splines::ns(L1.area, df = 3)2","L.Area S2",-3.39982550898369,7.31416193951126,0.642054806655636,3763
+"legacy","T2_4_Airtanker","splines::ns(L1.area, df = 3)3","L.Area S3",7.46568750181465,16.3052302018141,0.647045323495044,3763
+"legacy","T2_4_Airtanker","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.136035832971151,0.496007272489883,0.783883460821859,3763
+"legacy","T2_4_Airtanker","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.376167526772408,0.82600008579012,0.648815323207476,3763
+"legacy","T2_4_Airtanker","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0160686765961914,0.0397156365416705,0.685776555589163,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccEB","GACC EB x DOY",0.218163777625399,0.14908363768834,0.143367530110441,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccNO","GACC NO x DOY",0.622582301006611,0.615630246845934,0.311876416088308,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccNR","GACC NR x DOY",0.0401527766133921,0.140470633688976,0.774997122144371,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccNW","GACC NW x DOY",-0.28909176395665,0.263875488671997,0.273270821160078,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccRM","GACC RM x DOY",0.359173743257155,0.308604917901201,0.244479670470308,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccSO","GACC SO x DOY",0.355171227350982,0.383053601967065,0.353817380228701,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccSW","GACC SW x DOY",0.363813276225351,0.252222286658128,0.149180789105039,3763
+"legacy","T2_4_Airtanker","doy_cos:gaccWB","GACC WB x DOY",-0.54481605772923,0.448834292076639,0.224806240976209,3763
+"legacy","Helicopters","growth_potentialHigh","Growth Potential (High)",0.550760008157083,0.133094932601518,3.50195263854964e-05,3763
+"legacy","Helicopters","growth_potentialLow","Growth Potential (Low)",-0.252860414261662,0.125146224890188,0.0433295075878147,3763
+"legacy","Helicopters","evac_potential","Potential Evacuation",-0.0789955264286099,0.172910378928701,0.647772962082053,3763
+"legacy","Helicopters","L1.growth","Lagged Growth",0.0254901948017129,0.0118123459025101,0.030933411490395,3763
+"legacy","Helicopters","L1.evac","L.Evacuation",-0.144064971605448,0.160910946775517,0.370622087444906,3763
+"legacy","Helicopters","terrainHigh","Inaccessibility (High)",0.430538363268263,0.397732463197014,0.279038263043528,3763
+"legacy","Helicopters","terrainLow","Inaccessibility (Low)",0.369747074652655,0.482216137943542,0.443220487737011,3763
+"legacy","Helicopters","splines::ns(L1.area, df = 3)1","L.Area S1",-3.36118956461142,1.42887264930764,0.0186558796210997,3763
+"legacy","Helicopters","splines::ns(L1.area, df = 3)2","L.Area S2",-4.47506025401605,2.80358978326461,0.110446516669452,3763
+"legacy","Helicopters","splines::ns(L1.area, df = 3)3","L.Area S3",-2.02779670656289,6.36049202912925,0.749869612005102,3763
+"legacy","Helicopters","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.033152215529038,0.206289458250137,0.872323963753966,3763
+"legacy","Helicopters","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.131449590836586,0.335205567327897,0.694950189966878,3763
+"legacy","Helicopters","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0118488646157512,0.0161623308327425,0.46348763378855,3763
+"legacy","Helicopters","doy_cos:gaccEB","GACC EB x DOY",0.0319017777438109,0.0931311810473925,0.731939513701016,3763
+"legacy","Helicopters","doy_cos:gaccNO","GACC NO x DOY",-0.0929069105939222,0.245499189794748,0.705103161440394,3763
+"legacy","Helicopters","doy_cos:gaccNR","GACC NR x DOY",0.000597325610900659,0.0787463617831696,0.993947754518644,3763
+"legacy","Helicopters","doy_cos:gaccNW","GACC NW x DOY",0.0344270343999944,0.136395036508314,0.800726646338046,3763
+"legacy","Helicopters","doy_cos:gaccRM","GACC RM x DOY",-0.129320849796792,0.123739633464431,0.295974666895499,3763
+"legacy","Helicopters","doy_cos:gaccSO","GACC SO x DOY",0.121816754293523,0.214891206332836,0.570798156478637,3763
+"legacy","Helicopters","doy_cos:gaccSW","GACC SW x DOY",0.0841163368266604,0.0665534431374416,0.206268942069202,3763
+"legacy","Helicopters","doy_cos:gaccWB","GACC WB x DOY",-0.107098758749746,0.302327400523579,0.723153327106446,3763

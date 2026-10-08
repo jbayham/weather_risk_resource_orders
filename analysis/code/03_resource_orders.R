@@ -51,7 +51,7 @@ esttable(all.resources,
                         `*` = 0.1),
          digits = 2) %>%
   rownames_to_column(var = "Variable") %>%
-  write_csv(path="report/tables/need_formatting/03_growth_gp_all.csv")
+  write_csv(file="report/tables/need_formatting/03_growth_gp_all.csv")
 
 
 
@@ -98,7 +98,7 @@ esttable(results.lm,
                         `*` = 0.1),
          digits = 2) %>%
   rownames_to_column(var = "Variable") %>%
-  write_csv(path="report/tables/need_formatting/03_growth_gp_by_resource.csv")
+  write_csv(file="report/tables/need_formatting/03_growth_gp_by_resource.csv")
 
 
 save(results.lm,all.resources,file = "analysis/cache/results_resource_orders.Rdata")
@@ -113,4 +113,4 @@ for.summary <- orders.ds[-results.lm[[1]]$obsRemoved,] %>%
   mutate_at(vars(L1.evac,evac_potential),~factor(.,labels = c("No","Yes")))
 
 sum.stat <- my_skim(for.summary) 
-sum.stat %>% add_row(skim_type=data_rows(sum.stat)) %>% write_csv("report/tables/need_formatting/03_summary.csv")
+sum.stat %>% as_tibble() %>% add_row(skim_type=as.character(data_rows(sum.stat))) %>% write_csv("report/tables/need_formatting/03_summary.csv")

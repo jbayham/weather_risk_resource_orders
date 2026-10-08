@@ -41,8 +41,8 @@ output.growth <- map(lag.var.list,
       
       coeftest(lm.model,vcov=vcovCL(lm.model,cluster = growth.ds$ross_inc_id[-lm.model$na.action])) %>%
         tidy() %>%
-        add_row(term="Effron R2", estimate=PseudoR2(lm.model, which = "Effron")) %>%
-        write_csv(.,path = str_c("report/tables/need_formatting/01_growth_wx_",str_c(vars.cat$Var2,collapse = "_"),".csv"))
+        add_row(term="Efron R2", estimate=PseudoR2(lm.model, which = "Efron")) %>%
+        write_csv(.,file = str_c("report/tables/need_formatting/01_growth_wx_",str_c(vars.cat$Var2,collapse = "_"),".csv"))
       
       to.map <- read_csv("report/wx_names.csv",col_names = T) %>%
         mutate(var=str_c("L1.",abbr)) %>%
@@ -91,7 +91,7 @@ for.summary <- growth.ds[-output.growth[[1]]$na.action,] %>%
 
 sum.stat <- my_skim(for.summary) 
 
-sum.stat %>% add_row(skim_type=data_rows(sum.stat)) %>% write_csv("report/tables/need_formatting/01_summary.csv")
+sum.stat %>% as_tibble() %>% add_row(skim_type=as.character(data_rows(sum.stat))) %>% write_csv("report/tables/need_formatting/01_summary.csv")
 
 
 

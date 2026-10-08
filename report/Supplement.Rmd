@@ -1,300 +1,78 @@
 ---
-title: "Supplementary Material: Weather, Risk, and Resource Orders on Large Wildland Fires in the Western US"
-author: "Jude Bayham, Erin J. Belval, Matthew P. Thompson, David E. Calkin, Crystal S. Stonesifer and Christopher Dunn "
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-output: 
+title: "AI audit: regenerated supplementary results"
+output:
   html_document:
     toc: true
     toc_depth: 2
-    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
-
-#Packages
-library(tidyverse)
-library(lmtest)
-library(sandwich)
-library(stargazer)
-library(margins)
-library(knitr)
-library(readxl)
-library(kableExtra)
-
-options(knitr.kable.NA = '')
-
-#Data for growth model
-load("analysis/inputs/01_growth.Rdata")
-load("analysis/cache/results_growth.Rdata")
-
-load("analysis/inputs/03_orders.Rdata")
-load("analysis/cache/results_resource_orders.Rdata")
-
-#Name replacements
-var.names <- read_csv("report/var_names.csv")
-
-source("functions/analysis_functions.R")
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+fig <- function(path) knitr::include_graphics(normalizePath(path, mustWork=TRUE))
+tab <- function(f,caption) knitr::kable(read.csv(file.path("report/audit",f)),digits=4,caption=caption)
 ```
 
-# Introduction
+This is an **AI-assisted reproducibility audit**, not the published supplement or a revised manuscript. It uses the corrected conservative commander lookup and R ordered logits described in `audit/README.md`. Read the [published paper](https://doi.org/10.3390/f11020169) separately. Missing original raw inputs prevent validating extraction; the missing complexity input prevents regenerating the map. Neither is substituted here. Archived figures/tables elsewhere in the repository remain reference outputs.
 
-This document is the supplementary material for the manuscript "Weather, Risk, and Resource Orders on Large Wildland Fires in the Western US".  We provide more detail on the data used in the analysisas well as the complete regression tables and full set of figures from our analyses.
+## Data and sample coverage
 
-
-# Data
-
-This section provides additional information on the nature of the data used in the analysis and our processing steps.  
-
-
-## Outliers
-
-We remove outliers of weather and growth variables to reduce their potential influence on the regression results.  The following figure displays histograms of the weather variables (CFBX is not included because it is categorical) with omitted outliers indicated in red.
-
-
-<center>
 ```{r}
-include_graphics(path = "figures/outliers.png")
-```
-</center>
-## Summary Statistics
-
-The datasets used in each regression vary based on the missingness of the variables used in the analysis.  While the datasets vary in number of observations, they are all based on the same criteria: fires between 2007-2013 in the Western US.  Table S1 provides summary statistics of the core weather, fire size and growth, and resource order variables used in each regression model.  There are no significant differences between the means across the three datasets.  Therefore, using the larger datasets in models 1 and 2 simply provide more efficient estimates.   
-
-
-```{r,message=FALSE,warning=FALSE}
-sum.tab <- read_csv("report/tables/summ_stats.csv") %>%
-  rename_all(~str_replace_all(.,"_[:digit:]",""))
-
-sum.tab %>%
-  kable(caption = "Table S1 Summary Statistics used in each Model") %>%
-  kable_styling(bootstrap_options = c("condensed"),
-                full_width = F,position = "center") %>%
-  add_header_above(c(" " = 1, "Model 3: Resource Orders" = 5, "Model 1: Fire Growth" = 5, "Model 2: Growth Potential" = 5))
-  # footnote(general = "Observations: 14,366. *** p<0.01, ** p<0.05, * p<0.1 
-  #          Standard errors are clustered at the fire level and are in parentheses.  ",
-  #          general_title = "Notes: ")
-
+tab("model-coverage.csv","Sample and fixed-effect counts by data path; legacy is a diagnostic with duplicate rows")
+tab("commander_audit.csv","Conservative commander reconciliation: counts before order-model filtering")
+tab("S1-summary.csv","S1: freshly computed numeric summaries of estimation samples")
 ```
 
+Area/growth values use thousands of acres. `L1` denotes a one-period lag; current weather is `L0`. Growth-potential summaries use the ordered-logit sample; resource summaries use total-resource Model 1. Model-specific coverage appears above. The summaries do not establish equality of the samples' distributions.
 
-### Interactive Map of Fires in Dataset
-The following map depicts the location of fires in the dataset.  The point color and size indicate the incident complexity, a composite metric influenced by both fire size and values at risk.  Zoom in to see the individual fire locations in dense regions.  Click on a dot to see additional information about the fire including its name, final size, and growth potential over the course of the fire.
-```{r,out.width = "100%"}
-#leaflet map
-load("analysis/cache/map_for_image.Rdata")
-m
+## Outliers and principal components
+
+```{r, out.width='80%'}
+fig(c("report/audit/figures/outliers.png","report/audit/figures/PCA.png"))
 ```
 
-## Principal Components Analysis
+The PCA and outlier rules retain the source workflow. This audit does not validate raw database extraction or revisit the substantive choice of those rules.
 
-Data on the vegetation and topography are compiled based on Landfire Existing Vegetation Types (EVT) and the National Land Cover Database Vegetation Types.  Data were gathered from 2001 versions of both sources in order to limit confounding of fire changing vegetation in subsequent years.  For each fire, a 2km buffer around each ignition point was overlaid with the vegetation layers.  The number of hectares of each EVT subclass (22 categories) and NLCD vegetation class (17 categories) are calculated as well as their respective proportions of the area of the 2km buffer, generating 80 variables per fire.  
+## Fire growth: Table S2 and Figure 3 panels
 
-We also calculate several metrics from a digital elevation model.  Specifically, we calculate the mean, standard deviation, median, minimum, maximum, mode, range (max-min), and sum of elevation and slope.  We also calculate ruggedness defined as the ratio of actual surface area to slope-corrected surface area.
+Quasipoisson models retain the original formulas. Standard errors cluster on fire.
 
-These variables clearly capture redundant information that would cause multicollinearity in a regression model.  We conduct a Principal Components Analysis (PCA) to find the orthogonal components that capture the most variation in the data and would thus likely provide the best controls without causing collinearity.  This is a well-established strategy for dealing with collinear variables when interpretation of the coefficients is not necessary.  The following figure shows the cumulative proportion of variance explained by each principal component.  The red line indicates our cutoff at 80% of the variation.
-
-<center>
 ```{r}
-load("analysis/cache/pca.Rdata")
-summary(pca.output)$importance %>%
-  t() %>%
-  as_tibble() %>%
-  rownames_to_column(var = "Principal Components") %>%
-  filter(`Cumulative Proportion`<0.97) %>%
-  ggplot(aes(x=reorder(`Principal Components`,`Cumulative Proportion`),y=`Cumulative Proportion`)) +
-    geom_col(width = 1) +
-    geom_hline(yintercept = .8, color="red",size=2) +
-    scale_x_discrete(name="Principal Components",breaks=seq.int(1,36,2)) +
-    ylab("Cumulative Proportion of Variation") +
-    theme_bw()
-```
-</center>
-
-
-## ICS-209 Reporting
-
-Changes to the ICS-209 implemented in 2014 have added some ambiguity to the intent of the 209 reporting process, specifically with how it relates to reactive or proactive planning. These updates eliminated the Growth Potential field altogether; further, they modified the “Report Date” field to a new data block called “For Time Period.” In this new data block, users must enter time and date values for fields named “Report From” and “Report To.” While the user guide offers some guidance on how to populate these fields (https://www.predictiveservices.nifc.gov/intelligence/ICS-209_User_Guide_2.0.pdf), it is unclear how widely these instructions are adhered to. Some users may see that this is a forward-looking tool since they are planning for resource needs for upcoming operational periods; they may, in turn, indicate that the “For Time Period” values span the upcoming 24 hours. Others may see it as a reactive tool for reporting on past events and populate the date range for the last 24 hours. The potential inconsistencies from these changes confuse temporal summaries and eliminate the snapshot value of a daily report with a single date and time. Future improvements to clarify and simplify this would improve managers’ abilities to consistently interpret fire report data and increase analytical value of archived data. 
-
-
-
-
-
-# Results
-
-This section contains the full result tables referenced in the manuscript.
-
-## Fire Growth
-
-Table S2 contains the full regression results of the quasipoisson models of fire growth as a function of weather and other controls (eq 1 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction.  Column 1 contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression.
-
-<center>
-
-```{r, results='asis'}
-map(output.growth,
-    function(x){
-      temp.names <- suppressMessages(names(x$coefficients) %>%
-        enframe(., name = NULL) %>%
-        inner_join(.,
-                   var.names))
-      names(x$coefficients) <- temp.names$new_name
-      coeftest(x,vcov=vcovCL(x,cluster = growth.ds$ross_inc_id[-x$na.action]))
-    }) %>%
-  stargazer(.,
-            type = "html",
-            title = "Table S2 Complete Results of Quasipoisson Regression of Fire Growth",
-            dep.var.caption = "Fire Growth",
-            notes = "Notes: *** p<0.01, ** p<0.05, * p<0.1 </br>Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are CFBX=1, Inaccessibility (Medium), GACC (EB),</br> and year (2007)    L.Area are the three coefficients on the cubic natural spline.  </br>PC denotes the principal components. L denotes a 1 period lag.",
-            notes.append = F,
-            notes.align = "l",
-            notes.label = " ",
-            single.row = T)
-
-
-```
-</center>
-
-</br>
-
-The direct and composite weather measures are all statistically significant at $\alpha=0.01$, and the signs confirm intuition.  Fire growth decreases when precipitation and humidity are higher, whereas growth increases with higher temperature, wind speed, BI, ERC, and CFBX.  The magnitude of the coefficients on the discrete levels of CFBX is rising, which confirms that higher fire behavior ratings correspond to higher fire growth rates.  
-
-The following figures illustrate the predicted fire growth over the observed domain of the weather variables.  The figures are generated using the estimates from the separately estimated regressions.  Note that the small ticks on the horizontal axis denote observations in the dataset.
-
-
-```{r,out.width="50%"}
-include_graphics(path = "figures/prcp.png")
-include_graphics(path = "figures/rmin.png")
-include_graphics(path = "figures/tmax.png")
-include_graphics(path = "figures/wind.png")
-include_graphics(path = "figures/bi.png")
-include_graphics(path = "figures/erc.png")
-include_graphics(path = "figures/sfwp.png")
+tab("S2-growth.csv","S2: all fitted terms with fire-clustered SEs")
 ```
 
-*****************************
-
-## Growth Potential
-Table S3 contains the full regression results of the ordered logit regressions of fire growth potential on weather and other controls (equation 2 in the main text).  We estimate three separate models since the direct and composite weather metrics are collinear by construction. Column 1 labeled *All* contains all weather variables to demonstrate the consequences of including the measured and composite weather variables in the same regression. 
-```{r,message=FALSE,warning=FALSE}
-temp.tab <- read_tsv("report/tables/need_formatting/02_gp_raw.txt",
-                     skip = 3,
-                     n_max = 128)
-
-temp.tab %>%
-  left_join(.,
-            var.names,
-            by=c("X1"="value")) %>%
-  select(Coefficient=new_name,All=X2,Weather=X3,Indices=X4,CFBX=X5) %>%
-  kable(caption = "Table S3 Complete Results of Ordered Logit Regression of Growth Potential") %>%
-  kable_styling(bootstrap_options = c("condensed"),
-                full_width = F,position = "center") %>%
-  footnote(general = "Observations: 14,366. *** p<0.01, ** p<0.05, * p<0.1 
-           Standard errors are clustered at the fire level and are in parentheses.  ",
-           general_title = "Notes: ")
-
+```{r, out.width='48%'}
+fig(file.path("report/audit/figures",paste0(c("prcp","rmin","tmax","wind","bi","erc","sfwp"),".png")))
 ```
 
+## Growth potential: Table S3 and Figure 4
 
-The direct and composite weather measures are all statistically significant at $\alpha=0.01$ when estimates separately, and the signs confirm intuition.  Fire growth potential decreases when precipitation and humidity are higher, whereas growth increases with higher temperature, wind speed, BI, ERC, and CFBX.  The magnitude of the coefficients on the discrete levels of CFBX is rising, which confirms that higher fire behavior ratings correspond to higher fire growth rates.  
+These are R cumulative-logit maximum-likelihood fits with fire-clustered covariance. They use Low/Medium/High/Extreme outcomes and the source do-file's Low terrain reference, GACC/year/cause indicators, seasonal interactions, PCs and restricted-cubic area spline. Saved Stata coefficients do not all match at printed precision. The comparison file reports discrepancies without relaxing the threshold.
 
-The following figures illustrate the predicted probabilities of each category of growth potential over the observed domain of the weather variables.  The figures are generated using the estimates from the separately estimated regressions.  Note that the small ticks on the horizontal axis denote observations in the dataset.
-
-```{r,out.width="50%"}
-include_graphics(path = "figures/gp_prcp.png")
-include_graphics(path = "figures/gp_rmin_leg.png")
-include_graphics(path = "figures/gp_tmax.png")
-include_graphics(path = "figures/gp_wind.png")
-include_graphics(path = "figures/gp_bi.png")
-include_graphics(path = "figures/gp_erc.png")
-include_graphics(path = "figures/gp_sfwp.png")
+```{r}
+tab("gp-coefficients.csv","S3: R ordered-logit coefficients, thresholds and fire-clustered SEs")
 ```
 
-*****************************
-
-## Resource Orders
-
-Tables S4 contains the complete regression results of the linear fixed effects regression of total resource orders on observed and expected fire growth, evacuation, and interactions between the two.  Columns 1-4 correspond to the models described in the main text in Table 4.  Column 1 includes only the main effects of growth potential and lagged fire growth as well as fire fixed effects.  Column 2 includes growth potential, lagged fire growth, potential evacuation, and lagged evacuation as well as their interactions (fire fixed effects).  Column 3 includes the same regressors as column 2 but adds days since discovery fixed effects.  Column 4 adds incident commander fixed effects.
-
-<center>
-```{r, results='asis'}
-note.text <- "Notes: *** p<0.01, ** p<0.05, * p<0.1 </br>Observations: 3,735; Fires: 1,125; Number of days since discovery FE: 84; Number of ICs: 1,234 </br> Standard errors are clustered at the fire level and given in parentheses.  </br>The ommitted categories are Growth Potential (Medium), Inaccessibility (Medium),</br>   L.Area are the three coefficients on the cubic natural spline.  </br> L denotes a 1 period lag."
-
-map(all.resources,
-    function(x){
-      temp.names <- suppressMessages(
-        rownames(x$coeftable) %>%
-        enframe(., name = NULL) %>%
-        inner_join(.,
-                   var.names))
-      rownames(x$coeftable) <- temp.names$new_name
-      fixest_to_coeftest(x)
-    }) %>%
-  stargazer(.,
-            type = "html",
-            title = "Table S4 Complete Results of Fixed Effects Regression of Total Resource Orders",
-            dep.var.caption = "Total Resource Orders",
-            notes = note.text,
-            notes.append = F,
-            notes.align = "l",
-            notes.label = " ",
-            single.row = T)
-
-
+```{r, out.width='95%'}
+fig("report/audit/figures/Figure4_R.png")
 ```
-</center>
 
-Tables S5a and S5b contain the complete regression results of the linear fixed effects regressions by resource type.
-
-<center>
-```{r, results='asis'}
-map(results.lm[c(1,2,4,5)],
-    function(x){
-      temp.names <- suppressMessages(
-        rownames(x$coeftable) %>%
-        enframe(., name = NULL) %>%
-        inner_join(.,
-                   var.names))
-      rownames(x$coeftable) <- temp.names$new_name
-      fixest_to_coeftest(x)
-    }) %>%
-  stargazer(.,
-            type = "html",
-            title = "Table S5a Complete Results of Fixed Effects Regression of Select Resource Orders",
-            column.labels = c("Wildland Engines","Structure Engines","Type 1 Crews","Type 2 Crews"),
-            dep.var.caption = " ",
-            model.numbers = F,
-            notes = note.text,
-            notes.append = F,
-            notes.align = "l",
-            notes.label = " ",
-            single.row = F)
-
-
-
-map(results.lm[c(6,7,8,3)],
-    function(x){
-      temp.names <- suppressMessages(
-        rownames(x$coeftable) %>%
-        enframe(., name = NULL) %>%
-        inner_join(.,
-                   var.names))
-      rownames(x$coeftable) <- temp.names$new_name
-      fixest_to_coeftest(x)
-    }) %>%
-  stargazer(.,
-            type = "html",
-            title = "Table S5b Complete Results of Fixed Effects Regression of Select Resource Orders",
-            column.labels = c("LAT","Aircraft","Helicopters","Dozers"),
-            dep.var.caption = " ",
-            model.numbers = F,
-            notes = note.text,
-            notes.append = F,
-            notes.align = "l",
-            notes.label = " ",
-            single.row = F)
-
-
+```{r, out.width='48%'}
+fig(file.path("report/audit/figures",paste0("gp_",c("prcp","tmax","wind","bi","sfwp"),"_R.png")))
 ```
-</center>
 
+Curves average counterfactual probabilities over the estimation sample. Bars are normal delta-method 95% intervals using fire-clustered covariance, not predictions at mean covariates.
 
+## Resource orders: main Tables 3–6 and S4–S5
+
+Labels map by term name, so `L1.growth` is **Lagged Growth** and `evac_potential` is **Potential Evacuation**. Unlike the old renderer, these outputs explicitly request fire-clustered standard errors. Fixed-effect counts come from fitted models. The High-growth coefficient is conditional on no potential evacuation in models containing that interaction; it is not an unconditional average effect.
+
+```{r}
+tab("Table3.csv","Table 3: corrected resource-order sample")
+tab("Table4.csv","Table 4: total resource orders")
+tab("Table5.csv","Table 5: engines and crews")
+tab("Table6.csv","Table 6: aircraft, helicopters and dozers")
+x<-read.csv("report/audit/resource-coefficients-all-paths.csv")
+knitr::kable(x[x$variant=="corrected",],digits=4,caption="S4–S5: all resource-order terms; corrected path")
+```
+
+These are conditional observational associations. The audit does not identify a causal response to perceived risk, evacuation potential or weather. Before/after estimates and significance changes are summarized in `audit/RESULTS.md`.

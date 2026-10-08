@@ -1,0 +1,8 @@
+status,n
+input_rows,14709
+output_rows,14709
+lookup_conflicting_keys,102
+cleaned_rows,3845
+conflicting_rows_retained,65
+unmatched_or_empty_rows_retained,10799
+missing_names_after,88
