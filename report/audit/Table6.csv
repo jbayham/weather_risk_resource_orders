@@ -1,27 +1,27 @@
 "variant","model","term","label","estimate","se","p","n"
-"corrected","VLAT","growth_potentialHigh","Growth Potential (High)",0.124837820432784,0.0391874216901312,0.00144423980948245,3735
+"corrected","VLAT","growth_potentialHigh","Growth Potential (High)",0.124837820432784,0.0391874216901312,0.00144423980948244,3735
 "corrected","VLAT","growth_potentialLow","Growth Potential (Low)",-0.128578833809008,0.0595550882555282,0.0308509508089796,3735
 "corrected","VLAT","L1.growth","Lagged Growth",-0.00111769574130548,0.00300818884343686,0.710227135835477,3735
 "corrected","VLAT","evac_potential","Potential Evacuation",0.0122863801852452,0.0566164693460234,0.82819999879842,3735
 "corrected","VLAT","L1.evac","L.Evacuation",-0.0132789043408339,0.0486904533064653,0.785067766146032,3735
-"corrected","VLAT","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.000364610890828171,0.0686579384555733,0.995762820153937,3735
+"corrected","VLAT","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.000364610890828171,0.0686579384555734,0.995762820153937,3735
 "corrected","VLAT","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.0231349222897592,0.114086293219753,0.83930353947583,3735
 "corrected","VLAT","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0100249304047924,0.00692995699027816,0.148006777367593,3735
-"corrected","T2_4_Airtanker","growth_potentialHigh","Growth Potential (High)",1.92362604872862,0.337273764190174,1.17402405522765e-08,3735
-"corrected","T2_4_Airtanker","growth_potentialLow","Growth Potential (Low)",-1.24830738077551,0.346543728776364,0.000315579031705807,3735
+"corrected","T2_4_Airtanker","growth_potentialHigh","Growth Potential (High)",1.92362604872862,0.337273764190174,1.17402405522764e-08,3735
+"corrected","T2_4_Airtanker","growth_potentialLow","Growth Potential (Low)",-1.24830738077551,0.346543728776364,0.000315579031705806,3735
 "corrected","T2_4_Airtanker","L1.growth","Lagged Growth",0.0669305634919088,0.0336466691492622,0.0466771342175281,3735
 "corrected","T2_4_Airtanker","evac_potential","Potential Evacuation",-0.0138843556377373,0.445371204774581,0.975130141480499,3735
 "corrected","T2_4_Airtanker","L1.evac","L.Evacuation",0.484411108086057,0.339214740501339,0.153281287382654,3735
 "corrected","T2_4_Airtanker","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.160856773850207,0.495328505805241,0.745372059437137,3735
-"corrected","T2_4_Airtanker","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.344882573000007,0.826076533019237,0.676316601327212,3735
+"corrected","T2_4_Airtanker","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.344882573000007,0.826076533019238,0.676316601327212,3735
 "corrected","T2_4_Airtanker","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0146831069134161,0.0397873939303552,0.71209852724747,3735
 "corrected","Helicopters","growth_potentialHigh","Growth Potential (High)",0.544919376596461,0.132225038374683,3.76983885756038e-05,3735
-"corrected","Helicopters","growth_potentialLow","Growth Potential (Low)",-0.253749324651548,0.125642490549069,0.0434234486504712,3735
+"corrected","Helicopters","growth_potentialLow","Growth Potential (Low)",-0.253749324651548,0.125642490549069,0.0434234486504711,3735
 "corrected","Helicopters","L1.growth","Lagged Growth",0.0259377138947909,0.0119127529294579,0.0294577096103705,3735
 "corrected","Helicopters","evac_potential","Potential Evacuation",-0.0819122518333221,0.173617065086084,0.637070700006848,3735
 "corrected","Helicopters","L1.evac","L.Evacuation",-0.136807998499709,0.15816106444985,0.387043377389495,3735
 "corrected","Helicopters","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",-0.0278982647447042,0.206975680665425,0.892777863827154,3735
-"corrected","Helicopters","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.126226588009717,0.33580971250631,0.707000722621676,3735
+"corrected","Helicopters","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",0.126226588009717,0.33580971250631,0.707000722621675,3735
 "corrected","Helicopters","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.0110552842460108,0.0162256552168976,0.495652623260027,3735
 "corrected","Dozers","growth_potentialHigh","Growth Potential (High)",0.573946671002074,0.237895804663097,0.0158393282713361,3735
 "corrected","Dozers","growth_potentialLow","Growth Potential (Low)",-0.259026961947342,0.197739244910311,0.190215423156763,3735
@@ -29,5 +29,5 @@
 "corrected","Dozers","evac_potential","Potential Evacuation",-0.140879482716202,0.249358924802573,0.572096431012333,3735
 "corrected","Dozers","L1.evac","L.Evacuation",-0.454426188506913,0.348064086674649,0.191694762345624,3735
 "corrected","Dozers","growth_potentialHigh:evac_potential","Growth Potential (High) x Pot. Evac.",0.0747556493764245,0.291043394868754,0.797291510665831,3735
-"corrected","Dozers","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.985292802691991,0.974316197990581,0.311889154863674,3735
+"corrected","Dozers","growth_potentialLow:evac_potential","Growth Potential (Low) x Pot. Evac.",-0.985292802691991,0.974316197990582,0.311889154863674,3735
 "corrected","Dozers","L1.growth:L1.evac","Lagged Growth x L. Evacuation",0.035981743876273,0.0534982412024412,0.501215756543839,3735

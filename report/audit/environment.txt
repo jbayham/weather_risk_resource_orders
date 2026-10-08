@@ -1,4 +1,4 @@
 R 4.5.0
 Platform: aarch64-apple-darwin20
-No seed: deterministic estimation; no resampling.
+Deterministic estimation with fixest threads=1; no resampling. Plot rug jitter seed: 20261008.
 Base revision: 5fe40759ee4194f3a5a86926e1105fdc3b66ca0e
